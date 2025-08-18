@@ -1,4 +1,3 @@
-import { FC } from "react";
 import Image from "next/image";
 import { Carousel, Col, Row } from "antd";
 import { RightOutlined } from "@ant-design/icons";
@@ -12,18 +11,22 @@ import poster2 from "@/assets/home/poster2.png";
 import CaseCard from "./case/card";
 import Link from "next/link";
 import LeekonoStatistic from "@/component/statistic";
-import { useTranslation } from "../i18n/client";
+import { getTranslation } from "../i18n";
 
 const prefix = "leekono-home";
 
+interface Params {
+  params: Promise<{ lng: string }>;
+}
 const data = [
   { id: "founded", value: 15, suffix: "" },
   { id: "servingCountries", value: 30, suffix: "+" },
   { id: "partner", value: 1100, suffix: "+" },
   { id: "servingProvinces", value: 31, suffix: "" },
 ];
-const Home = async ({ params: { lng } }) => {
-  const { t } = await useTranslation(lng, "home");
+const Home = async ({ params }: Params) => {
+  const { lng } = await params;
+  const { t } = await getTranslation(lng, "home");
 
   return (
     <div className={prefix}>

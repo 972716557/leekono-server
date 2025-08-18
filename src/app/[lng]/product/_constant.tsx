@@ -1,0 +1,2389 @@
+import { FormattedMessage } from "umi";
+
+import indoor1 from "@/assets/product/indoor/1.jpg";
+import indoor2 from "@/assets/product/indoor/2.jpg";
+import indoor3 from "@/assets/product/indoor/3.jpg";
+import indoor4 from "@/assets/product/indoor/4.jpg";
+import indoor5 from "@/assets/product/indoor/5.jpg";
+import indoor6 from "@/assets/product/indoor/6.jpg";
+
+import outdoor1 from "@/assets/product/outdoor/1.jpg";
+import outdoor2 from "@/assets/product/outdoor/2.jpg";
+import outdoor3 from "@/assets/product/outdoor/3.jpg";
+import outdoor4 from "@/assets/product/outdoor/4.jpg";
+import outdoor5 from "@/assets/product/outdoor/5.jpg";
+import outdoor6 from "@/assets/product/outdoor/6.jpg";
+
+import rental1 from "@/assets/product/rental/1.jpg";
+import rental2 from "@/assets/product/rental/2.jpg";
+import rental3 from "@/assets/product/rental/3.jpg";
+import rental4 from "@/assets/product/rental/4.jpg";
+import rental5 from "@/assets/product/rental/5.jpg";
+import rental6 from "@/assets/product/rental/6.jpg";
+
+import poster1 from "@/assets/product/poster/1.jpg";
+import poster2 from "@/assets/product/poster/2.jpg";
+import poster3 from "@/assets/product/poster/3.jpg";
+import poster4 from "@/assets/product/poster/4.jpg";
+import poster5 from "@/assets/product/poster/5.jpg";
+import poster6 from "@/assets/product/poster/6.jpg";
+import posterCase1 from "@/assets/product/poster/case1.png";
+
+import transparent1 from "@/assets/product/transparent/1.jpg";
+import transparent2 from "@/assets/product/transparent/2.jpg";
+import transparent3 from "@/assets/product/transparent/3.jpg";
+import transparent4 from "@/assets/product/transparent/4.jpg";
+import transparent5 from "@/assets/product/transparent/5.jpg";
+import transparent6 from "@/assets/product/transparent/6.jpg";
+
+import soft1 from "@/assets/product/soft/1.jpg";
+import soft2 from "@/assets/product/soft/2.jpg";
+import soft3 from "@/assets/product/soft/3.jpg";
+import soft4 from "@/assets/product/soft/4.jpg";
+import soft5 from "@/assets/product/soft/5.jpg";
+import soft6 from "@/assets/product/soft/6.jpg";
+
+import crystal1 from "@/assets/product/crystal/1.jpg";
+import crystal2 from "@/assets/product/crystal/2.jpg";
+import crystal3 from "@/assets/product/crystal/3.jpg";
+import crystal4 from "@/assets/product/crystal/4.jpg";
+import crystal5 from "@/assets/product/crystal/5.jpg";
+import crystal6 from "@/assets/product/crystal/6.jpg";
+
+import floor1 from "@/assets/product/floor/1.jpg";
+import floor2 from "@/assets/product/floor/2.jpg";
+import floor3 from "@/assets/product/floor/3.jpg";
+import floor4 from "@/assets/product/floor/4.jpg";
+import floor5 from "@/assets/product/floor/5.jpg";
+import floor6 from "@/assets/product/floor/6.jpg";
+
+import taxi1 from "@/assets/product/taxi/1.jpg";
+import taxi2 from "@/assets/product/taxi/2.jpg";
+import taxi3 from "@/assets/product/taxi/3.jpg";
+import taxi4 from "@/assets/product/taxi/4.jpg";
+import taxi5 from "@/assets/product/taxi/5.jpg";
+import taxi6 from "@/assets/product/taxi/6.jpg";
+
+import devil1 from "@/assets/product/devil/1.jpg";
+import devil2 from "@/assets/product/devil/2.jpg";
+import devil3 from "@/assets/product/devil/3.jpg";
+import devil4 from "@/assets/product/devil/4.jpg";
+import devil5 from "@/assets/product/devil/5.jpg";
+import devil6 from "@/assets/product/devil/6.jpg";
+
+export const IndoorColumns = [
+  {
+    dataIndex: "config",
+    title: <FormattedMessage id="config"></FormattedMessage>,
+    key: "config",
+    fixed: "left",
+    with: 300,
+    render: (text: string) => (
+      <div>
+        <FormattedMessage id={text}></FormattedMessage>
+        {text === "warranty" && (
+          <span>
+            <span>/(</span>
+            <FormattedMessage id={"year"}></FormattedMessage>
+            <span>)</span>
+          </span>
+        )}
+      </div>
+    ),
+  },
+  { dataIndex: "P1.25", title: "P1.25", key: "P1.25" },
+  { dataIndex: "P1.56", title: "P1.56", key: "P1.56" },
+  { dataIndex: "P1.66", title: "P1.66", key: "P1.66" },
+  { dataIndex: "P1.86", title: "P1.86", key: "P1.86" },
+  { dataIndex: "P2", title: "P2", key: "P2" },
+  { dataIndex: "P2.5", title: "P2.5", key: "P2.5" },
+  { dataIndex: "P3", title: "P3", key: "P3" },
+  { dataIndex: "P4", title: "P4", key: "P4" },
+  { dataIndex: "P5", title: "P5", key: "P5" },
+];
+export const IndoorData = [
+  {
+    config: "bestView",
+    "P1.25": "1.2m-15m",
+    "P1.56": "1.5m-15m",
+    "P1.66": "1.6m-15m",
+    "P1.86": "1.8m-15m",
+    P2: "2m-15m",
+    "P2.5": "2.5m-15m",
+    P3: "3m-15m",
+    P4: "4m-15m",
+    P5: "5m-15m",
+  },
+  {
+    config: "pixelPitch",
+    "P1.25": "1.25mm",
+    "P1.56": "1.56mm",
+    "P1.66": "1.66mm",
+    "P1.86": "1.86mm",
+    P2: "2mm",
+    "P2.5": "2.5mm",
+    P3: "3mm",
+    P4: "4mm",
+    P5: "5mm",
+  },
+  {
+    config: "brightness",
+    "P1.25": "700-1000CD/m²",
+    "P1.56": "700-1000CD/m²",
+    "P1.66": "700-1000CD/m²",
+    "P1.86": "700-1000CD/m²",
+    P2: "700-1000CD/m²",
+    "P2.5": "800-1100CD/m²",
+    P3: "800-1100CD/m²",
+    P4: "800-1100CD/m²",
+    P5: "800-1100CD/m²",
+  },
+  {
+    config: "dot",
+    "P1.25": "640000 dot/m²",
+    "P1.56": "409600 dot/m²",
+    "P1.66": "360000 dot/m²",
+    "P1.86": "284444 dot/m²",
+    P2: "250000 dot/m²",
+    "P2.5": "160000 dot/m²",
+    P3: "111111 dot/m²",
+    P4: "62500 dot/m²",
+    P5: "40000 dot/m²",
+  },
+  {
+    config: "moduleSize",
+    "P1.25": "320 x 160mm",
+    "P1.56": "320 x 160mm",
+    "P1.66": "320 x 160mm",
+    "P1.86": "320 x 160mm",
+    P2: "320 x 160mm",
+    "P2.5": "320 x 160mm",
+    P3: "320 x 160mm",
+    P4: "320 x 160mm",
+    P5: "320 x 160mm",
+  },
+  {
+    config: "moduleWeight",
+    "P1.25": "0.31kg",
+    "P1.56": "0.31kg",
+    "P1.66": "0.31kg",
+    "P1.86": "0.31kg",
+    P2: "0.31kg",
+    "P2.5": "0.31kg",
+    P3: "0.31kg",
+    P4: "0.31kg",
+    P5: "0.31kg",
+  },
+  {
+    config: "cabinetSize",
+    "P1.25": "640mm*480mm*55mm",
+    "P1.56": "640mm*480mm*55mm",
+    "P1.66": "640mm*480mm*55mm",
+    "P1.86": "640mm*480mm*55mm",
+    P2: "640mm*480mm*55mm",
+    "P2.5": "640mm*640mm*55mm",
+    P3: "640mm*640mm*55mm",
+    P4: "640mm*640mm*55mm",
+    P5: "640mm*640mm*55mm",
+  },
+  {
+    config: "cabinetWeight",
+    "P1.25": "7.5kg",
+    "P1.56": "7.5kg",
+    "P1.66": "7.5kg",
+    "P1.86": "7.5kg",
+    P2: "7.5kg",
+    "P2.5": "7.5kg",
+    P3: "7.5kg",
+    P4: "7.5kg",
+    P5: "7.5kg",
+  },
+  {
+    config: "cabinetResolution",
+    "P1.25": "512*384",
+    "P1.56": "416*312",
+    "P1.66": "384*288",
+    "P1.86": "344*258",
+    P2: "320*240",
+    "P2.5": "256*256",
+    P3: "230*230",
+    P4: "160*160",
+    P5: "128*128",
+  },
+  {
+    config: "ipRate",
+    "P1.25": "IP 54",
+    "P1.56": "IP 54",
+    "P1.66": "IP 54",
+    "P1.86": "IP 54",
+    P2: "IP 54",
+    "P2.5": "IP 54",
+    P3: "IP 54",
+    P4: "IP 54",
+    P5: "IP 54",
+  },
+  {
+    config: "scan",
+    "P1.25": "1/64S",
+    "P1.56": "1/52S",
+    "P1.66": "1/48S",
+    "P1.86": "1/43S",
+    P2: "1/40S",
+    "P2.5": "1/32S",
+    P3: "1/32S",
+    P4: "1/32S",
+    P5: "1/16S",
+  },
+  {
+    config: "warranty",
+    "P1.25": "2",
+    "P1.56": "2",
+    "P1.66": "2",
+    "P1.86": "2",
+    P2: "2",
+    "P2.5": "2",
+    P3: "2",
+    P4: "2",
+    P5: "2",
+  },
+  {
+    config: "lifeSpan",
+    "P1.25": "10000h",
+    "P1.56": "10000h",
+    "P1.66": "10000h",
+    "P1.86": "10000h",
+    P2: "10000h",
+    "P2.5": "10000h",
+    P3: "10000h",
+    P4: "10000h",
+    P5: "10000h",
+  },
+  {
+    config: "maxPower",
+    "P1.25": "800W/m²",
+    "P1.56": "800W/m²",
+    "P1.66": "800W/m²",
+    "P1.86": "800W/m²",
+    P2: "800W/m²",
+    "P2.5": "800W/m²",
+    P3: "800W/m²",
+    P4: "800W/m²",
+    P5: "800W/m²",
+  },
+  {
+    config: "averagePower",
+    "P1.25": "420W/m²",
+    "P1.56": "420W/m²",
+    "P1.66": "420W/m²",
+    "P1.86": "420W/m²",
+    P2: "420W/m²",
+    "P2.5": "420W/m²",
+    P3: "420W/m²",
+    P4: "420W/m²",
+    P5: "420W/m²",
+  },
+  {
+    config: "horizontalViewAngle",
+    "P1.25": "≧130 o",
+    "P1.56": "≧130 o",
+    "P1.66": "≧130 o",
+    "P1.86": "≧130 o",
+    P2: "≧130 o",
+    "P2.5": "≧130 o",
+    P3: "≧130 o",
+    P4: "≧130 o",
+    P5: "≧130 o",
+  },
+  {
+    config: "verticalViewAngle",
+    "P1.25": "≧140 o",
+    "P1.56": "≧140 o",
+    "P1.66": "≧140 o",
+    "P1.86": "≧140 o",
+    P2: "≧140 o",
+    "P2.5": "≧140 o",
+    P3: "≧140 o",
+    P4: "≧140 o",
+    P5: "≧140 o",
+  },
+  {
+    config: "workingTemperature",
+    "P1.25": " -25°C~60°C",
+    "P1.56": " -25°C~60°C",
+    "P1.66": " -25°C~60°C",
+    "P1.86": " -25°C~60°C",
+    P2: " -25°C~60°C",
+    "P2.5": " -25°C~60°C",
+    P3: " -25°C~60°C",
+    P4: " -25°C~60°C",
+    P5: " -25°C~60°C",
+  },
+  {
+    config: "workingHumidity",
+    "P1.25": "10%RH~90%RH",
+    "P1.56": "10%RH~90%RH",
+    "P1.66": "10%RH~90%RH",
+    "P1.86": "10%RH~90%RH",
+    "P1.96": "10%RH~90%RH",
+    P2: "10%RH~90%RH",
+    "P2.5": "10%RH~90%RH",
+    P3: "10%RH~90%RH",
+    P4: "10%RH~90%RH",
+    P5: "10%RH~90%RH",
+  },
+];
+
+export const SoftColumns = [
+  {
+    dataIndex: "config",
+    title: <FormattedMessage id="config"></FormattedMessage>,
+    key: "config",
+    fixed: "left",
+    with: 300,
+    render: (text: string) => (
+      <div>
+        <FormattedMessage id={text}></FormattedMessage>
+        {text === "warranty" && (
+          <span>
+            <span>/(</span>
+            <FormattedMessage id={"year"}></FormattedMessage>
+            <span>)</span>
+          </span>
+        )}
+      </div>
+    ),
+  },
+  { dataIndex: "P1.25", title: "P1.25", key: "P1.25" },
+  { dataIndex: "P1.53", title: "P1.53", key: "P1.53" },
+  { dataIndex: "P1.86", title: "P1.86", key: "P1.86" },
+  { dataIndex: "P2", title: "P2", key: "P2" },
+  { dataIndex: "P2.5", title: "P2.5", key: "P2.5" },
+  { dataIndex: "P3", title: "P3", key: "P3" },
+  { dataIndex: "P4", title: "P4", key: "P4" },
+];
+export const SoftData = [
+  {
+    config: "bestView",
+    "P1.25": "1m-20m",
+    "P1.53": "1m-25m",
+    "P1.86": "2m-30m",
+    P2: "2m-40m",
+    "P2.5": "2.5m-40m",
+    P3: "3m-50m",
+    P4: "4m-60m",
+  },
+  {
+    config: "pixelPitch",
+    "P1.25": "1.25mm",
+    "P1.53": "1.53mm",
+    "P1.86": "1.86mm",
+    P2: "2mm",
+    "P2.5": "2.5mm",
+    P3: "3mm",
+    P4: "4mm",
+  },
+  {
+    config: "brightness",
+    "P1.25": "700-1000CD/m²",
+    "P1.53": "700-1000CD/m²",
+    "P1.86": "700-1000CD/m²",
+    P2: "700-1000CD/m²",
+    "P2.5": "700-1000CD/m²",
+    P3: "700-1000CD/m²",
+    P4: "700-1000CD/m²",
+  },
+  {
+    config: "dot",
+    "P1.25": "640000 dot/m²",
+    "P1.53": "422500 dot/m²",
+    "P1.86": "289050 dot/m²",
+    P2: "250000 dot/m²",
+    "P2.5": "160000 dot/m²",
+    P3: "105688 dot/m²",
+    P4: "62500 dot/m²",
+  },
+  {
+    config: "moduleSize",
+    "P1.25": "320mm*160mm/240mm*120mm",
+    "P1.53": "320mm*160mm/240mm*120mm",
+    "P1.86": "320mm*160mm/240mm*120mm",
+    P2: "320mm*160mm/240mm*120mm",
+    "P2.5": "320mm*160mm/240mm*120mm",
+    P3: "320mm*160mm/240mm*120mm",
+    P4: "320mm*160mm/240mm*120mm",
+    P5: "320mm*160mm/240mm*120mm",
+  },
+  {
+    config: "moduleWeight",
+    "P1.25": "0.31kg",
+    "P1.53": "0.31kg",
+    "P1.86": "0.31kg",
+    P2: "0.31kg",
+    "P2.5": "0.31kg",
+    P3: "0.31kg",
+    P4: "0.31kg",
+  },
+  {
+    config: "cabinetSize",
+    "P1.25": "960mm*960mm*100mm",
+    "P1.53": "960mm*960mm*100mm",
+    "P1.86": "960mm*960mm*100mm",
+    P2: "960mm*960mm*100mm",
+    "P2.5": "960mm*960mm*100mm",
+    P3: "960mm*960mm*100mm",
+    P4: "960mm*960mm*100mm",
+  },
+  {
+    config: "cabinetWeight",
+    "P1.25": "25kg/m²",
+    "P1.53": "25kg/m²",
+    "P1.86": "25kg/m²",
+    P2: "25kg/m²",
+    "P2.5": "25kg/m²",
+    P3: "25kg/m²",
+    P4: "25kg/m²",
+  },
+  {
+    config: "cabinetResolution",
+    "P1.25": "768*768",
+    "P1.53": "624*624",
+    "P1.86": "172*172",
+    P2: "480*480",
+    "P2.5": "384*384",
+    P3: "312*312",
+    P4: "240*240",
+  },
+  {
+    config: "ipRate",
+    "P1.25": "Front: IP40, Back: IP41",
+    "P1.53": "Front: IP40, Back: IP41",
+    "P1.86": "Front: IP40, Back: IP41",
+    P2: "Front: IP40, Back: IP41",
+    "P2.5": "Front: IP40, Back: IP41",
+    P3: "Front: IP40, Back: IP41",
+    P4: "Front: IP40, Back: IP41",
+  },
+  {
+    config: "scan",
+    "P1.25": "1/64S",
+    "P1.53": "1/52S",
+    "P1.86": "1/43S",
+    P2: "1/40S",
+    "P2.5": "1/32S",
+    P3: "1/26S",
+    P4: "1/20S",
+  },
+  {
+    config: "warranty",
+    "P1.25": "2",
+    "P1.53": "2",
+    "P1.86": "2",
+    P2: "2",
+    "P2.5": "2",
+    P3: "2",
+    P4: "2",
+  },
+  {
+    config: "lifeSpan",
+    "P1.25": "10000h",
+    "P1.53": "10000h",
+    "P1.86": "10000h",
+    P2: "10000h",
+    "P2.5": "10000h",
+    P3: "10000h",
+    P4: "10000h",
+  },
+  {
+    config: "maxPower",
+    "P1.25": "800W/m²",
+    "P1.53": "800W/m²",
+    "P1.86": "800W/m²",
+    P2: "800W/m²",
+    "P2.5": "800W/m²",
+    P3: "800W/m²",
+    P4: "800W/m²",
+  },
+  {
+    config: "averagePower",
+    "P1.25": "400W/m²",
+    "P1.53": "400W/m²",
+    "P1.86": "400W/m²",
+    P2: "400W/m²",
+    "P2.5": "400W/m²",
+    P3: "400W/m²",
+    P4: "400W/m²",
+  },
+  {
+    config: "horizontalViewAngle",
+    "P1.25": "≧160 o",
+    "P1.53": "≧160 o",
+    "P1.86": "≧160 o",
+    P2: "≧160 o",
+    "P2.5": "≧160 o",
+    P3: "≧160 o",
+    P4: "≧160 o",
+  },
+  {
+    config: "verticalViewAngle",
+    "P1.25": "≧120 o",
+    "P1.53": "≧120 o",
+    "P1.86": "≧120 o",
+    P2: "≧120 o",
+    "P2.5": "≧120 o",
+    P3: "≧120 o",
+    P4: "≧120 o",
+  },
+  {
+    config: "workingTemperature",
+    "P1.25": " -25°C~60°C",
+    "P1.53": " -25°C~60°C",
+    "P1.86": " -25°C~60°C",
+    P2: " -25°C~60°C",
+    "P2.5": " -25°C~60°C",
+    P3: " -25°C~60°C",
+    P4: " -25°C~60°C",
+    P5: " -25°C~60°C",
+  },
+  {
+    config: "workingHumidity",
+    "P1.25": "10%RH~90%RH",
+    "P1.53": "10%RH~90%RH",
+    "P1.86": "10%RH~90%RH",
+    "P1.96": "10%RH~90%RH",
+    P2: "10%RH~90%RH",
+    "P2.5": "10%RH~90%RH",
+    P3: "10%RH~90%RH",
+    P4: "10%RH~90%RH",
+    P5: "10%RH~90%RH",
+  },
+];
+
+const OutdoorColumns = [
+  {
+    dataIndex: "config",
+    title: "config",
+    key: "config",
+    fixed: "left",
+    with: 200,
+    render: (text: string) => (
+      <div>
+        <FormattedMessage id={text}></FormattedMessage>
+        {text === "warranty" && (
+          <span>
+            <span>/(</span>
+            <FormattedMessage id={"year"}></FormattedMessage>
+            <span>)</span>
+          </span>
+        )}
+      </div>
+    ),
+  },
+  { dataIndex: "P2.5", title: "P2.5", key: "P2.5" },
+  { dataIndex: "P3", title: "P3", key: "P3" },
+  { dataIndex: "P4", title: "P4", key: "P4" },
+  { dataIndex: "P5", title: "P5", key: "P5" },
+  { dataIndex: "P6.67", title: "P6.67", key: "P6.67" },
+  { dataIndex: "P8", title: "P8", key: "P8" },
+  { dataIndex: "P10", title: "P10", key: "P10" },
+];
+const OutdoorData = [
+  {
+    config: "bestView",
+    "P2.5": "2.5m-100m",
+    P3: "3m-100m",
+    P4: "4m-100m",
+    P5: "5m-100m",
+    "P6.67": "6-100m",
+    P8: "8-100m",
+    P10: "10-100m",
+  },
+  {
+    config: "brightness",
+    "P2.5": "3500CD/m²",
+    P3: "4500CD/m²",
+    P4: "5000CD/m²",
+    P5: "5000CD/m²",
+    "P6.67": "5500CD/m²",
+    P8: "6000CD/m²",
+    P10: "6500CD/m²",
+  },
+  {
+    config: "dot",
+    "P2.5": "160000 dot/m²",
+    P3: "110889 dot/m²",
+    P4: "62500 dot/m²",
+    P5: "40000 dot/m²",
+    "P6.67": "22464 dot/m²",
+    P8: "15600 dot/m²",
+    P10: "10000 dot/m²",
+  },
+  {
+    config: "moduleSize",
+    "P2.5": "320 x 160mm",
+    P3: "320 x 160mm",
+    P4: "320 x 160mm",
+    P5: "320 x 160mm",
+    "P6.67": "320 x 160mm",
+    P8: "320 x 160mm",
+    P10: "320 x 160mm",
+  },
+  {
+    config: "ipRate",
+    "P2.5": "IP 65",
+    P3: "IP 65",
+    P4: "IP 65",
+    P5: "IP 65",
+    "P6.67": "IP 65",
+    P8: "IP 65",
+    P10: "IP 65",
+  },
+  {
+    config: "scan",
+    "P2.5": "16",
+    P3: "13",
+    P4: "10",
+    P5: "8",
+    "P6.67": "6",
+    P8: "5",
+    P10: "4",
+  },
+  {
+    config: "warranty",
+    "P2.5": "2",
+    P3: "2",
+    P4: "2",
+    P5: "2",
+    "P6.67": "2",
+    P8: "2",
+    P10: "2",
+  },
+  {
+    config: "lifeSpan",
+    "P2.5": "10000h",
+    P3: "10000h",
+    P4: "10000h",
+    P5: "10000h",
+    "P6.67": "10000h",
+    P8: "10000h",
+    P10: "10000h",
+  },
+  {
+    config: "maxPower",
+    "P2.5": "1000W/m²",
+    P3: "1000W/m²",
+    P4: "1000W/m²",
+    P5: "1000W/m²",
+    "P6.67": "1000W/m²",
+    P8: "1000W/m²",
+    P10: "1000W/m²",
+  },
+  {
+    config: "averagePower",
+    "P2.5": "500W/m²",
+    P3: "500W/m²",
+    P4: "500W/m²",
+    P5: "500W/m²",
+    "P6.67": "500W/m²",
+    P8: "500W/m²",
+    P10: "500W/m²",
+  },
+  {
+    config: "horizontalViewAngle",
+    "P2.5": "≧130 o",
+    P3: "≧130 o",
+    P4: "≧130 o",
+    P5: "≧130 o",
+    "P6.67": "≧130 o",
+    P8: "≧130 o",
+    P10: "≧130 o",
+  },
+  {
+    config: "verticalViewAngle",
+    "P2.5": "≧140 o",
+    P3: "≧140 o",
+    P4: "≧140 o",
+    P5: "≧140 o",
+    "P6.67": "≧140 o",
+    P8: "≧140 o",
+    P10: "≧140 o",
+  },
+  {
+    config: "workingTemperature",
+    "P2.5": "-20℃+60℃",
+    P3: "-20℃+60℃",
+    P4: "-20℃+60℃",
+    P5: "-20℃+60℃",
+    "P6.67": "-20℃+60℃",
+    P8: "-20℃+60℃",
+    P10: "-20℃+60℃",
+  },
+  {
+    config: "workingHumidity",
+    "P2.5": "10%RH~80%RH",
+    P3: "10%RH~80%RH",
+    P4: "10%RH~80%RH",
+    P5: "10%RH~80%RH",
+    "P6.67": "10%RH~80%RH",
+    P8: "10%RH~80%RH",
+    P10: "10%RH~80%RH",
+  },
+];
+
+const RentalColumns = [
+  {
+    dataIndex: "config",
+    title: "config",
+    key: "config",
+    fixed: "left",
+    with: 200,
+    render: (text: string) => (
+      <div>
+        <FormattedMessage id={text}></FormattedMessage>
+        {text === "warranty" && (
+          <span>
+            <span>/(</span>
+            <FormattedMessage id={"year"}></FormattedMessage>
+            <span>)</span>
+          </span>
+        )}
+      </div>
+    ),
+  },
+  { dataIndex: "P1.953", title: "P1.953", key: "P1.953" },
+  { dataIndex: "P2.5", title: "P2.5", key: "P2.5" },
+  { dataIndex: "P2.604", title: "P2.604", key: "P2.604" },
+  { dataIndex: "P2.976", title: "P2.976", key: "P2.976" },
+  { dataIndex: "P3.91", title: "P3.91", key: "P3.91" },
+  { dataIndex: "P4.81", title: "P4.81", key: "P4.81" },
+];
+const RentalData = [
+  {
+    config: "bestView",
+    "P1.953": "2-50m",
+    "P2.5": "2.5m-60m",
+    "P2.604": "2.5m-60m",
+    "P2.976": "2.5m-60m",
+    "P3.91": "4m-80m",
+    "P4.81": "4-80m",
+  },
+  {
+    config: "brightness",
+    "P2.5": "Indoor 1000cd/m² | Outdoor 5000cd/m²",
+    "P1.953": "Indoor 1000cd/m² | Outdoor 5000cd/m²",
+    "P2.604": "Indoor 1000cd/m² | Outdoor 5000cd/m²",
+    "P2.976": "Indoor 1000cd/m² | Outdoor 5000cd/m²",
+    "P3.91": "Indoor 1000cd/m² | Outdoor 5000cd/m²",
+    "P4.81": "Indoor 1000cd/m² | Outdoor 5000cd/m²",
+  },
+  {
+    config: "dot",
+    "P2.5": "160000 dot/m²",
+    "P1.953": "262144 dot/m²",
+    "P2.604": "147474 dot/m²",
+    "P2.976": "112896 dot/m²",
+    "P3.91": "65410 dot/m²",
+    "P4.81": "43222 dot/m²",
+  },
+  {
+    config: "moduleSize",
+    "P2.5": "250*250mm",
+    "P1.953": "250*250mm",
+    "P2.604": "250*250mm",
+    "P2.976": "250*250mm",
+    "P3.91": "250*250mm",
+    "P4.81": "250*250mm",
+  },
+  {
+    config: "ipRate",
+    "P2.5": "Indoor Front: IP40, Back: IP51; Outdoor Front IP65, Back: IP54",
+    "P1.953": "Indoor Front: IP40, Back: IP51; Outdoor Front IP65, Back: IP54",
+    "P2.604": "Indoor Front: IP40, Back: IP51; Outdoor Front IP65, Back: IP54",
+    "P2.976": "Indoor Front: IP40, Back: IP51; Outdoor Front IP65, Back: IP54",
+    "P3.91": "Indoor Front: IP40, Back: IP51; Outdoor Front IP65, Back: IP54",
+    "P4.81": "Indoor Front: IP40, Back: IP51; Outdoor Front IP65, Back: IP54",
+  },
+  {
+    config: "scan",
+    "P2.5": "1/25S",
+    "P1.953": "1/32S",
+    "P2.604": "1/32S",
+    "P2.976": "Outdoor 1/21S, Indoor 1/28S",
+    "P3.91": "1/16S",
+    "P4.81": "1/13S",
+  },
+  {
+    config: "warranty",
+    "P2.5": "2",
+    "P1.953": "2",
+    "P2.604": "2",
+    "P2.976": "2",
+    "P3.91": "2",
+    "P4.81": "2",
+  },
+  {
+    config: "lifeSpan",
+    "P2.5": "10000h",
+    "P1.953": "10000h",
+    "P2.604": "10000h",
+    "P2.976": "10000h",
+    "P3.91": "10000h",
+    "P4.81": "10000h",
+  },
+  {
+    config: "maxPower",
+    "P2.5": "800W/m²",
+    "P1.953": "800W/m²",
+    "P2.604": "800W/m²",
+    "P2.976": "800W/m²",
+    "P3.91": "800W/m²",
+    "P4.81": "800W/m²",
+  },
+  {
+    config: "averagePower",
+    "P2.5": "420W/m²",
+    "P1.953": "420W/m²",
+    "P2.604": "420W/m²",
+    "P2.976": "420W/m²",
+    "P3.91": "420W/m²",
+    "P4.81": "420W/m²",
+  },
+  {
+    config: "horizontalViewAngle",
+    "P2.5": "≧160 o",
+    "P1.953": "≧160 o",
+    "P2.604": "≧160 o",
+    "P2.976": "≧160 o",
+    "P3.91": "≧160 o",
+    "P4.81": "≧160 o",
+  },
+  {
+    config: "verticalViewAngle",
+    "P2.5": "≧120 o",
+    "P1.953": "≧120 o",
+    "P2.604": "≧120 o",
+    "P2.976": "≧120 o",
+    "P3.91": "≧120 o",
+    "P4.81": "≧120 o",
+  },
+  {
+    config: "workingTemperature",
+    "P2.5": "-25℃+60℃",
+    "P1.953": "-25℃+60℃",
+    "P2.604": "-25℃+60℃",
+    "P2.976": "-25℃+60℃",
+    "P3.91": "-25℃+60℃",
+    "P4.81": "-25℃+60℃",
+  },
+  {
+    config: "workingHumidity",
+    "P2.5": "10%RH~90%RH",
+    "P1.953": "10%RH~90%RH",
+    "P2.604": "10%RH~90%RH",
+    "P2.976": "10%RH~90%RH",
+    "P3.91": "10%RH~90%RH",
+    "P4.81": "10%RH~90%RH",
+  },
+];
+
+const RentalOutdoorColumns = [
+  {
+    dataIndex: "config",
+    title: "config",
+    key: "config",
+    fixed: "left",
+    with: 200,
+    render: (text: string) => (
+      <div>
+        <FormattedMessage id={text}></FormattedMessage>
+        {text === "warranty" && (
+          <span>
+            <span>/(</span>
+            <FormattedMessage id={"year"}></FormattedMessage>
+            <span>)</span>
+          </span>
+        )}
+      </div>
+    ),
+  },
+  { dataIndex: "P1.953", title: "P1.953", key: "P1.953" },
+  { dataIndex: "P2.5", title: "P2.5", key: "P2.5" },
+  { dataIndex: "P2.604", title: "P2.604", key: "P2.604" },
+  { dataIndex: "P2.976", title: "P2.976", key: "P2.976" },
+  { dataIndex: "P3.91", title: "P3.91", key: "P3.91" },
+  { dataIndex: "P4.81", title: "P4.81", key: "P4.81" },
+];
+const RentalOutdoorData = [
+  {
+    config: "bestView",
+    "P1.953": "2-50m",
+    "P2.5": "2.5m-60m",
+    "P2.604": "2.5m-60m",
+    "P2.976": "2.5m-60m",
+    "P3.91": "4m-80m",
+    "P4.81": "4-80m",
+  },
+  {
+    config: "brightness",
+    "P2.5": "Indoor 1000cd/m² | Outdoor 5000cd/m²",
+    "P1.953": "Indoor 1000cd/m² | Outdoor 5000cd/m²",
+    "P2.604": "Indoor 1000cd/m² | Outdoor 5000cd/m²",
+    "P2.976": "Indoor 1000cd/m² | Outdoor 5000cd/m²",
+    "P3.91": "Indoor 1000cd/m² | Outdoor 5000cd/m²",
+    "P4.81": "Indoor 1000cd/m² | Outdoor 5000cd/m²",
+  },
+  {
+    config: "dot",
+    "P2.5": "160000 dot/m²",
+    "P1.953": "262144 dot/m²",
+    "P2.604": "147474 dot/m²",
+    "P2.976": "112896 dot/m²",
+    "P3.91": "65410 dot/m²",
+    "P4.81": "43222 dot/m²",
+  },
+  {
+    config: "moduleSize",
+    "P2.5": "250*250mm",
+    "P1.953": "250*250mm",
+    "P2.604": "250*250mm",
+    "P2.976": "250*250mm",
+    "P3.91": "250*250mm",
+    "P4.81": "250*250mm",
+  },
+  {
+    config: "ipRate",
+    "P2.5": "Indoor Front: IP40, Back: IP51; Outdoor Front IP65, Back: IP54",
+    "P1.953": "Indoor Front: IP40, Back: IP51; Outdoor Front IP65, Back: IP54",
+    "P2.604": "Indoor Front: IP40, Back: IP51; Outdoor Front IP65, Back: IP54",
+    "P2.976": "Indoor Front: IP40, Back: IP51; Outdoor Front IP65, Back: IP54",
+    "P3.91": "Indoor Front: IP40, Back: IP51; Outdoor Front IP65, Back: IP54",
+    "P4.81": "Indoor Front: IP40, Back: IP51; Outdoor Front IP65, Back: IP54",
+  },
+  {
+    config: "scan",
+    "P2.5": "1/25S",
+    "P1.953": "1/32S",
+    "P2.604": "1/32S",
+    "P2.976": "Outdoor 1/21S, Indoor 1/28S",
+    "P3.91": "1/16S",
+    "P4.81": "1/13S",
+  },
+  {
+    config: "warranty",
+    "P2.5": "2",
+    "P1.953": "2",
+    "P2.604": "2",
+    "P2.976": "2",
+    "P3.91": "2",
+    "P4.81": "2",
+  },
+  {
+    config: "lifeSpan",
+    "P2.5": "10000h",
+    "P1.953": "10000h",
+    "P2.604": "10000h",
+    "P2.976": "10000h",
+    "P3.91": "10000h",
+    "P4.81": "10000h",
+  },
+  {
+    config: "maxPower",
+    "P2.5": "800W/m²",
+    "P1.953": "800W/m²",
+    "P2.604": "800W/m²",
+    "P2.976": "800W/m²",
+    "P3.91": "800W/m²",
+    "P4.81": "800W/m²",
+  },
+  {
+    config: "averagePower",
+    "P2.5": "420W/m²",
+    "P1.953": "420W/m²",
+    "P2.604": "420W/m²",
+    "P2.976": "420W/m²",
+    "P3.91": "420W/m²",
+    "P4.81": "420W/m²",
+  },
+  {
+    config: "horizontalViewAngle",
+    "P2.5": "≧160 o",
+    "P1.953": "≧160 o",
+    "P2.604": "≧160 o",
+    "P2.976": "≧160 o",
+    "P3.91": "≧160 o",
+    "P4.81": "≧160 o",
+  },
+  {
+    config: "verticalViewAngle",
+    "P2.5": "≧120 o",
+    "P1.953": "≧120 o",
+    "P2.604": "≧120 o",
+    "P2.976": "≧120 o",
+    "P3.91": "≧120 o",
+    "P4.81": "≧120 o",
+  },
+  {
+    config: "workingTemperature",
+    "P2.5": "-25℃+60℃",
+    "P1.953": "-25℃+60℃",
+    "P2.604": "-25℃+60℃",
+    "P2.976": "-25℃+60℃",
+    "P3.91": "-25℃+60℃",
+    "P4.81": "-25℃+60℃",
+  },
+  {
+    config: "workingHumidity",
+    "P2.5": "10%RH~90%RH",
+    "P1.953": "10%RH~90%RH",
+    "P2.604": "10%RH~90%RH",
+    "P2.976": "10%RH~90%RH",
+    "P3.91": "10%RH~90%RH",
+    "P4.81": "10%RH~90%RH",
+  },
+];
+
+const CrystalColumns = [
+  {
+    dataIndex: "config",
+    title: "config",
+    key: "config",
+    fixed: "left",
+    with: 200,
+    render: (text: string) => (
+      <div>
+        <FormattedMessage id={text}></FormattedMessage>
+        {text === "warranty" && (
+          <span>
+            <span>/(</span>
+            <FormattedMessage id={"year"}></FormattedMessage>
+            <span>)</span>
+          </span>
+        )}
+      </div>
+    ),
+  },
+  { dataIndex: "P7.5", title: "P7.5", key: "P7.5" },
+  { dataIndex: "P10", title: "P10", key: "P10" },
+  { dataIndex: "P15", title: "P15", key: "P15" },
+];
+const CrystalData = [
+  {
+    config: "bestView",
+    "P7.5": "2-50m",
+    P15: "2.5m-60m",
+    P10: "2.5m-60m",
+  },
+  {
+    config: "brightness",
+    P15: ">4OOOcd/rrf",
+    "P7.5": ">4OOOcd/rrf",
+    P10: ">4OOOcd/rrf",
+  },
+  {
+    config: "moduleSize",
+    P15: "240*960mm",
+    "P7.5": "240*960mm",
+    P10: "240*960mm",
+  },
+  {
+    config: "moduleWeight",
+    P15: "0.3kg",
+    "P7.5": "0.3kg",
+    P10: "0.3kg",
+  },
+  {
+    config: "ipRate",
+    P15: "Front: IP35 Back: IP45",
+    "P7.5": "Front: IP35 Back: IP45",
+    P10: "Front: IP35 Back: IP45",
+  },
+  {
+    config: "scan",
+    P15: "Static",
+    "P7.5": "Static",
+    P10: "Static",
+  },
+  {
+    config: "warranty",
+    P15: "2",
+    "P7.5": "2",
+    P10: "2",
+  },
+  {
+    config: "lifeSpan",
+    P15: "10000h",
+    "P7.5": "10000h",
+    P10: "10000h",
+  },
+  {
+    config: "maxPower",
+    P15: "800W/m²",
+    "P7.5": "800W/m²",
+    P10: "800W/m²",
+  },
+  {
+    config: "averagePower",
+    P15: "400W/m²",
+    "P7.5": "400W/m²",
+    P10: "400W/m²",
+  },
+  {
+    config: "horizontalViewAngle",
+    P15: "≧160 o",
+    "P7.5": "≧160 o",
+    P10: "≧160 o",
+  },
+  {
+    config: "verticalViewAngle",
+    P15: "≧120 o",
+    "P7.5": "≧120 o",
+    P10: "≧120 o",
+  },
+  {
+    config: "workingTemperature",
+    P15: "-25℃+60℃",
+    "P7.5": "-25℃+60℃",
+    P10: "-25℃+60℃",
+  },
+  {
+    config: "workingHumidity",
+    P15: "10%RH~90%RH",
+    "P7.5": "10%RH~90%RH",
+    P10: "10%RH~90%RH",
+  },
+];
+
+const TransparentColumns = [
+  {
+    dataIndex: "config",
+    title: "config",
+    key: "config",
+    fixed: "left",
+    with: 200,
+    render: (text: string) => (
+      <div>
+        <FormattedMessage id={text}></FormattedMessage>
+        {text === "warranty" && (
+          <span>
+            <span>/(</span>
+            <FormattedMessage id={"year"}></FormattedMessage>
+            <span>)</span>
+          </span>
+        )}
+      </div>
+    ),
+  },
+  { dataIndex: "P2.8-5.6", title: "P2.8-5.6", key: "P2.8-5.6" },
+  { dataIndex: "P2.9-5.8", title: "P2.9-5.8", key: "P2.9-5.8" },
+  { dataIndex: "P3.91-7.82", title: "P3.91-7.82", key: "P3.91-7.82" },
+];
+const TransparentData = [
+  {
+    config: "bestView",
+    "P2.8-5.6": "3-30m",
+    "P2.9-5.8": "4m-100m",
+    "P3.91-7.82": "5m-100m",
+  },
+  {
+    config: "brightness",
+    "P2.9-5.8": "1000-4500cd/rrf",
+    "P2.8-5.6": "1000-4500cd/rrf",
+    "P3.91-7.82": "1000-4500cd/rrf",
+  },
+  {
+    config: "refreshRate",
+    "P2.9-5.8": ">3840Hz",
+    "P2.8-5.6": ">3840Hz",
+    "P3.91-7.82": ">3840Hz",
+  },
+  {
+    config: "cabinetSize",
+    "P2.9-5.8": "500mm*1000mm*85mm",
+    "P2.8-5.6": "500mm*1000mm*85mm",
+    "P3.91-7.82": "500mm*1000mm*85mm",
+  },
+  {
+    config: "ipRate",
+    "P2.9-5.8": "Front: IP30/ Back: IP30",
+    "P2.8-5.6": "Front: IP30/ Back: IP30",
+    "P3.91-7.82": "Front: IP30/ Back: IP30",
+  },
+  {
+    config: "warranty",
+    "P2.9-5.8": "2",
+    "P2.8-5.6": "2",
+    "P3.91-7.82": "2",
+  },
+  {
+    config: "lifeSpan",
+    "P2.9-5.8": "10000h",
+    "P2.8-5.6": "10000h",
+    "P3.91-7.82": "10000h",
+  },
+  {
+    config: "maxPower",
+    "P2.9-5.8": "800W/m²",
+    "P2.8-5.6": "800W/m²",
+    "P3.91-7.82": "800W/m²",
+  },
+  {
+    config: "averagePower",
+    "P2.9-5.8": "280W/m²",
+    "P2.8-5.6": "280W/m²",
+    "P3.91-7.82": "280W/m²",
+  },
+  {
+    config: "horizontalViewAngle",
+    "P2.9-5.8": "≧160 o",
+    "P2.8-5.6": "≧160 o",
+    "P3.91-7.82": "≧160 o",
+  },
+  {
+    config: "verticalViewAngle",
+    "P2.9-5.8": "≧120 o",
+    "P2.8-5.6": "≧120 o",
+    "P3.91-7.82": "≧120 o",
+  },
+  {
+    config: "workingTemperature",
+    "P2.9-5.8": "-25℃+60℃",
+    "P2.8-5.6": "-25℃+60℃",
+    "P3.91-7.82": "-25℃+60℃",
+  },
+  {
+    config: "workingHumidity",
+    "P2.9-5.8": "10%RH~90%RH",
+    "P2.8-5.6": "10%RH~90%RH",
+    "P3.91-7.82": "10%RH~90%RH",
+  },
+];
+
+const FloorColumns = [
+  {
+    dataIndex: "config",
+    title: "config",
+    key: "config",
+    fixed: "left",
+    with: 200,
+    render: (text: string) => (
+      <div>
+        <FormattedMessage id={text}></FormattedMessage>
+        {text === "warranty" && (
+          <span>
+            <span>/(</span>
+            <FormattedMessage id={"year"}></FormattedMessage>
+            <span>)</span>
+          </span>
+        )}
+      </div>
+    ),
+  },
+  { dataIndex: "P2.976", title: "P2.976", key: "P2.976" },
+  { dataIndex: "P3.91", title: "P3.91", key: "P3.91" },
+  { dataIndex: "P4.81", title: "P4.81", key: "P4.81" },
+];
+const FloorData = [
+  {
+    config: "bestView",
+    "P2.976": "2-50m",
+    "P3.91": "3m-80m",
+    "P4.81": "4m-100m",
+  },
+  {
+    config: "ledPackage",
+    "P2.976": "SMD1415",
+    "P3.91": "SMD1921",
+    "P4.81": "SMD1921",
+  },
+  {
+    config: "brightness",
+    "P3.91": "Indoor 2000cd/m² / Outdoor 5000cd/m²",
+    "P2.976": "Indoor 2000cd/m² / Outdoor 5000cd/m²",
+    "P4.81": "Indoor 2000cd/m² / Outdoor 5000cd/m²",
+  },
+  {
+    config: "refreshRate",
+    "P3.91": ">3840Hz",
+    "P2.976": ">3840Hz",
+    "P4.81": ">3840Hz",
+  },
+  {
+    config: "dot",
+    "P3.91": "65536 dot/m²",
+    "P2.976": "112896 dot/m²",
+    "P4.81": "43264 dot/m²",
+  },
+  {
+    config: "moduleSize",
+    "P3.91": "250mm*250mm",
+    "P2.976": "250mm*250mm",
+    "P4.81": "250mm*250mm",
+  },
+  {
+    config: "moduleWeight",
+    "P3.91": "22kg",
+    "P2.976": "22kg",
+    "P4.81": "22kg",
+  },
+  {
+    config: "moduleResolution",
+    "P2.976": "84*84",
+    "P3.91": "64*64",
+    "P4.81": "52*52",
+  },
+  {
+    config: "cabinetSize",
+    "P3.91": "500*500mm/500*1000mm",
+    "P2.976": "500*500mm/500*1000mm",
+    "P4.81": "500*500mm/500*1000mm",
+  },
+  {
+    config: "cabinetResolution",
+    "P2.976": "168*168/168*336",
+    "P3.91": "128*128/128*256",
+    "P4.81": "104*104/104*208",
+  },
+  {
+    config: "scan",
+    "P3.91": "1/16S",
+    "P2.976": "1/28S",
+    "P4.81": "1/13S",
+  },
+  {
+    config: "ipRate",
+    "P3.91": "Indoor Front: IP40, Back: IP51 Outdoor Front: IP65, Back: IP54",
+    "P2.976": "Indoor Front: IP40, Back: IP51 Outdoor Front: IP65, Back: IP54",
+    "P4.81": "Indoor Front: IP40, Back: IP51 Outdoor Front: IP65, Back: IP54",
+  },
+  {
+    config: "warranty",
+    "P3.91": "2",
+    "P2.976": "2",
+    "P4.81": "2",
+  },
+  {
+    config: "lifeSpan",
+    "P3.91": "10000h",
+    "P2.976": "10000h",
+    "P4.81": "10000h",
+  },
+  {
+    config: "maxPower",
+    "P3.91": "800W/m²",
+    "P2.976": "800W/m²",
+    "P4.81": "800W/m²",
+  },
+  {
+    config: "averagePower",
+    "P3.91": "420W/m²",
+    "P2.976": "420W/m²",
+    "P4.81": "420W/m²",
+  },
+  {
+    config: "horizontalViewAngle",
+    "P3.91": "≧160 o",
+    "P2.976": "≧160 o",
+    "P4.81": "≧160 o",
+  },
+  {
+    config: "verticalViewAngle",
+    "P3.91": "≧120 o",
+    "P2.976": "≧120 o",
+    "P4.81": "≧120 o",
+  },
+  {
+    config: "workingTemperature",
+    "P3.91": "-25℃+60℃",
+    "P2.976": "-25℃+60℃",
+    "P4.81": "-25℃+60℃",
+  },
+  {
+    config: "workingHumidity",
+    "P3.91": "10%RH~90%RH",
+    "P2.976": "10%RH~90%RH",
+    "P4.81": "10%RH~90%RH",
+  },
+];
+
+export const PosterColumns = [
+  {
+    dataIndex: "config",
+    title: <FormattedMessage id="config"></FormattedMessage>,
+    key: "config",
+    fixed: "left",
+    with: 300,
+    render: (text: string) => (
+      <div>
+        <FormattedMessage id={text}></FormattedMessage>
+        {text === "warranty" && (
+          <span>
+            <span>/(</span>
+            <FormattedMessage id={"year"}></FormattedMessage>
+            <span>)</span>
+          </span>
+        )}
+      </div>
+    ),
+  },
+  { dataIndex: "P1.25", title: "P1.25", key: "P1.25" },
+  { dataIndex: "P1.53", title: "P1.53", key: "P1.53" },
+  { dataIndex: "P1.86", title: "P1.86", key: "P1.86" },
+  { dataIndex: "P2", title: "P2", key: "P2" },
+  { dataIndex: "P2.5", title: "P2.5", key: "P2.5" },
+  { dataIndex: "P3.076", title: "P3.076", key: "P3.076" },
+];
+export const PosterData = [
+  {
+    config: "bestView",
+    "P1.25": "2-40m",
+    "P1.53": "2-40m",
+    "P1.66": "2-40m",
+    "P1.86": "2-40m",
+    P2: "2-40m",
+    "P2.5": "2-40m",
+    "P3.076": "2-40m",
+  },
+  {
+    config: "ledPackage",
+    "P1.25": "SMD1010",
+    "P1.53": "SMD1212",
+    "P1.66": "SMD1212",
+    "P1.86": "SMD1515",
+    P2: "SMD1515",
+    "P2.5": "SMD2020",
+    "P3.076": "SMD2020",
+  },
+  {
+    config: "pixelPitch",
+    "P1.25": "1.25mm",
+    "P1.53": "1.56mm",
+    "P1.66": "1.66mm",
+    "P1.86": "1.86mm",
+    P2: "2mm",
+    "P2.5": "2.5mm",
+    "P3.076": "3mm",
+  },
+  {
+    config: "brightness",
+    "P1.25": "800-1200cd/m2",
+    "P1.53": "800-1200cd/m2",
+    "P1.66": "800-1200cd/m2",
+    "P1.86": "800-1200cd/m2",
+    P2: "800-1200cd/m2",
+    "P2.5": "800-1200cd/m2",
+    "P3.076": "800-1200cd/m2",
+  },
+  {
+    config: "dot",
+    "P1.25": "640000 dot/m²",
+    "P1.53": "422500 dot/m²",
+    "P1.66": "360000 dot/m²",
+    "P1.86": "289050 dot/m²",
+    P2: "250000 dot/m²",
+    "P2.5": "160000 dot/m²",
+    "P3.076": "111111 dot/m²",
+  },
+  {
+    config: "moduleSize",
+    "P1.25": "320 x 160mm",
+    "P1.53": "320 x 160mm",
+    "P1.66": "320 x 160mm",
+    "P1.86": "320 x 160mm",
+    P2: "320 x 160mm",
+    "P2.5": "320 x 160mm",
+    "P3.076": "320 x 160mm",
+  },
+  {
+    config: "moduleResolution",
+    "P1.25": "256*128",
+    "P1.53": "208*104",
+    "P1.66": "192*96",
+    "P1.86": "172*86",
+    P2: "160*80",
+    "P2.5": "128*64",
+    "P3.076": "104*52",
+  },
+  {
+    config: "moduleWeight",
+    "P1.25": "0.31kg",
+    "P1.53": "0.31kg",
+    "P1.66": "0.31kg",
+    "P1.86": "0.31kg",
+    P2: "0.31kg",
+    "P2.5": "0.31kg",
+    "P3.076": "0.31kg",
+  },
+  {
+    config: "cabinetSize",
+    "P1.25": "640mm*1920mm*70mm/customized dimension",
+    "P1.53": "640mm*1920mm*70mm/customized dimension",
+    "P1.66": "640mm*1920mm*70mm/customized dimension",
+    "P1.86": "640mm*1920mm*70mm/customized dimension",
+    P2: "640mm*1920mm*70mm/customized dimension",
+    "P2.5": "640mm*1920mm*70mm/customized dimension",
+    "P3.076": "640mm*1920mm*70mm/customized dimension",
+  },
+  {
+    config: "cabinetWeight",
+    "P1.25": "45kg ± 1 kg",
+    "P1.53": "45kg ± 1 kg",
+    "P1.66": "45kg ± 1 kg",
+    "P1.86": "45kg ± 1 kg",
+    P2: "45kg ± 1 kg",
+    "P2.5": "45kg ± 1 kg",
+    "P3.076": "45kg ± 1 kg",
+  },
+  {
+    config: "cabinetResolution",
+    "P1.25": "512*1536",
+    "P1.53": "416*1248",
+    "P1.66": "384*1152",
+    "P1.86": "344*1032",
+    P2: "320*960",
+    "P2.5": "256*768",
+    "P3.076": "208*624",
+  },
+  {
+    config: "ipRate",
+    "P1.25": "Front: IP40, Back: IP51",
+    "P1.53": "Front: IP40, Back: IP51",
+    "P1.66": "Front: IP40, Back: IP51",
+    "P1.86": "Front: IP40, Back: IP51",
+    P2: "Front: IP40, Back: IP51",
+    "P2.5": "Front: IP40, Back: IP51",
+    "P3.076": "Front: IP40, Back: IP51",
+  },
+  {
+    config: "scan",
+    "P1.25": "1/64S",
+    "P1.53": "1/52S",
+    "P1.66": "1/48S",
+    "P1.86": "1/43S",
+    P2: "1/40S",
+    "P2.5": "1/32S",
+    "P3.076": "1/26S",
+  },
+  {
+    config: "warranty",
+    "P1.25": "2",
+    "P1.53": "2",
+    "P1.66": "2",
+    "P1.86": "2",
+    P2: "2",
+    "P2.5": "2",
+    "P3.076": "2",
+  },
+  {
+    config: "lifeSpan",
+    "P1.25": "10000h",
+    "P1.53": "10000h",
+    "P1.66": "10000h",
+    "P1.86": "10000h",
+    P2: "10000h",
+    "P2.5": "10000h",
+    "P3.076": "10000h",
+  },
+  {
+    config: "maxPower",
+    "P1.25": "830W/m²",
+    "P1.53": "830W/m²",
+    "P1.66": "830W/m²",
+    "P1.86": "830W/m²",
+    P2: "830W/m²",
+    "P2.5": "830W/m²",
+    "P3.076": "830W/m²",
+  },
+  {
+    config: "averagePower",
+    "P1.25": "420W/m²",
+    "P1.53": "420W/m²",
+    "P1.66": "420W/m²",
+    "P1.86": "420W/m²",
+    P2: "420W/m²",
+    "P2.5": "420W/m²",
+    "P3.076": "420W/m²",
+  },
+  {
+    config: "horizontalViewAngle",
+    "P1.25": "≧160 o",
+    "P1.53": "≧160 o",
+    "P1.66": "≧160 o",
+    "P1.86": "≧160 o",
+    P2: "≧160 o",
+    "P2.5": "≧160 o",
+    "P3.076": "≧160 o",
+  },
+  {
+    config: "verticalViewAngle",
+    "P1.25": "≧120 o",
+    "P1.53": "≧120 o",
+    "P1.66": "≧120 o",
+    "P1.86": "≧120 o",
+    P2: "≧120 o",
+    "P2.5": "≧120 o",
+    "P3.076": "≧120 o",
+  },
+  {
+    config: "workingTemperature",
+    "P1.25": " -25°C~60°C",
+    "P1.53": " -25°C~60°C",
+    "P1.66": " -25°C~60°C",
+    "P1.86": " -25°C~60°C",
+    P2: " -25°C~60°C",
+    "P2.5": " -25°C~60°C",
+    "P3.076": " -25°C~60°C",
+  },
+  {
+    config: "workingHumidity",
+    "P1.25": "10%RH~90%RH",
+    "P1.53": "10%RH~90%RH",
+    "P1.66": "10%RH~90%RH",
+    "P1.86": "10%RH~90%RH",
+    "P1.96": "10%RH~90%RH",
+    P2: "10%RH~90%RH",
+    "P2.5": "10%RH~90%RH",
+    "P3.076": "10%RH~90%RH",
+  },
+];
+
+export const TaxiColumns = [
+  {
+    dataIndex: "config",
+    title: <FormattedMessage id="config"></FormattedMessage>,
+    key: "config",
+    fixed: "left",
+    with: 300,
+    render: (text: string) => (
+      <div>
+        <FormattedMessage id={text}></FormattedMessage>
+        {text === "warranty" && (
+          <span>
+            <span>/(</span>
+            <FormattedMessage id={"year"}></FormattedMessage>
+            <span>)</span>
+          </span>
+        )}
+      </div>
+    ),
+  },
+  { dataIndex: "P2.5", title: "P2.5", key: "P2.5" },
+  { dataIndex: "P3", title: "P3", key: "P3" },
+  { dataIndex: "P3.076", title: "P3.076", key: "P3.076" },
+  { dataIndex: "P4", title: "P4", key: "P4" },
+  { dataIndex: "P5", title: "P5", key: "P5" },
+  { dataIndex: "P6", title: "P6", key: "P6" },
+  { dataIndex: "P8", title: "P8", key: "P8" },
+  { dataIndex: "P10", title: "P10", key: "P10" },
+];
+
+export const TaxiData = [
+  {
+    config: "bestView",
+    "P2.5": "3-30m",
+    P3: "3-30m",
+    "P3.076": "3-30m",
+    P4: "4-40m",
+    P5: "5-50m",
+    P6: "6-60m",
+    P8: "8-80m",
+    P10: "10-100m",
+  },
+  {
+    config: "ledPackage",
+    "P2.5": "SMD 1415",
+    P3: "SMD 1415",
+    "P3.076": "SMD 1415",
+    P4: "SMD 1921",
+    P5: "SMD 1921",
+    P6: "SMD 3535",
+    P8: "SMD 3535",
+    P10: "SMD 3535",
+  },
+  {
+    config: "pixelPitch",
+    "P2.5": "2.5mm",
+    P3: "3mm",
+    "P3.076": "3.076mm",
+    P4: "4mm",
+    P5: "5mm",
+    P6: "6mm",
+    P8: "8mm",
+    P10: "10mm",
+  },
+  {
+    config: "brightness",
+    "P2.5": ">6000cd/m²",
+    P3: ">6000cd/m²",
+    "P3.076": ">6000cd/m²",
+    P4: ">6000cd/m²",
+    P5: ">6000cd/m²",
+    P6: ">6000cd/m²",
+    P8: ">6000cd/m²",
+    P10: ">6000cd/m²",
+  },
+  {
+    config: "dot",
+    "P2.5": "160000 dot/m²",
+    P3: "111111 dot/m²",
+    "P3.076": "105625 dot/m²",
+    P4: "62500 dot/m²",
+    P5: "40000 dot/m²",
+    P6: "27777 dot/m²",
+    P8: "15625 dot/m²",
+    P10: "10000 dot/m²",
+  },
+  {
+    config: "moduleSize",
+    "P2.5": "320x160mm",
+    P3: "192x192mm",
+    "P3.076": "1320x160mm",
+    P4: "320x160mm",
+    P5: "320x160mm",
+    P6: "192x192mm",
+    P8: "320x160mm",
+    P10: "320x160mm",
+  },
+  {
+    config: "moduleResolution",
+    "P2.5": "128x64",
+    P3: "64x64",
+    "P3.076": "104x52",
+    P4: "80x40",
+    P5: "64x32",
+    P6: "32x32",
+    P8: "40x20",
+    P10: "32x16",
+  },
+  {
+    config: "moduleWeight",
+    "P2.5": "0.4kg",
+    "P3.076": "0.4kg",
+    P3: "0.4kg",
+    P4: "0.4kg",
+    P5: "0.4kg",
+    P6: "0.4kg",
+    P8: "0.4kg",
+    P10: "0.4kg",
+  },
+  {
+    config: "cabinetSize",
+    "P2.5": `640mm*640mm*140mm
+    960mm*960mm*140mm`,
+    "P3.076": `640mm*640mm*140mm
+    960mm*960mm*140mm`,
+    P3: `640mm*640mm*140mm
+    960mm*960mm*140mm`,
+    P4: `640mm*640mm*140mm
+    960mm*960mm*140mm`,
+    P5: `640mm*640mm*140mm
+    960mm*960mm*140mm`,
+    P6: `640mm*640mm*140mm
+    960mm*960mm*140mm`,
+    P8: `640mm*640mm*140mm
+    960mm*960mm*140mm`,
+    P10: `640mm*640mm*140mm
+    960mm*960mm*140mm`,
+  },
+  {
+    config: "cabinetWeight",
+    "P2.5": "10.5kg/35kg",
+    P3: "10.5kg/35kg",
+    "P3.076": "10.5kg/35kg",
+    P4: "10.5kg/35kg",
+    P5: "10.5kg/35kg",
+    P6: "10.5kg/35kg",
+    P8: "10.5kg/35kg",
+    P10: "10.5kg/35kg",
+  },
+  {
+    config: "cabinetResolution",
+    "P2.5": "256*256/384*384",
+    P3: "320*320",
+    "P3.076": "208*208/312*312",
+    P4: "160*160/240*240",
+    P5: "128*128/192*192",
+    P6: "160*160",
+    P8: "80*80/120*120",
+    P10: "64*64/96*96",
+  },
+  {
+    config: "ipRate",
+    "P2.5": "IP65",
+    P3: "IP65",
+    "P3.076": "IP65",
+    P4: "IP65",
+    P5: "IP65",
+    P6: "IP65",
+    P8: "IP65",
+    P10: "IP65",
+  },
+  {
+    config: "scan",
+    "P2.5": "1/16S",
+    P3: "1/16S",
+    "P3.076": "1/13S",
+    P4: "1/10S",
+    P5: "1/8S",
+    P6: "1/8、1/4S",
+    P8: "1/5S",
+    P10: "1/2、1/4S",
+  },
+  {
+    config: "warranty",
+    "P2.5": "2",
+    P3: "2",
+    "P3.076": "2",
+    P4: "2",
+    P5: "2",
+    P6: "2",
+    P8: "2",
+    P10: "2",
+  },
+  {
+    config: "lifeSpan",
+    "P2.5": "10000h",
+    P3: "10000h",
+    "P3.076": "10000h",
+    P4: "10000h",
+    P5: "10000h",
+    P6: "10000h",
+    P8: "10000h",
+    P10: "10000h",
+  },
+  {
+    config: "maxPower",
+    "P2.5": "830W/m²",
+    P3: "830W/m²",
+    "P3.076": "830W/m²",
+    P4: "830W/m²",
+    P5: "830W/m²",
+    P6: "830W/m²",
+    P8: "830W/m²",
+    P10: "830W/m²",
+  },
+  {
+    config: "averagePower",
+    "P2.5": "400W/m²",
+    "P3.076": "400W/m²",
+    P3: "400W/m²",
+    P4: "400W/m²",
+    P5: "400W/m²",
+    P6: "400W/m²",
+    P8: "400W/m²",
+    P10: "400W/m²",
+  },
+  {
+    config: "horizontalViewAngle",
+    P3: "≧160 o",
+    P4: "≧160 o",
+    P5: "≧160 o",
+    P6: "≧160 o",
+    P8: "≧160 o",
+    P10: "≧160 o",
+    "P2.5": "≧160 o",
+    "P3.076": "≧160 o",
+  },
+  {
+    config: "verticalViewAngle",
+    "P2.5": "≧120 o",
+    P3: "≧120 o",
+    "P3.076": "≧120 o",
+    P4: "≧120 o",
+    P5: "≧120 o",
+    P6: "≧120 o",
+    P8: "≧120 o",
+    P10: "≧120 o",
+  },
+  {
+    config: "workingTemperature",
+    "P2.5": " -25°C~60°C",
+    "P3.076": " -25°C~60°C",
+    P3: " -25°C~60°C",
+    P4: " -25°C~60°C",
+    P5: " -25°C~60°C",
+    P6: " -25°C~60°C",
+    P8: " -25°C~60°C",
+    P10: " -25°C~60°C",
+  },
+  {
+    config: "workingHumidity",
+    "P2.5": "10%RH~90%RH",
+    P3: "10%RH~90%RH",
+    "P3.076": "10%RH~90%RH",
+    P4: "10%RH~90%RH",
+    P5: "10%RH~90%RH",
+    P6: "10%RH~90%RH",
+    P8: "10%RH~90%RH",
+    P10: "10%RH~90%RH",
+  },
+];
+
+export const DevilColumns = [
+  {
+    dataIndex: "config",
+    title: <FormattedMessage id="config"></FormattedMessage>,
+    key: "config",
+    fixed: "left",
+    with: 300,
+    render: (text: string) => (
+      <div>
+        <FormattedMessage id={text}></FormattedMessage>
+        {text === "warranty" && (
+          <span>
+            <span>/(</span>
+            <FormattedMessage id={"year"}></FormattedMessage>
+            <span>)</span>
+          </span>
+        )}
+      </div>
+    ),
+  },
+  { dataIndex: "P2.5", title: "P2.5", key: "P2.5" },
+  { dataIndex: "P3", title: "P3", key: "P3" },
+  { dataIndex: "P3.076", title: "P3.076", key: "P3.076" },
+  { dataIndex: "P4", title: "P4", key: "P4" },
+  { dataIndex: "P5", title: "P5", key: "P5" },
+  { dataIndex: "P6", title: "P6", key: "P6" },
+  { dataIndex: "P8", title: "P8", key: "P8" },
+  { dataIndex: "P10", title: "P10", key: "P10" },
+];
+
+export const DevilData = [
+  {
+    config: "bestView",
+    "P2.5": "3-30m",
+    P3: "3-30m",
+    "P3.076": "3-30m",
+    P4: "4-40m",
+    P5: "5-50m",
+    P6: "6-60m",
+    P8: "8-80m",
+    P10: "10-100m",
+  },
+  {
+    config: "ledPackage",
+    "P2.5": "SMD 1415",
+    P3: "SMD 1415",
+    "P3.076": "SMD 1415",
+    P4: "SMD 1921",
+    P5: "SMD 1921",
+    P6: "SMD 3535",
+    P8: "SMD 3535",
+    P10: "SMD 3535",
+  },
+  {
+    config: "pixelPitch",
+    "P2.5": "2.5mm",
+    P3: "3mm",
+    "P3.076": "3.076mm",
+    P4: "4mm",
+    P5: "5mm",
+    P6: "6mm",
+    P8: "8mm",
+    P10: "10mm",
+  },
+  {
+    config: "brightness",
+    "P2.5": ">6000cd/m²",
+    P3: ">6000cd/m²",
+    "P3.076": ">6000cd/m²",
+    P4: ">6000cd/m²",
+    P5: ">6000cd/m²",
+    P6: ">6000cd/m²",
+    P8: ">6000cd/m²",
+    P10: ">6000cd/m²",
+  },
+  {
+    config: "dot",
+    "P2.5": "160000 dot/m²",
+    P3: "111111 dot/m²",
+    "P3.076": "105625 dot/m²",
+    P4: "62500 dot/m²",
+    P5: "40000 dot/m²",
+    P6: "27777 dot/m²",
+    P8: "15625 dot/m²",
+    P10: "10000 dot/m²",
+  },
+  {
+    config: "moduleSize",
+    "P2.5": "320x160mm",
+    P3: "192x192mm",
+    "P3.076": "1320x160mm",
+    P4: "320x160mm",
+    P5: "320x160mm",
+    P6: "192x192mm",
+    P8: "320x160mm",
+    P10: "320x160mm",
+  },
+  {
+    config: "moduleResolution",
+    "P2.5": "128x64",
+    P3: "64x64",
+    "P3.076": "104x52",
+    P4: "80x40",
+    P5: "64x32",
+    P6: "32x32",
+    P8: "40x20",
+    P10: "32x16",
+  },
+  {
+    config: "moduleWeight",
+    "P2.5": "0.4kg",
+    "P3.076": "0.4kg",
+    P3: "0.4kg",
+    P4: "0.4kg",
+    P5: "0.4kg",
+    P6: "0.4kg",
+    P8: "0.4kg",
+    P10: "0.4kg",
+  },
+  {
+    config: "cabinetSize",
+    "P2.5": `640mm*640mm*140mm
+    960mm*960mm*140mm`,
+    "P3.076": `640mm*640mm*140mm
+    960mm*960mm*140mm`,
+    P3: `640mm*640mm*140mm
+    960mm*960mm*140mm`,
+    P4: `640mm*640mm*140mm
+    960mm*960mm*140mm`,
+    P5: `640mm*640mm*140mm
+    960mm*960mm*140mm`,
+    P6: `640mm*640mm*140mm
+    960mm*960mm*140mm`,
+    P8: `640mm*640mm*140mm
+    960mm*960mm*140mm`,
+    P10: `640mm*640mm*140mm
+    960mm*960mm*140mm`,
+  },
+  {
+    config: "cabinetWeight",
+    "P2.5": "10.5kg/35kg",
+    P3: "10.5kg/35kg",
+    "P3.076": "10.5kg/35kg",
+    P4: "10.5kg/35kg",
+    P5: "10.5kg/35kg",
+    P6: "10.5kg/35kg",
+    P8: "10.5kg/35kg",
+    P10: "10.5kg/35kg",
+  },
+  {
+    config: "cabinetResolution",
+    "P2.5": "256*256/384*384",
+    P3: "320*320",
+    "P3.076": "208*208/312*312",
+    P4: "160*160/240*240",
+    P5: "128*128/192*192",
+    P6: "160*160",
+    P8: "80*80/120*120",
+    P10: "64*64/96*96",
+  },
+  {
+    config: "ipRate",
+    "P2.5": "IP65",
+    P3: "IP65",
+    "P3.076": "IP65",
+    P4: "IP65",
+    P5: "IP65",
+    P6: "IP65",
+    P8: "IP65",
+    P10: "IP65",
+  },
+  {
+    config: "scan",
+    "P2.5": "1/16S",
+    P3: "1/16S",
+    "P3.076": "1/13S",
+    P4: "1/10S",
+    P5: "1/8S",
+    P6: "1/8、1/4S",
+    P8: "1/5S",
+    P10: "1/2、1/4S",
+  },
+  {
+    config: "warranty",
+    "P2.5": "2",
+    P3: "2",
+    "P3.076": "2",
+    P4: "2",
+    P5: "2",
+    P6: "2",
+    P8: "2",
+    P10: "2",
+  },
+  {
+    config: "lifeSpan",
+    "P2.5": "10000h",
+    P3: "10000h",
+    "P3.076": "10000h",
+    P4: "10000h",
+    P5: "10000h",
+    P6: "10000h",
+    P8: "10000h",
+    P10: "10000h",
+  },
+  {
+    config: "maxPower",
+    "P2.5": "830W/m²",
+    P3: "830W/m²",
+    "P3.076": "830W/m²",
+    P4: "830W/m²",
+    P5: "830W/m²",
+    P6: "830W/m²",
+    P8: "830W/m²",
+    P10: "830W/m²",
+  },
+  {
+    config: "averagePower",
+    "P2.5": "400W/m²",
+    "P3.076": "400W/m²",
+    P3: "400W/m²",
+    P4: "400W/m²",
+    P5: "400W/m²",
+    P6: "400W/m²",
+    P8: "400W/m²",
+    P10: "400W/m²",
+  },
+  {
+    config: "horizontalViewAngle",
+    P3: "≧160 o",
+    P4: "≧160 o",
+    P5: "≧160 o",
+    P6: "≧160 o",
+    P8: "≧160 o",
+    P10: "≧160 o",
+    "P2.5": "≧160 o",
+    "P3.076": "≧160 o",
+  },
+  {
+    config: "verticalViewAngle",
+    "P2.5": "≧120 o",
+    P3: "≧120 o",
+    "P3.076": "≧120 o",
+    P4: "≧120 o",
+    P5: "≧120 o",
+    P6: "≧120 o",
+    P8: "≧120 o",
+    P10: "≧120 o",
+  },
+  {
+    config: "workingTemperature",
+    "P2.5": " -25°C~60°C",
+    "P3.076": " -25°C~60°C",
+    P3: " -25°C~60°C",
+    P4: " -25°C~60°C",
+    P5: " -25°C~60°C",
+    P6: " -25°C~60°C",
+    P8: " -25°C~60°C",
+    P10: " -25°C~60°C",
+  },
+  {
+    config: "workingHumidity",
+    "P2.5": "10%RH~90%RH",
+    P3: "10%RH~90%RH",
+    "P3.076": "10%RH~90%RH",
+    P4: "10%RH~90%RH",
+    P5: "10%RH~90%RH",
+    P6: "10%RH~90%RH",
+    P8: "10%RH~90%RH",
+    P10: "10%RH~90%RH",
+  },
+];
+
+const prefix = "leekono-product-detail-advantage";
+
+export const Products = [
+  {
+    data: IndoorData,
+    columns: IndoorColumns,
+    id: "indoor",
+    enDescription: "",
+    zhDescription: "",
+    twDescription: "",
+    enAdvantage: (
+      <>
+        <div>
+          <div className={`${prefix}-title`}>POSTER SCREEN MODULE</div>
+          <img src={posterCase1} alt="img" />
+        </div>
+        <div>
+          <div className={`${prefix}-title`}>POSTER SCREEN MODULE</div>
+          <img src={posterCase1} alt="img" />
+        </div>
+        <div>
+          <div className={`${prefix}-title`}>POSTER SCREEN MODULE</div>
+          <img src={posterCase1} alt="img" />
+        </div>
+      </>
+    ),
+    zhAdvantage: (
+      <>
+        <div>
+          <div className={`${prefix}-title`}>POSTER SCREEN MODULE</div>
+          <img src={posterCase1} alt="img" />
+        </div>
+        <div className={`${prefix}-title`}>
+          <div>POSTER SCREEN MODULE</div>
+          <img src={posterCase1} alt="img" />
+        </div>
+        <div className={`${prefix}-title`}>
+          <div>POSTER SCREEN MODULE</div>
+          <img src={posterCase1} alt="img" />
+        </div>
+      </>
+    ),
+    twAdvantage: (
+      <>
+        <div>
+          <div className={`${prefix}-title`}>POSTER SCREEN MODULE</div>
+          <img src={posterCase1} alt="img" />
+        </div>
+        <div>
+          <div className={`${prefix}-title`}>POSTER SCREEN MODULE</div>
+          <img src={posterCase1} alt="img" />
+        </div>
+        <div>
+          <div className={`${prefix}-title`}>POSTER SCREEN MODULE</div>
+          <img src={posterCase1} alt="img" />
+        </div>
+      </>
+    ),
+    images: [indoor1, indoor2, indoor3, indoor4, indoor5, indoor6],
+  },
+  {
+    data: OutdoorData,
+    columns: OutdoorColumns,
+    id: "outdoor",
+    enDescription: "",
+    zhDescription: "",
+    twDescription: "",
+    enAdvantage:
+      "低热量、低噪音、低辐射，更可镶嵌至墙体内部，享受纯平大视野贴墙安装，精简空间--安装厚度仅为8CM让您的空间更加宽阔",
+    zhAdvantage: "",
+    twAdvantage: "",
+    images: [outdoor1, outdoor2, outdoor3, outdoor4, outdoor5, outdoor6],
+  },
+  {
+    data: RentalData,
+    columns: RentalColumns,
+    id: "rental",
+    enDescription: "",
+    zhDescription: "",
+    twDescription: "",
+    enAdvantage:
+      "低热量、低噪音、低辐射，更可镶嵌至墙体内部，享受纯平大视野贴墙安装，精简空间--安装厚度仅为8CM让您的空间更加宽阔",
+    zhAdvantage: "",
+    twAdvantage: "",
+    images: [rental1, rental2, rental3, rental4, rental5, rental6],
+  },
+  {
+    data: RentalOutdoorData,
+    columns: RentalOutdoorColumns,
+    id: "rentalOutdoor",
+    enDescription: "",
+    zhDescription: "",
+    twDescription: "",
+    enAdvantage:
+      "低热量、低噪音、低辐射，更可镶嵌至墙体内部，享受纯平大视野贴墙安装，精简空间--安装厚度仅为8CM让您的空间更加宽阔",
+    zhAdvantage: "",
+    twAdvantage: "",
+    images: [rental1, rental2, rental3, rental4, rental5, rental6],
+  },
+  {
+    data: CrystalData,
+    columns: CrystalColumns,
+    id: "crystal",
+    enDescription: "",
+    zhDescription: "",
+    twDescription: "",
+    enAdvantage:
+      "低热量、低噪音、低辐射，更可镶嵌至墙体内部，享受纯平大视野贴墙安装，精简空间--安装厚度仅为8CM让您的空间更加宽阔",
+    zhAdvantage: "",
+    twAdvantage: "",
+    images: [crystal1, crystal2, crystal3, crystal4, crystal5, crystal6],
+  },
+  {
+    data: FloorData,
+    columns: FloorColumns,
+    id: "floor",
+    enDescription: "",
+    zhDescription: "",
+    twDescription: "",
+    enAdvantage:
+      "低热量、低噪音、低辐射，更可镶嵌至墙体内部，享受纯平大视野贴墙安装，精简空间--安装厚度仅为8CM让您的空间更加宽阔",
+    zhAdvantage: "",
+    twAdvantage: "",
+    images: [floor1, floor2, floor3, floor4, floor5, floor6],
+  },
+  {
+    data: PosterData,
+    columns: PosterColumns,
+    id: "poster",
+    enDescription: "",
+    zhDescription: "",
+    twDescription: "",
+    enAdvantage:
+      "低热量、低噪音、低辐射，更可镶嵌至墙体内部，享受纯平大视野贴墙安装，精简空间--安装厚度仅为8CM让您的空间更加宽阔",
+    zhAdvantage: "",
+    twAdvantage: "",
+    images: [poster1, poster2, poster3, poster4, poster5, poster6],
+  },
+  {
+    data: SoftData,
+    columns: SoftColumns,
+    id: "soft",
+    enDescription: "",
+    zhDescription: "",
+    twDescription: "",
+    enAdvantage:
+      "低热量、低噪音、低辐射，更可镶嵌至墙体内部，享受纯平大视野贴墙安装，精简空间--安装厚度仅为8CM让您的空间更加宽阔",
+    zhAdvantage: "",
+    twAdvantage: "",
+    images: [soft1, soft2, soft3, soft4, soft5, soft6],
+  },
+  {
+    data: TransparentData,
+    columns: TransparentColumns,
+    id: "transparent",
+    enDescription: "",
+    zhDescription: "",
+    twDescription: "",
+    enAdvantage:
+      "低热量、低噪音、低辐射，更可镶嵌至墙体内部，享受纯平大视野贴墙安装，精简空间--安装厚度仅为8CM让您的空间更加宽阔",
+    zhAdvantage: "",
+    twAdvantage: "",
+    images: [
+      transparent1,
+      transparent2,
+      transparent3,
+      transparent4,
+      transparent5,
+      transparent6,
+    ],
+  },
+  {
+    data: TaxiData,
+    columns: TaxiColumns,
+    id: "taxi",
+    enDescription: "",
+    zhDescription: "",
+    twDescription: "",
+    enAdvantage:
+      "低热量、低噪音、低辐射，更可镶嵌至墙体内部，享受纯平大视野贴墙安装，精简空间--安装厚度仅为8CM让您的空间更加宽阔",
+    zhAdvantage: "",
+    twAdvantage: "",
+    images: [taxi1, taxi2, taxi3, taxi4, taxi5, taxi6],
+  },
+  {
+    data: DevilData,
+    columns: DevilColumns,
+    id: "devil",
+    enDescription: "",
+    zhDescription: "",
+    twDescription: "",
+    enAdvantage:
+      "低热量、低噪音、低辐射，更可镶嵌至墙体内部，享受纯平大视野贴墙安装，精简空间--安装厚度仅为8CM让您的空间更加宽阔",
+    zhAdvantage: "",
+    twAdvantage: "",
+    images: [devil1, devil2, devil3, devil4, devil5, devil6],
+  },
+];
