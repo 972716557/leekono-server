@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Carousel, Col, Row } from "antd";
 import { RightOutlined } from "@ant-design/icons";
 
-import { LedTypes } from "../constant";
+import { LedTypes } from "../../constant";
 import LeekonoSwiper from "@/component/swiper";
 
 import { Cases } from "./case/constant";
@@ -12,12 +12,7 @@ import poster2 from "@/assets/home/poster2.png";
 import CaseCard from "./case/card";
 import Link from "next/link";
 import LeekonoStatistic from "@/component/statistic";
-
-interface HomeProps {
-  id?: string;
-  // 设置展示背景颜色
-  theme?: "white" | "black";
-}
+import { useTranslation } from "../i18n/client";
 
 const prefix = "leekono-home";
 
@@ -27,7 +22,9 @@ const data = [
   { id: "partner", value: 1100, suffix: "+" },
   { id: "servingProvinces", value: 31, suffix: "" },
 ];
-const Home: FC<HomeProps> = () => {
+const Home = async ({ params: { lng } }) => {
+  const { t } = await useTranslation(lng, "home");
+
   return (
     <div className={prefix}>
       <div className={`${prefix}-carousel`}>
@@ -38,27 +35,16 @@ const Home: FC<HomeProps> = () => {
       </div>
 
       <section className={`${prefix}-section ${prefix}-about-us`}>
-        <h2 className={`${prefix}-title mb12`}>
-          关于我们
-          {/* <FormattedMessage id="aboutUs"></FormattedMessage> */}
-        </h2>
-        <h3 className={`${prefix}-company`}>
-          公司名称
-          {/* <FormattedMessage id="companyName"></FormattedMessage> */}
-        </h3>
-        <div className={`${prefix}-desc`}>
-          公司描述
-          {/* <FormattedMessage id="companyDescription"></FormattedMessage> */}
-        </div>
+        <h2 className={`${prefix}-title mb12`}>{t("aboutUs")}</h2>
+        <h3 className={`${prefix}-company`}>{t("companyName")}</h3>
+        <div className={`${prefix}-desc`}>{t("companyDescription")}</div>
       </section>
       <section className={`${prefix}-section ${prefix}-about-us-data`}>
         <Row gutter={[12, 12]}>
           {data.map(({ id, value, suffix }) => (
             <Col span={12} key={id}>
               <LeekonoStatistic value={value} suffix={suffix} />
-              <span className={`${prefix}-about-us-dec`}>
-                {/* <FormattedMessage id={id}></FormattedMessage> */}
-              </span>
+              <span className={`${prefix}-about-us-dec`}>{t(id)}</span>
             </Col>
           ))}
         </Row>
@@ -66,13 +52,11 @@ const Home: FC<HomeProps> = () => {
       <section className={`${prefix}-section ${prefix}-about-us`}>
         <Row justify="space-between" align="middle">
           <Col>
-            <h2 className={`${prefix}-title`}>
-              {/* <FormattedMessage id="product"></FormattedMessage> */}
-            </h2>
+            <h2 className={`${prefix}-title`}>{t("product")}</h2>
           </Col>
           <Col>
             <a href="/product">
-              {/* <FormattedMessage id="viewAll"></FormattedMessage> */}
+              {t("viewAll")}
               <RightOutlined />
             </a>
           </Col>
@@ -91,13 +75,11 @@ const Home: FC<HomeProps> = () => {
         <div className="mb20">
           <Row justify="space-between" align="middle">
             <Col>
-              <h2 className={`${prefix}-title`}>
-                {/* <FormattedMessage id="case"></FormattedMessage> */}
-              </h2>
+              <h2 className={`${prefix}-title`}>{t("case")}</h2>
             </Col>
             <Col>
               <Link href="/case">
-                {/* <FormattedMessage id="viewAll"></FormattedMessage> */}
+                {t("viewAll")}
                 <RightOutlined />
               </Link>
             </Col>

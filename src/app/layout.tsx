@@ -4,6 +4,18 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import Header from "@/component/header";
 import Footer from "@/component/footer";
 import "./globals.css";
+import { dir } from "i18next";
+import { ReactNode } from "react";
+
+const languages = ["en", "zh"];
+
+type Props = {
+  children: ReactNode;
+  params: { lng: string };
+};
+export async function generateStaticParams() {
+  return languages.map((lng) => ({ lng }));
+}
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -22,11 +34,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+  params: { lng },
+}: Readonly<Props>) {
+  console.log(lng, "lng");
   return (
-    <html lang="en">
+    <html lang={lng}>
+      {/* dir={dir(lng)} */}
       <body
       // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
