@@ -1,17 +1,17 @@
 import { FC } from "react";
 import Image from "next/image";
-import { Carousel, Col, Row, Statistic, StatisticProps } from "antd";
-import CountUp from "react-countup";
+import { Carousel, Col, Row } from "antd";
 import { RightOutlined } from "@ant-design/icons";
 
-import { LedTypes, Posters } from "../constant";
-import LeekonoSwiper, { SwiperDataType } from "@/component/swiper";
+import { LedTypes } from "../constant";
+import LeekonoSwiper from "@/component/swiper";
 
 import { Cases } from "./case/constant";
 import poster1 from "@/assets/home/poster1.png";
 import poster2 from "@/assets/home/poster2.png";
 import CaseCard from "./case/card";
 import Link from "next/link";
+import LeekonoStatistic from "@/component/statistic";
 
 interface HomeProps {
   id?: string;
@@ -20,10 +20,6 @@ interface HomeProps {
 }
 
 const prefix = "leekono-home";
-
-const formatter: StatisticProps["formatter"] = (value) => {
-  return <CountUp end={value as number} separator="," />;
-};
 
 const data = [
   { id: "founded", value: 15, suffix: "" },
@@ -59,12 +55,7 @@ const Home: FC<HomeProps> = () => {
         <Row gutter={[12, 12]}>
           {data.map(({ id, value, suffix }) => (
             <Col span={12} key={id}>
-              {/* <Statistic
-                title={null}
-                value={value}
-                suffix={suffix}
-                formatter={formatter}
-              /> */}
+              <LeekonoStatistic value={value} suffix={suffix} />
               <span className={`${prefix}-about-us-dec`}>
                 {/* <FormattedMessage id={id}></FormattedMessage> */}
               </span>
