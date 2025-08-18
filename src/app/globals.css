@@ -1,4 +1,6 @@
 @import "tailwindcss";
+/* @import "@/assets/iconfont/iconfont.css"; */
+
 
 :root {
   --background: #ffffff;
@@ -23,4 +25,115 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.leekono-home {
+  background-color: #fff;
+}
+
+.leekono-home-carousel {
+  padding: 12px;
+}
+
+.leekono-home-image {
+  border-radius: 12px;
+}
+
+.leekono-home-title {
+  margin: 0;
+}
+
+.leekono-home-about-us {
+  padding: 0 12px;
+}
+
+.leekono-home-company {
+  margin-bottom: 12px;
+}
+
+.leekono-home-desc {
+  color: #86909c;
+  line-height: 1.5;
+}
+
+.leekono-home-section {
+  background-color: #fff;
+  margin-top: 20px;
+}
+
+.leekono-home-case {
+  padding: 10px;
+}
+
+.leekono-home-about-us-dec {
+  color: #86909c;
+  margin-top: 8px;
+}
+
+.leekono-home-about-us-data {
+  padding: 0 20px;
+}
+
+.leekono-home-card {
+  padding: 4px 4px 0 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.leekono-home-card-content {
+  padding-top: 24px;
+  width: 100%;
+  text-align: center;
+}
+
+.leekono-home-card-link {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.leekono-home-card-title {
+  margin-bottom: 12px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.leekono-home-card-image {
+  width: 100%;
+  border-radius: 28px;
+  margin-bottom: 4px;
+  margin-top: 28px;
+}
+
+.leekono-home .leekono-swiper-card {
+  height: fit-content;
+}
+
+.leekono-home .ant-image {
+  border-radius: 12px;
+}
+
+.leekono-home .ant-statistic-title {
+  min-height: 44px;
+}
+
+.leekono-home-section .adm-swiper-slide {
+  padding: 20px 6px;
+}
+
+@media screen and (max-width: 480px) {
+  .leekono-home-content {
+    height: 80vh;
+    min-height: 680px;
+    max-width: 1920px;
+    max-height: 1260px;
+    margin: 0 auto;
+    width: 87.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
 }

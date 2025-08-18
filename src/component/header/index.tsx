@@ -24,7 +24,7 @@ const MobileHeader = () => {
   };
 
   return (
-    <header className="top-[0] left-[0] right-[0] pd-20 w-full fixed z-100001 shadow-[0_8px_24px_-2px_rgba(0,0,0,0.05)]">
+    <header className="top-[0] left-[0] right-[0] pd-20 w-full fixed z-100001 sticky bg-white shadow-[0_8px_24px_-2px_rgba(0,0,0,0.05)]">
       <div className="relative flex items-center justify-center">
         <span onTouchEnd={onClick} className="absolute left-[20px] font-[16px]">
           <MenuOutlined />

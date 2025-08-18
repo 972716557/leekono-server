@@ -1,0 +1,10 @@
+.header-button {
+  color: #fff;
+  background-color: unset;
+  border: none;
+  border-radius: 16px;
+}
+.header-button-active {
+  color: #4096ff;
+  background-color: #fff;
+}
