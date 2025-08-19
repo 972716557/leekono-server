@@ -5,11 +5,14 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { GlobalOutlined, MenuOutlined } from "@ant-design/icons";
 import logo from "../../../public/favicon-title.png";
-
+import { routes } from "@/constant";
+import { useTranslation } from "react-i18next";
+import "./_index.css";
 const prefix = "leekono-layout-mobile-header";
 const MobileHeader = () => {
   const router = useRouter();
   const [visible, setVisible] = useState(false);
+  const { t } = useTranslation();
   const onClick = () => {
     setVisible(true);
   };
@@ -54,15 +57,15 @@ const MobileHeader = () => {
           borderRight: "1px solid #ebedf1",
         }}
       >
-        {/* {routes.map((item) => (
+        {routes.map((item) => (
           <div
             key={item.id}
             onTouchEnd={() => onTouchEnd(item.path)}
             className={`${prefix}-side`}
           >
-            <div className={`${prefix}-side-item`}></div>
+            <div className={`${prefix}-side-item`}>{t(item.id)}</div>
           </div>
-        ))} */}
+        ))}
       </Popup>
     </header>
   );

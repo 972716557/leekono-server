@@ -1,0 +1,14 @@
+.leekono-layout-mobile-header-side {
+  padding-top: 20px;
+}
+
+.leekono-layout-mobile-header-side-item {
+  line-height: 2.4;
+  font-size: 16px;
+  color: #454d64;
+  text-align: center;
+}
+
+.leekono-layout-mobile-header-mask {
+  background-color: rgba(255, 255, 255, 0) !important;
+}

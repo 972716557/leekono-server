@@ -1,0 +1,50 @@
+.leekono-contact {
+  padding: 0 12px;
+  background-color: #fff;
+}
+.leekono-contact-content {
+  display: flex;
+  border-bottom: 1px solid #e5e5e5;
+}
+.leekono-contact-label {
+  font-family: "GB";
+  background-color: #f5f5f5;
+  flex: 0 0 320px;
+  display: inline-flex;
+  align-items: center;
+  padding-left: 12px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+  line-height: 80px;
+}
+.leekono-contact-value {
+  display: flex;
+  align-items: center;
+  color: #828283;
+  padding: 10px 0;
+  background-color: #fff;
+  line-height: 80px;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+}
+@media screen and (max-width: 480px) {
+  .leekono-contact-content {
+    display: block;
+    border-bottom: none;
+  }
+  .leekono-contact-label {
+    width: 100%;
+    line-height: 40px;
+    padding-left: 0;
+    text-align: center;
+    display: block;
+  }
+  .leekono-contact-value {
+    width: 100%;
+    line-height: 20px;
+    padding-left: 0;
+    text-align: center;
+  }
+}

@@ -11,7 +11,7 @@ import devilSrc from "@/assets/images/devil.png";
 import { StaticImageData } from "next/image";
 
 const routes = [
-  { path: "/home", id: "home" },
+  { path: "/", id: "home" },
   // { path: "/about-us", id: "aboutUs" },
   { path: "/case", id: "case" },
   { path: "/contact", id: "contact" },
