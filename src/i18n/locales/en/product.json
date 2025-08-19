@@ -39,5 +39,22 @@
         "title": "Soft LED",
         "detail": "Soft Screen"
     },
+    "config": "Config",
+    "bestView": "Best View Distance",
+    "dot": "Dot",
+    "ipRate": "IP Rate",
+    "scan": "Scan",
+    "moduleSize": "Module Size",
+    "brightness": "Brightness",
+    "warranty": "Warranty",
+    "lifeSpan": "Life Span",
+    "maxPower": "Max Power",
+    "averagePower": "Average Power",
+    "horizontalViewAngle": "Horizontal View Angle",
+    "verticalViewAngle": "Vertical View Angle",
+    "workingTemperature": "Working Temperature",
+    "workingHumidity": "Working Humidity",
+    "year": "year",
+    "hour": "h",
   "contact": "Contact Us"
 }

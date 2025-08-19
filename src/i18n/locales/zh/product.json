@@ -39,5 +39,22 @@
         "title": "柔软屏",
         "detail": "Soft Screen"
     },
-  "contact": "联系我们"
+  "contact": "联系我们",
+    "config": "配置",
+    "bestView": "最佳视距",
+    "dot": "像素点密度",
+    "ipRate": "IP等级",
+    "scan": "扫描方式",
+    "moduleSize": "模组大小",
+    "brightness": "亮度",
+    "warranty": "保质期",
+    "lifeSpan": "生命周期",
+    "maxPower": "最大功率",
+    "averagePower": "平均功率",
+    "horizontalViewAngle": "水平观看角度",
+    "verticalViewAngle": "垂直观看角度",
+    "workingTemperature": "工作温度",
+    "workingHumidity": "工作湿度",
+    "year": "年",
+    "hour": "小时"
 }

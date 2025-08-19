@@ -39,5 +39,20 @@
         "title": "柔軟屏",
         "detail": "Soft Screen"
     },
+    "config": "配置",
+    "bestView": "最佳視距",
+    "dot": "像素點密度",
+    "ipRate": "IP等級",
+    "scan": "掃描方式",
+    "moduleSize": "模組大小",
+    "brightness": "亮度",
+    "warranty": "保質期",
+    "lifeSpan": "生命週期",
+    "maxPower": "最大功率",
+    "averagePower": "平均功率",
+    "horizontalViewAngle": "水平觀看角度",
+    "verticalViewAngle": "垂直觀看角度",
+    "workingTemperature": "工作溫度",
+    "workingHumidity": "工作濕度",
     "contact": "聯係我們"
 }

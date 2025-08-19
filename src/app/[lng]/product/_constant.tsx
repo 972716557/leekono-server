@@ -69,26 +69,16 @@ import devil3 from "@/assets/product/devil/3.jpg";
 import devil4 from "@/assets/product/devil/4.jpg";
 import devil5 from "@/assets/product/devil/5.jpg";
 import devil6 from "@/assets/product/devil/6.jpg";
+import Title from "./_card/_title";
 
 export const IndoorColumns = [
   {
     dataIndex: "config",
-    title: <div id="config"></div>,
+    title: <Title id="config" />,
     key: "config",
     fixed: "left",
     with: 300,
-    render: (text: string) => (
-      <div>
-        <div id={text}></div>
-        {text === "warranty" && (
-          <span>
-            <span>/(</span>
-            <div id={"year"}></div>
-            <span>)</span>
-          </span>
-        )}
-      </div>
-    ),
+    render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P1.25", title: "P1.25", key: "P1.25" },
   { dataIndex: "P1.56", title: "P1.56", key: "P1.56" },
@@ -335,22 +325,11 @@ export const IndoorData = [
 export const SoftColumns = [
   {
     dataIndex: "config",
-    title: <div id="config"></div>,
+    title: <Title id="config" />,
     key: "config",
     fixed: "left",
     with: 300,
-    render: (text: string) => (
-      <div>
-        <div id={text}></div>
-        {text === "warranty" && (
-          <span>
-            <span>/(</span>
-            <div id={"year"}></div>
-            <span>)</span>
-          </span>
-        )}
-      </div>
-    ),
+    render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P1.25", title: "P1.25", key: "P1.25" },
   { dataIndex: "P1.53", title: "P1.53", key: "P1.53" },
@@ -560,22 +539,11 @@ export const SoftData = [
 const OutdoorColumns = [
   {
     dataIndex: "config",
-    title: "config",
+    title: <Title id="config" />,
     key: "config",
     fixed: "left",
     with: 200,
-    render: (text: string) => (
-      <div>
-        <div id={text}></div>
-        {text === "warranty" && (
-          <span>
-            <span>/(</span>
-            <div id={"year"}></div>
-            <span>)</span>
-          </span>
-        )}
-      </div>
-    ),
+    render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P2.5", title: "P2.5", key: "P2.5" },
   { dataIndex: "P3", title: "P3", key: "P3" },
@@ -731,22 +699,11 @@ const OutdoorData = [
 const RentalColumns = [
   {
     dataIndex: "config",
-    title: "config",
+    title: <Title id="config" />,
     key: "config",
     fixed: "left",
     with: 200,
-    render: (text: string) => (
-      <div>
-        <div id={text}></div>
-        {text === "warranty" && (
-          <span>
-            <span>/(</span>
-            <div id={"year"}></div>
-            <span>)</span>
-          </span>
-        )}
-      </div>
-    ),
+    render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P1.953", title: "P1.953", key: "P1.953" },
   { dataIndex: "P2.5", title: "P2.5", key: "P2.5" },
@@ -887,22 +844,11 @@ const RentalData = [
 const RentalOutdoorColumns = [
   {
     dataIndex: "config",
-    title: "config",
+    title: <Title id="config" />,
     key: "config",
     fixed: "left",
     with: 200,
-    render: (text: string) => (
-      <div>
-        <div id={text}></div>
-        {text === "warranty" && (
-          <span>
-            <span>/(</span>
-            <div id={"year"}></div>
-            <span>)</span>
-          </span>
-        )}
-      </div>
-    ),
+    render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P1.953", title: "P1.953", key: "P1.953" },
   { dataIndex: "P2.5", title: "P2.5", key: "P2.5" },
@@ -1043,22 +989,11 @@ const RentalOutdoorData = [
 const CrystalColumns = [
   {
     dataIndex: "config",
-    title: "config",
+    title: <Title id="config" />,
     key: "config",
     fixed: "left",
     with: 200,
-    render: (text: string) => (
-      <div>
-        <div id={text}></div>
-        {text === "warranty" && (
-          <span>
-            <span>/(</span>
-            <div id={"year"}></div>
-            <span>)</span>
-          </span>
-        )}
-      </div>
-    ),
+    render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P7.5", title: "P7.5", key: "P7.5" },
   { dataIndex: "P10", title: "P10", key: "P10" },
@@ -1154,22 +1089,11 @@ const CrystalData = [
 const TransparentColumns = [
   {
     dataIndex: "config",
-    title: "config",
+    title: <Title id="config" />,
     key: "config",
     fixed: "left",
     with: 200,
-    render: (text: string) => (
-      <div>
-        <div id={text}></div>
-        {text === "warranty" && (
-          <span>
-            <span>/(</span>
-            <div id={"year"}></div>
-            <span>)</span>
-          </span>
-        )}
-      </div>
-    ),
+    render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P2.8-5.6", title: "P2.8-5.6", key: "P2.8-5.6" },
   { dataIndex: "P2.9-5.8", title: "P2.9-5.8", key: "P2.9-5.8" },
@@ -1259,22 +1183,11 @@ const TransparentData = [
 const FloorColumns = [
   {
     dataIndex: "config",
-    title: "config",
+    title: <Title id="config" />,
     key: "config",
     fixed: "left",
     with: 200,
-    render: (text: string) => (
-      <div>
-        <div id={text}></div>
-        {text === "warranty" && (
-          <span>
-            <span>/(</span>
-            <div id={"year"}></div>
-            <span>)</span>
-          </span>
-        )}
-      </div>
-    ),
+    render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P2.976", title: "P2.976", key: "P2.976" },
   { dataIndex: "P3.91", title: "P3.91", key: "P3.91" },
@@ -1406,22 +1319,11 @@ const FloorData = [
 export const PosterColumns = [
   {
     dataIndex: "config",
-    title: <div id="config"></div>,
+    title: <Title id="config" />,
     key: "config",
     fixed: "left",
     with: 300,
-    render: (text: string) => (
-      <div>
-        <div id={text}></div>
-        {text === "warranty" && (
-          <span>
-            <span>/(</span>
-            <div id={"year"}></div>
-            <span>)</span>
-          </span>
-        )}
-      </div>
-    ),
+    render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P1.25", title: "P1.25", key: "P1.25" },
   { dataIndex: "P1.53", title: "P1.53", key: "P1.53" },
@@ -1647,22 +1549,11 @@ export const PosterData = [
 export const TaxiColumns = [
   {
     dataIndex: "config",
-    title: <div id="config"></div>,
+    title: <Title id="config" />,
     key: "config",
     fixed: "left",
     with: 300,
-    render: (text: string) => (
-      <div>
-        <div id={text}></div>
-        {text === "warranty" && (
-          <span>
-            <span>/(</span>
-            <div id={"year"}></div>
-            <span>)</span>
-          </span>
-        )}
-      </div>
-    ),
+    render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P2.5", title: "P2.5", key: "P2.5" },
   { dataIndex: "P3", title: "P3", key: "P3" },
@@ -1919,22 +1810,11 @@ export const TaxiData = [
 export const DevilColumns = [
   {
     dataIndex: "config",
-    title: <div id="config"></div>,
+    title: <Title id="config" />,
     key: "config",
     fixed: "left",
     with: 300,
-    render: (text: string) => (
-      <div>
-        <div id={text}></div>
-        {text === "warranty" && (
-          <span>
-            <span>/(</span>
-            <div id={"year"}></div>
-            <span>)</span>
-          </span>
-        )}
-      </div>
-    ),
+    render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P2.5", title: "P2.5", key: "P2.5" },
   { dataIndex: "P3", title: "P3", key: "P3" },
