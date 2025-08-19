@@ -11,8 +11,8 @@ import poster2 from "@/assets/home/poster2.png";
 import CaseCard from "./case/card";
 import Link from "next/link";
 import LeekonoStatistic from "@/component/statistic";
-import { getTranslation } from "../i18n";
-import { languages } from "../i18n/settings";
+import { getTranslation } from "../../i18n";
+import { languages } from "../../i18n/settings";
 
 const prefix = "leekono-home";
 
@@ -100,7 +100,15 @@ const Home = async ({ params }: Params) => {
     </div>
   );
 };
-export async function generateStaticParams() {
-  return languages.map((lang) => ({ lang }));
-}
+
 export default Home;
+export async function getStaticPaths() {
+  return {
+    paths: languages.map((item) => ({
+      params: {
+        lng: item,
+      },
+    })),
+    fallback: true, // 设置fallback为true时，如果找不到对应的路由，会变成客户端渲染
+  };
+}

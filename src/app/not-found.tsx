@@ -12,7 +12,8 @@ export default function NotFound() {
             Sorry we couldn't find this page.
           </p>
           <p className="mb-8">
-            But dont worry, you can find plenty of other things on our homepage.
+            But don't worry, you can find plenty of other things on our
+            homepage.
           </p>
 
           <Link href="/" className="text-blue-500 hover:text-blue-800">

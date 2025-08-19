@@ -1,4 +1,4 @@
-import { languages } from "@/app/i18n/settings";
+import { languages } from "@/i18n/settings";
 import React from "react";
 
 export default function page() {
