@@ -19,7 +19,8 @@ i18next
   .use(LanguageDetector)
   .use(
     resourcesToBackend(
-      (language, namespace) => import(`./locales/${language}/${namespace}.json`)
+      (language: string, namespace: string) =>
+        import(`./locales/${language}/${namespace}.json`)
     )
   )
   .init({
@@ -31,9 +32,9 @@ i18next
     preload: runsOnServerSide ? languages : [],
   });
 
-export function useTranslation(lng, ns, options) {
+export function useTranslation(lng: string, ns: string) {
   const i18nextCookie = getCookie(cookieName);
-  const ret = useTranslationOrg(ns, options);
+  const ret = useTranslationOrg(ns);
   const { i18n } = ret;
   if (runsOnServerSide && lng && i18n.resolvedLanguage !== lng) {
     i18n.changeLanguage(lng);

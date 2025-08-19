@@ -1,16 +1,16 @@
 "use client";
 import { Table } from "antd";
 import { ImageViewer, Swiper } from "antd-mobile";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
+import { notFound, useParams } from "next/navigation";
 
 import { En_Locale, TW_Locale, ZH_Locale } from "@/constant";
+import { useTranslation } from "@/i18n/client";
 
 import { Products } from "../_constant";
 
 import "../_index.css";
-import { notFound, useParams } from "next/navigation";
-import { useTranslation } from "@/i18n/client";
 
 const prefix = "leekono-product-detail";
 
@@ -24,13 +24,13 @@ const ProductDetail = () => {
   const [visible, setVisible] = useState(false);
 
   const detail = Products.find((item) => item.id === id);
-  const [src, setSrc] = useState(detail?.images[0]);
+  const [src, setSrc] = useState<StaticImageData>();
 
   if (!detail) {
     notFound();
   }
-  const onClick = (src: string) => {
-    setSrc(src);
+  const onClick = ({ src }: { src: string }) => {
+    setSrc(src as unknown as StaticImageData);
     setVisible(true);
   };
 
@@ -57,21 +57,21 @@ const ProductDetail = () => {
           ))}
         </Swiper>
         <ImageViewer
-          image={src}
+          image={src as unknown as string}
           visible={visible}
           onClose={() => {
             setVisible(false);
           }}
         />
       </div>
-      <div className={`${prefix}-card`}>
+      {/* <div className={`${prefix}-card`}>
         <h2 className={`${prefix}-title`}>{t(`${detail.id}.title`)}</h2>
         <div className={`${prefix}-content`}>
           {isEN && detail.enDescription}
           {isTW && detail.twDescription}
           {isZH && detail.zhDescription}
         </div>
-      </div>
+      </div> */}
       <div className={`${prefix}-card`}>
         <h2 className={`${prefix}-title`}>{t("productDetails")}</h2>
         <Table
@@ -81,12 +81,12 @@ const ProductDetail = () => {
           pagination={false}
         />
       </div>
-      <div className={`${prefix}-card ${prefix}-advantage`}>
+      {/* <div className={`${prefix}-card ${prefix}-advantage`}>
         <h2 className={`${prefix}-title`}>{t("productAdvantage")}</h2>
         {isEN && detail.enAdvantage}
         {isTW && detail.twAdvantage}
         {isZH && detail.zhAdvantage}
-      </div>
+      </div> */}
     </div>
   );
 };
