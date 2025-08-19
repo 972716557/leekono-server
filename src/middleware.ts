@@ -10,41 +10,30 @@ export const config = {
 };
 
 export default async function middleware(req) {
-  console.log(
-    !languages.some((loc) => {
-      console.log(
-        req.nextUrl.pathname,
-        req.nextUrl.pathname.startsWith(`/${loc}`),
-        "name发发发"
-      );
-    }) && !req.nextUrl.pathname.startsWith("/_next")
-  );
-
   let lng;
-  if (req.cookies.has(cookieName))
-    lng = acceptLanguage.get(req.cookies.get(cookieName).value);
-  if (!lng) lng = acceptLanguage.get(req.headers.get("Accept-Language"));
+  // if (req.cookies.has(cookieName))
+  //   lng = acceptLanguage.get(req.cookies.get(cookieName).value);
+  // if (!lng) lng = acceptLanguage.get(req.headers.get("Accept-Language"));
   if (!lng) lng = fallbackLng;
 
   // Redirect if lng in path is not supported
-  // if (
-  //   !languages.some((loc) => req.nextUrl.pathname.startsWith(`/${loc}`)) &&
-  //   !req.nextUrl.pathname.startsWith("/_next")
-  // ) {
-  //   return NextResponse.redirect(
-  //     new URL(`/${lng}${req.nextUrl.pathname}`, req.url)
-  //   );
-  // }
+  const isMatch = languages.includes(req.nextUrl.locale);
 
-  if (req.headers.has("referer")) {
-    const refererUrl = new URL(req.headers.get("referer"));
-    const lngInReferer = languages.find((l) =>
-      refererUrl.pathname.startsWith(`/${l}`)
+  if (!isMatch) {
+    return NextResponse.redirect(
+      new URL(`/${lng}${req.nextUrl.pathname}`, req.url)
     );
-    const response = NextResponse.next();
-    if (lngInReferer) response.cookies.set(cookieName, lngInReferer);
-    return response;
   }
+
+  // if (req.headers.has("referer")) {
+  //   const refererUrl = new URL(req.headers.get("referer"));
+  //   const lngInReferer = languages.find((l) =>
+  //     refererUrl.pathname.startsWith(`/${l}`)
+  //   );
+  //   const response = NextResponse.next();
+  //   if (lngInReferer) response.cookies.set(cookieName, lngInReferer);
+  //   return response;
+  // }
 
   return NextResponse.next();
 }

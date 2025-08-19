@@ -12,6 +12,7 @@ import CaseCard from "./case/card";
 import Link from "next/link";
 import LeekonoStatistic from "@/component/statistic";
 import { getTranslation } from "../i18n";
+import { languages } from "../i18n/settings";
 
 const prefix = "leekono-home";
 
@@ -99,4 +100,7 @@ const Home = async ({ params }: Params) => {
     </div>
   );
 };
+export async function generateStaticParams() {
+  return languages.map((lang) => ({ lang }));
+}
 export default Home;
