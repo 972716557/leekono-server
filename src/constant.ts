@@ -22,7 +22,7 @@ const ZH_Locale = "zh";
 const En_Locale = "en";
 const TW_Locale = "zh-TW";
 
-type LedEnum =
+export type LedEnum =
   | "rental"
   | "outdoor"
   | "indoor"

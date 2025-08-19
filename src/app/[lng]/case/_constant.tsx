@@ -7,12 +7,12 @@ import outdoorCase1and4 from "@/assets/case/outdoor/case1/4.jpg";
 import outdoorCase2and1 from "@/assets/case/outdoor/case2/1.jpg";
 import outdoorCase2and2 from "@/assets/case/outdoor/case2/2.jpg";
 
-import outdoorCase3and1 from "@/assets/case/outdoor/case3/1.jpg";
-import outdoorCase3and2 from "@/assets/case/outdoor/case3/2.jpg";
+// import outdoorCase3and1 from "@/assets/case/outdoor/case3/1.jpg";
+// import outdoorCase3and2 from "@/assets/case/outdoor/case3/2.jpg";
 
-import outdoorCase4and1 from "@/assets/case/outdoor/case4/1.jpg";
-import outdoorCase4and2 from "@/assets/case/outdoor/case4/2.jpg";
-import outdoorCase4and3 from "@/assets/case/outdoor/case4/3.jpg";
+// import outdoorCase4and1 from "@/assets/case/outdoor/case4/1.jpg";
+// import outdoorCase4and2 from "@/assets/case/outdoor/case4/2.jpg";
+// import outdoorCase4and3 from "@/assets/case/outdoor/case4/3.jpg";
 
 import indoorCase1and1 from "@/assets/case/indoor/case1/1.jpg";
 import indoorCase1and2 from "@/assets/case/indoor/case1/2.jpg";
@@ -57,10 +57,10 @@ const Cases: CaseType[] = [
         <p>
           As an indispensable display terminal in the digital era, the
           large-scale adoption of P3.91 LED displays has become a trend.
-          Leekono's LED display solutions, designed to meet the operational
-          needs of enterprises, are widely used in scenarios such as outdoor
-          walls, advertising spaces, billboards, and posters—helping enterprises
-          achieve digital transformation and upgrading.
+          overview." Leekonos LED display solutions, designed to meet the
+          operational needs of enterprises, are widely used in scenarios such as
+          outdoor walls, advertising spaces, billboards, and posters—helping
+          enterprises achieve digital transformation and upgrading.
         </p>
         <Image alt="img" src={outdoorCase2and1} />
         <Image alt="img" src={outdoorCase2and2} />

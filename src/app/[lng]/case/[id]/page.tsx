@@ -1,10 +1,10 @@
+import { notFound } from "next/navigation";
+
 import { En_Locale, TW_Locale, ZH_Locale } from "@/constant";
 
 import { Cases } from "../_constant";
 
 import "../_index.css";
-import { Params } from "@/types/common";
-import { notFound } from "next/navigation";
 
 const prefix = "leekono-case-detail";
 const Detail = async ({

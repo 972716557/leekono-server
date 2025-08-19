@@ -1,60 +1,67 @@
 {
-    "rental": {
-        "title": "租赁屏",
-        "detail": "zhe "
-    },
-    "outdoor": {
-        "title": "户外屏",
-        "detail": "户外屏"
-    },
-    "indoor": {
-        "title": "室内屏",
-        "detail": "室内屏"
-    },
-    "poster": {
-        "title": "海报屏",
-        "detail": "海报屏"
-    },
-    "crystal": {
-        "title": "晶膜屏",
-        "detail": "晶膜屏"
-    },
-    "transparent": {
-        "title": "透明屏",
-        "detail": "透明屏"
-    },
-    "floor": {
-        "title": "地砖屏",
-        "detail": "地砖屏"
-    },
-    "devil": {
-        "title": "恶魔之眼",
-        "detail": "Evil Screen"
-    },
-    "taxi": {
-        "title": "出租车屏",
-        "detail": "Taxi Screen"
-    },
-    "soft": {
-        "title": "柔软屏",
-        "detail": "Soft Screen"
-    },
+  "rental": {
+    "title": "租赁屏",
+    "detail": "zhe "
+  },
+  "outdoor": {
+    "title": "户外屏",
+    "detail": "户外屏"
+  },
+  "indoor": {
+    "title": "室内屏",
+    "detail": "室内屏"
+  },
+  "poster": {
+    "title": "海报屏",
+    "detail": "海报屏"
+  },
+  "crystal": {
+    "title": "晶膜屏",
+    "detail": "晶膜屏"
+  },
+  "transparent": {
+    "title": "透明屏",
+    "detail": "透明屏"
+  },
+  "floor": {
+    "title": "地砖屏",
+    "detail": "地砖屏"
+  },
+  "devil": {
+    "title": "恶魔之眼",
+    "detail": "Evil Screen"
+  },
+  "taxi": {
+    "title": "出租车屏",
+    "detail": "Taxi Screen"
+  },
+  "soft": {
+    "title": "柔软屏",
+    "detail": "Soft Screen"
+  },
   "contact": "联系我们",
-    "config": "配置",
-    "bestView": "最佳视距",
-    "dot": "像素点密度",
-    "ipRate": "IP等级",
-    "scan": "扫描方式",
-    "moduleSize": "模组大小",
-    "brightness": "亮度",
-    "warranty": "保质期",
-    "lifeSpan": "生命周期",
-    "maxPower": "最大功率",
-    "averagePower": "平均功率",
-    "horizontalViewAngle": "水平观看角度",
-    "verticalViewAngle": "垂直观看角度",
-    "workingTemperature": "工作温度",
-    "workingHumidity": "工作湿度",
-    "year": "年",
-    "hour": "小时"
+  "config": "配置",
+  "bestView": "最佳视距",
+  "dot": "像素点密度",
+  "ipRate": "IP等级",
+  "scan": "扫描方式",
+  "moduleSize": "模组大小",
+  "brightness": "亮度",
+  "warranty": "保质期",
+  "lifeSpan": "生命周期",
+  "maxPower": "最大功率",
+  "averagePower": "平均功率",
+  "horizontalViewAngle": "水平观看角度",
+  "verticalViewAngle": "垂直观看角度",
+  "workingTemperature": "工作温度",
+  "workingHumidity": "工作湿度",
+  "year": "年",
+  "moduleWeight": "模组重量",
+  "cabinetSize": "箱体大小",
+  "cabinetWeight": "箱体重量",
+  "cabinetResolution": "箱体分辨率",
+  "pixelPitch": "像素间距",
+  "ledPackage": "LED 封装",
+  "moduleResolution": "模组分辨率",
+  "hour": "小时"
 }

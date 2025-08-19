@@ -1,60 +1,67 @@
 {
-    "rental": {
-        "title": "Rental LED",
-        "detail": "zhe "
-    },
-    "outdoor": {
-        "title": "Outdoor LED",
-        "detail": "户外屏"
-    },
-    "indoor": {
-        "title": "Indoor LED",
-        "detail": "室内屏"
-    },
-    "poster": {
-        "title": "Poster LED",
-        "detail": "海报屏"
-    },
-    "crystal": {
-        "title": "Crystal LED",
-        "detail": "晶膜屏"
-    },
-    "transparent": {
-        "title": "Transparent LED",
-        "detail": "透明屏"
-    },
-    "floor": {
-        "title": "Floor LED",
-        "detail": "地砖屏"
-    },
-    "devil": {
-        "title": "Devil's Eye",
-        "detail": "Evil Screen"
-    },
-    "taxi": {
-        "title": "Taxi LED",
-        "detail": "Taxi Screen"
-    },
-    "soft": {
-        "title": "Soft LED",
-        "detail": "Soft Screen"
-    },
-    "config": "Config",
-    "bestView": "Best View Distance",
-    "dot": "Dot",
-    "ipRate": "IP Rate",
-    "scan": "Scan",
-    "moduleSize": "Module Size",
-    "brightness": "Brightness",
-    "warranty": "Warranty",
-    "lifeSpan": "Life Span",
-    "maxPower": "Max Power",
-    "averagePower": "Average Power",
-    "horizontalViewAngle": "Horizontal View Angle",
-    "verticalViewAngle": "Vertical View Angle",
-    "workingTemperature": "Working Temperature",
-    "workingHumidity": "Working Humidity",
-    "year": "year",
-    "hour": "h",
+  "rental": {
+    "title": "Rental LED",
+    "detail": "zhe "
+  },
+  "outdoor": {
+    "title": "Outdoor LED",
+    "detail": "户外屏"
+  },
+  "indoor": {
+    "title": "Indoor LED",
+    "detail": "室内屏"
+  },
+  "poster": {
+    "title": "Poster LED",
+    "detail": "海报屏"
+  },
+  "crystal": {
+    "title": "Crystal LED",
+    "detail": "晶膜屏"
+  },
+  "transparent": {
+    "title": "Transparent LED",
+    "detail": "透明屏"
+  },
+  "floor": {
+    "title": "Floor LED",
+    "detail": "地砖屏"
+  },
+  "devil": {
+    "title": "Devil's Eye",
+    "detail": "Evil Screen"
+  },
+  "taxi": {
+    "title": "Taxi LED",
+    "detail": "Taxi Screen"
+  },
+  "soft": {
+    "title": "Soft LED",
+    "detail": "Soft Screen"
+  },
+  "config": "Config",
+  "bestView": "Best View Distance",
+  "dot": "Dot",
+  "ipRate": "IP Rate",
+  "scan": "Scan",
+  "moduleSize": "Module Size",
+  "brightness": "Brightness",
+  "warranty": "Warranty",
+  "lifeSpan": "Life Span",
+  "maxPower": "Max Power",
+  "averagePower": "Average Power",
+  "horizontalViewAngle": "Horizontal View Angle",
+  "verticalViewAngle": "Vertical View Angle",
+  "workingTemperature": "Working Temperature",
+  "workingHumidity": "Working Humidity",
+  "year": "year",
+  "hour": "h",
+  "moduleWeight": "Module Weight",
+  "cabinetSize": "Cabinet Size",
+  "cabinetWeight": "Cabinet Weight",
+  "cabinetResolution": "Cabinet Resolution",
+  "pixelPitch": "Pixel Pitch",
+  "ledPackage": "LED Package",
+  "moduleResolution": "Module Resolution",
   "contact": "Contact Us"
 }

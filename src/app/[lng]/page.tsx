@@ -1,19 +1,18 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Carousel, Col, Row } from "antd";
 import { RightOutlined } from "@ant-design/icons";
+import Link from "next/link";
 
-import { LedTypes } from "../../constant";
 import LeekonoSwiper from "@/component/swiper";
-
-import { Cases } from "./case/_constant";
 import poster1 from "@/assets/home/poster1.png";
 import poster2 from "@/assets/home/poster2.png";
-import CaseCard from "../../component/case-cart.tsx";
-import Link from "next/link";
-import LeekonoStatistic from "@/component/statistic";
-import { getTranslation } from "../../i18n";
-import { languages } from "../../i18n/settings";
 import { Params } from "@/types/common";
+import LeekonoStatistic from "@/component/statistic";
+
+import { Cases } from "./case/_constant";
+import CaseCard from "../../component/case-cart.tsx";
+import { getTranslation } from "../../i18n";
+import { LedTypes } from "../../constant";
 
 const prefix = "leekono-home";
 
@@ -67,7 +66,7 @@ const Home = async ({ params }: Params) => {
           showPlusButton={false}
           data={LedTypes.map((item) => ({
             type: item,
-            src: "https://www.apple.com/v/iphone/home/cb/images/overview/consider/safety__bwp7rsowtjiu_xlarge_2x.jpg",
+            src: "https://www.apple.com/v/iphone/home/cb/images/overview/consider/safety__bwp7rsowtjiu_xlarge_2x.jpg" as unknown as StaticImageData,
           }))}
         />
       </section>
@@ -98,13 +97,3 @@ const Home = async ({ params }: Params) => {
 };
 
 export default Home;
-export async function getStaticPaths() {
-  return {
-    paths: languages.map((item) => ({
-      params: {
-        lng: item,
-      },
-    })),
-    fallback: true, // 设置fallback为true时，如果找不到对应的路由，会变成客户端渲染
-  };
-}

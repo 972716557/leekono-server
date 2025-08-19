@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { ColumnProps } from "antd/es/table";
+
 import indoor1 from "@/assets/product/indoor/1.jpg";
 import indoor2 from "@/assets/product/indoor/2.jpg";
 import indoor3 from "@/assets/product/indoor/3.jpg";
@@ -71,13 +73,13 @@ import devil5 from "@/assets/product/devil/5.jpg";
 import devil6 from "@/assets/product/devil/6.jpg";
 import Title from "./_card/_title";
 
-export const IndoorColumns = [
+export const IndoorColumns: ColumnProps[] = [
   {
     dataIndex: "config",
     title: <Title id="config" />,
     key: "config",
     fixed: "left",
-    with: 300,
+    width: 300,
     render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P1.25", title: "P1.25", key: "P1.25" },
@@ -322,13 +324,13 @@ export const IndoorData = [
   },
 ];
 
-export const SoftColumns = [
+export const SoftColumns: ColumnProps[] = [
   {
     dataIndex: "config",
     title: <Title id="config" />,
     key: "config",
     fixed: "left",
-    with: 300,
+    width: 300,
     render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P1.25", title: "P1.25", key: "P1.25" },
@@ -536,13 +538,13 @@ export const SoftData = [
   },
 ];
 
-const OutdoorColumns = [
+const OutdoorColumns: ColumnProps[] = [
   {
     dataIndex: "config",
     title: <Title id="config" />,
     key: "config",
     fixed: "left",
-    with: 200,
+    width: 300,
     render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P2.5", title: "P2.5", key: "P2.5" },
@@ -696,13 +698,13 @@ const OutdoorData = [
   },
 ];
 
-const RentalColumns = [
+const RentalColumns: ColumnProps[] = [
   {
     dataIndex: "config",
     title: <Title id="config" />,
     key: "config",
     fixed: "left",
-    with: 200,
+    width: 300,
     render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P1.953", title: "P1.953", key: "P1.953" },
@@ -841,13 +843,13 @@ const RentalData = [
   },
 ];
 
-const RentalOutdoorColumns = [
+const RentalOutdoorColumns: ColumnProps[] = [
   {
     dataIndex: "config",
     title: <Title id="config" />,
     key: "config",
     fixed: "left",
-    with: 200,
+    width: 300,
     render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P1.953", title: "P1.953", key: "P1.953" },
@@ -986,13 +988,13 @@ const RentalOutdoorData = [
   },
 ];
 
-const CrystalColumns = [
+const CrystalColumns: ColumnProps[] = [
   {
     dataIndex: "config",
     title: <Title id="config" />,
     key: "config",
     fixed: "left",
-    with: 200,
+    width: 300,
     render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P7.5", title: "P7.5", key: "P7.5" },
@@ -1086,13 +1088,13 @@ const CrystalData = [
   },
 ];
 
-const TransparentColumns = [
+const TransparentColumns: ColumnProps[] = [
   {
     dataIndex: "config",
     title: <Title id="config" />,
     key: "config",
     fixed: "left",
-    with: 200,
+    width: 300,
     render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P2.8-5.6", title: "P2.8-5.6", key: "P2.8-5.6" },
@@ -1180,13 +1182,13 @@ const TransparentData = [
   },
 ];
 
-const FloorColumns = [
+const FloorColumns: ColumnProps[] = [
   {
     dataIndex: "config",
     title: <Title id="config" />,
     key: "config",
     fixed: "left",
-    with: 200,
+    width: 300,
     render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P2.976", title: "P2.976", key: "P2.976" },
@@ -1316,13 +1318,13 @@ const FloorData = [
   },
 ];
 
-export const PosterColumns = [
+export const PosterColumns: ColumnProps[] = [
   {
     dataIndex: "config",
     title: <Title id="config" />,
     key: "config",
     fixed: "left",
-    with: 300,
+    width: 300,
     render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P1.25", title: "P1.25", key: "P1.25" },
@@ -1546,13 +1548,13 @@ export const PosterData = [
   },
 ];
 
-export const TaxiColumns = [
+export const TaxiColumns: ColumnProps[] = [
   {
     dataIndex: "config",
     title: <Title id="config" />,
     key: "config",
     fixed: "left",
-    with: 300,
+    width: 300,
     render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P2.5", title: "P2.5", key: "P2.5" },
@@ -1807,13 +1809,13 @@ export const TaxiData = [
   },
 ];
 
-export const DevilColumns = [
+export const DevilColumns: ColumnProps[] = [
   {
     dataIndex: "config",
     title: <Title id="config" />,
     key: "config",
     fixed: "left",
-    with: 300,
+    width: 300,
     render: (text: string) => <Title id={text} />,
   },
   { dataIndex: "P2.5", title: "P2.5", key: "P2.5" },

@@ -5,7 +5,7 @@ import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 import { notFound, useParams } from "next/navigation";
 
-import { En_Locale, TW_Locale, ZH_Locale } from "@/constant";
+// import { En_Locale, TW_Locale, ZH_Locale } from "@/constant";
 import { useTranslation } from "@/i18n/client";
 
 import { Products } from "../_constant";
@@ -16,11 +16,11 @@ const prefix = "leekono-product-detail";
 
 const ProductDetail = () => {
   const { lng, id } = useParams();
-  const { t } = useTranslation(lng, "product");
+  const { t } = useTranslation(lng as string, "product");
 
-  const isEN = lng === En_Locale;
-  const isTW = lng === TW_Locale;
-  const isZH = lng === ZH_Locale;
+  // const isEN = lng === En_Locale;
+  // const isTW = lng === TW_Locale;
+  // const isZH = lng === ZH_Locale;
   const [visible, setVisible] = useState(false);
 
   const detail = Products.find((item) => item.id === id);

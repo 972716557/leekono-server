@@ -1,16 +1,17 @@
 "use client";
-import { FC, ReactNode, useRef, useState } from "react";
+import { FC, useRef, useState } from "react";
 import { Popup, Swiper, SwiperRef } from "antd-mobile";
 import { Modal } from "antd";
 import { useParams } from "next/navigation";
 import Image from "next/image";
-
-import "./index.css";
+import Link from "next/link";
 import { StaticImageData } from "next/image";
 import { RightOutlined } from "@ant-design/icons";
-import { Posters } from "@/constant";
+
+import { LedEnum, Posters } from "@/constant";
 import { useTranslation } from "@/i18n/client";
-import Link from "next/link";
+
+import "./index.css";
 
 export interface SwiperDataType {
   src: StaticImageData;
@@ -20,7 +21,6 @@ export interface SwiperProps {
   data: SwiperDataType[];
   showPlusButton?: boolean;
   isPictureInsideContent?: boolean;
-  render: (item: SwiperDataType) => ReactNode;
   className?: string;
 }
 
@@ -33,7 +33,7 @@ const LeekonoSwiper: FC<SwiperProps> = ({
 }) => {
   const ref = useRef<SwiperRef>(null);
   const { lng } = useParams();
-  const { t } = useTranslation(lng, "product");
+  const { t } = useTranslation(lng as string, "product");
   const [index, setIndex] = useState(0);
   const [popupVisible, setPopupVisible] = useState(false);
 
@@ -90,7 +90,7 @@ const LeekonoSwiper: FC<SwiperProps> = ({
               </div>
               <Image
                 alt="img"
-                src={Posters[item.type]}
+                src={Posters[item.type as unknown as LedEnum]}
                 className={`${prefix}-card-image`}
               />
               {showPlusButton && (
