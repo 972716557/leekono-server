@@ -9,10 +9,10 @@ const LeekonoFooter = () => {
   const { t } = useTranslation(lng, "common");
 
   return (
-    <footer className="flex leading-[1.5] flex-col items-center p-[32px_10px_20px] text-[12px] text-[#999]">
+    <footer className="flex leading-[2] flex-col items-center p-[32px_10px_20px] text-[12px] text-[#999]">
       <div>
         {t("phoneLabel")}
-        <span className="color-[#4d84ed]">{t("phone")}</span>
+        <span className="text-[#4d84ed] ml-[4px]">{t("phone")}</span>
       </div>
       <div>{t("email")}</div>
       <div>Leekono © 2025</div>
