@@ -24,7 +24,7 @@ const CaseCard: FC<CaseType> = (props) => {
 
   const { lng } = useParams();
 
-  const { t } = useTranslation(lng, "product");
+  const { t } = useTranslation(lng as string, "product");
   const onClick = () => {
     router.push(`/${lng}/case/${id}`);
   };

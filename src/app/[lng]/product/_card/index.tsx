@@ -5,7 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 
 import { FC } from "react";
 import classNames from "classnames";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 import { useTranslation } from "@/i18n/client";
 import rentalSrc from "@/assets/images/rental.png";
@@ -20,12 +20,13 @@ import floorSrc from "@/assets/images/floor.png";
 import devilSrc from "@/assets/images/devil.png";
 
 import "./index.css";
+import { LedEnum } from "@/constant";
 
 interface CardProps {
   type: string;
 }
 
-const imgs = {
+const imgs: Record<LedEnum, StaticImageData> = {
   rental: rentalSrc,
   indoor: indoorSrc,
   outdoor: outdoorSrc,
@@ -42,7 +43,7 @@ const prefix = "leekono-product-card";
 const Card: FC<CardProps> = (props) => {
   const history = useRouter();
   const { lng } = useParams();
-  const { t } = useTranslation(lng, "product");
+  const { t } = useTranslation(lng as string, "product");
 
   const { type = "led" } = props;
 
@@ -58,7 +59,11 @@ const Card: FC<CardProps> = (props) => {
   return (
     <div className={prefix}>
       <div>
-        <Image alt="img" className={`${prefix}-img`} src={imgs[type]} />
+        <Image
+          alt="img"
+          className={`${prefix}-img`}
+          src={imgs[type as unknown as LedEnum]}
+        />
       </div>
       <div className={titleClass}>{t(`${type}.title`)}</div>
       <div className={`${prefix}-footer`}>

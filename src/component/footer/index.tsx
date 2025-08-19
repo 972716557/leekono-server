@@ -6,7 +6,8 @@ import { useParams } from "next/navigation";
 
 const LeekonoFooter = () => {
   const { lng } = useParams();
-  const { t } = useTranslation(lng, "common");
+
+  const { t } = useTranslation(lng as string, "common");
 
   return (
     <footer className="flex leading-[2] flex-col items-center p-[32px_10px_20px] text-[12px] text-[#999]">

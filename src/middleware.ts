@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import acceptLanguage from "accept-language";
 import { languages, cookieName } from "./i18n/settings";
 
@@ -9,10 +9,10 @@ export const config = {
   matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
 };
 
-export default async function middleware(req) {
+export default async function middleware(req: NextRequest) {
   let lng;
   if (req.cookies.has(cookieName))
-    lng = acceptLanguage.get(req.cookies.get(cookieName).value);
+    lng = acceptLanguage.get(req.cookies.get(cookieName)?.value);
   if (!lng) lng = acceptLanguage.get(req.headers.get("Accept-Language"));
 
   // Redirect if lng in path is not supported
@@ -27,7 +27,7 @@ export default async function middleware(req) {
   }
 
   if (req.headers.has("referer")) {
-    const refererUrl = new URL(req.headers.get("referer"));
+    const refererUrl = new URL(req.headers.get("referer") ?? "");
     const lngInReferer = languages.find((l) =>
       refererUrl.pathname.startsWith(`/${l}`)
     );

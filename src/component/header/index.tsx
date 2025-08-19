@@ -14,7 +14,7 @@ const MobileHeader = () => {
   const router = useRouter();
   const [visible, setVisible] = useState(false);
   const { lng } = useParams();
-  const { t } = useTranslation(lng, "common");
+  const { t } = useTranslation(lng as string, "common");
   const params = useParams();
   const onClick = () => {
     setVisible(true);

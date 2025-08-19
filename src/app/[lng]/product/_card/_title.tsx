@@ -2,9 +2,9 @@
 import { useTranslation } from "@/i18n/client";
 import { useParams } from "next/navigation";
 
-const Title = ({ id }) => {
+const Title = ({ id }: { id: string }) => {
   const { lng } = useParams();
-  const { t } = useTranslation(lng, "product");
+  const { t } = useTranslation(lng as string, "product");
   return (
     <div>
       {t(id)}

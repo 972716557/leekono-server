@@ -34,6 +34,7 @@ i18next
 
 export function useTranslation(lng: string, ns: string) {
   const i18nextCookie = getCookie(cookieName);
+  // @ts-ignore
   const ret = useTranslationOrg(ns);
   const { i18n } = ret;
   if (runsOnServerSide && lng && i18n.resolvedLanguage !== lng) {
