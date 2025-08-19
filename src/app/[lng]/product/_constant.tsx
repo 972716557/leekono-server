@@ -1,4 +1,4 @@
-import { Image } from "antd-mobile";
+import Image from "next/image";
 import indoor1 from "@/assets/product/indoor/1.jpg";
 import indoor2 from "@/assets/product/indoor/2.jpg";
 import indoor3 from "@/assets/product/indoor/3.jpg";
