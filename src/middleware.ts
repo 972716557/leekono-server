@@ -16,7 +16,6 @@ export default async function middleware(req) {
   // if (!lng) lng = acceptLanguage.get(req.headers.get("Accept-Language"));
   if (!lng) lng = fallbackLng;
 
-  console.log(req.nextUrl.pathname, "middleware", req.nextUrl.locale);
   // Redirect if lng in path is not supported
   const isMatch = languages.some((item) =>
     req.nextUrl.pathname.startsWith(`/${item}`)

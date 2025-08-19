@@ -32,7 +32,6 @@ export default async function RootLayout({
   params,
 }: Readonly<Props>) {
   const { lng } = await params;
-  console.log(lng, "lng111");
   return (
     <html lang={lng}>
       {/* dir={dir(lng)} */}
