@@ -2,7 +2,7 @@ import { Col, Row } from "antd";
 import { LedTypes } from "@/constant";
 
 import Card from "./_card";
-import "./index.css";
+import "./_index.css";
 
 const prefix = "leekono-product";
 const Product = () => {

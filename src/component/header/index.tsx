@@ -3,11 +3,12 @@ import { useState } from "react";
 import { Popup } from "antd-mobile";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { GlobalOutlined, MenuOutlined } from "@ant-design/icons";
+import { MenuOutlined } from "@ant-design/icons";
 import logo from "../../../public/favicon-title.png";
 import { routes } from "@/constant";
 import { useTranslation } from "react-i18next";
 import "./_index.css";
+import Language from "../language";
 const prefix = "leekono-layout-mobile-header";
 const MobileHeader = () => {
   const router = useRouter();
@@ -27,7 +28,7 @@ const MobileHeader = () => {
   };
 
   return (
-    <header className="top-[0] left-[0] right-[0] pd-20 w-full fixed z-100001 sticky bg-white shadow-[0_8px_24px_-2px_rgba(0,0,0,0.05)]">
+    <header className="top-[0] left-[0] right-[0] pd-20 w-full fixed z-1001 sticky bg-white shadow-[0_8px_24px_-2px_rgba(0,0,0,0.05)]">
       <div className="relative flex items-center justify-center h-[50px]">
         <span onTouchEnd={onClick} className="absolute left-[20px] font-[16px]">
           <MenuOutlined />
@@ -36,7 +37,7 @@ const MobileHeader = () => {
           <Image src={logo} alt="logo" className="w-[120px]" />
         </span>
         <span className="absolute right-[20px] font-[16px]">
-          <GlobalOutlined />
+          <Language />
         </span>
       </div>
       <Popup

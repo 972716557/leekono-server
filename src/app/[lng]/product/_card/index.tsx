@@ -1,9 +1,11 @@
+"use client";
 import { Button } from "antd";
 import { RightOutlined } from "@ant-design/icons";
-import { FormattedMessage, history } from "umi";
-import { FC, ReactNode } from "react";
+import { useRouter } from "next/navigation";
+
+import { FC } from "react";
 import classNames from "classnames";
-import useIsMobile from "@/hooks/useIsMobile";
+import Image from "next/image";
 
 import rentalSrc from "@/assets/images/rental.png";
 import outdoorSrc from "@/assets/images/outdoor.png";
@@ -16,7 +18,8 @@ import taxiSrc from "@/assets/images/taxi.png";
 import floorSrc from "@/assets/images/floor.png";
 import devilSrc from "@/assets/images/devil.png";
 
-import "./index.less";
+import "./index.css";
+import { useTranslation } from "react-i18next";
 
 interface CardProps {
   type: string;
@@ -37,36 +40,33 @@ const imgs = {
 
 const prefix = "leekono-product-card";
 const Card: FC<CardProps> = (props) => {
+  const history = useRouter();
+  const { t } = useTranslation();
   const { type = "led" } = props;
 
-  const isMobile = useIsMobile();
   const onClickContactUs = () => {
     history.push("/contact");
   };
 
-  const titleClass = classNames(
-    `${prefix}-title`,
-    isMobile && `${prefix}-title-mobile`
-  );
+  const titleClass = classNames(`${prefix}-title`, `${prefix}-title-mobile`);
 
   const onClickDetail = () => {
-    history.push(`/product/detail?id=${type}`);
+    history.push(`/product/${type}`);
   };
   return (
     <div className={prefix}>
       <div>
-        <img className={`${prefix}-img`} src={imgs[type]} alt="img" />
+        <Image alt="img" className={`${prefix}-img`} src={imgs[type]} />
       </div>
-      <div className={titleClass}>
-        <FormattedMessage id={`${type}.title`} />
-      </div>
+      <div className={titleClass}>{t(`${type}.title`)}</div>
       <div className={`${prefix}-footer`}>
         <Button className={`${prefix}-button`} onClick={onClickContactUs}>
-          <FormattedMessage id="contact" />
+          {t("contact")}
         </Button>
       </div>
       <div className={`${prefix}-detail`} onClick={onClickDetail}>
-        <FormattedMessage id="learnMore" /> <RightOutlined />
+        {t("learnMore")}
+        <RightOutlined />
       </div>
     </div>
   );

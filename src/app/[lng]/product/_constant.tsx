@@ -1,5 +1,4 @@
-import { FormattedMessage } from "umi";
-
+import { Image } from "antd-mobile";
 import indoor1 from "@/assets/product/indoor/1.jpg";
 import indoor2 from "@/assets/product/indoor/2.jpg";
 import indoor3 from "@/assets/product/indoor/3.jpg";
@@ -74,17 +73,17 @@ import devil6 from "@/assets/product/devil/6.jpg";
 export const IndoorColumns = [
   {
     dataIndex: "config",
-    title: <FormattedMessage id="config"></FormattedMessage>,
+    title: <div id="config"></div>,
     key: "config",
     fixed: "left",
     with: 300,
     render: (text: string) => (
       <div>
-        <FormattedMessage id={text}></FormattedMessage>
+        <div id={text}></div>
         {text === "warranty" && (
           <span>
             <span>/(</span>
-            <FormattedMessage id={"year"}></FormattedMessage>
+            <div id={"year"}></div>
             <span>)</span>
           </span>
         )}
@@ -336,17 +335,17 @@ export const IndoorData = [
 export const SoftColumns = [
   {
     dataIndex: "config",
-    title: <FormattedMessage id="config"></FormattedMessage>,
+    title: <div id="config"></div>,
     key: "config",
     fixed: "left",
     with: 300,
     render: (text: string) => (
       <div>
-        <FormattedMessage id={text}></FormattedMessage>
+        <div id={text}></div>
         {text === "warranty" && (
           <span>
             <span>/(</span>
-            <FormattedMessage id={"year"}></FormattedMessage>
+            <div id={"year"}></div>
             <span>)</span>
           </span>
         )}
@@ -567,11 +566,11 @@ const OutdoorColumns = [
     with: 200,
     render: (text: string) => (
       <div>
-        <FormattedMessage id={text}></FormattedMessage>
+        <div id={text}></div>
         {text === "warranty" && (
           <span>
             <span>/(</span>
-            <FormattedMessage id={"year"}></FormattedMessage>
+            <div id={"year"}></div>
             <span>)</span>
           </span>
         )}
@@ -738,11 +737,11 @@ const RentalColumns = [
     with: 200,
     render: (text: string) => (
       <div>
-        <FormattedMessage id={text}></FormattedMessage>
+        <div id={text}></div>
         {text === "warranty" && (
           <span>
             <span>/(</span>
-            <FormattedMessage id={"year"}></FormattedMessage>
+            <div id={"year"}></div>
             <span>)</span>
           </span>
         )}
@@ -894,11 +893,11 @@ const RentalOutdoorColumns = [
     with: 200,
     render: (text: string) => (
       <div>
-        <FormattedMessage id={text}></FormattedMessage>
+        <div id={text}></div>
         {text === "warranty" && (
           <span>
             <span>/(</span>
-            <FormattedMessage id={"year"}></FormattedMessage>
+            <div id={"year"}></div>
             <span>)</span>
           </span>
         )}
@@ -1050,11 +1049,11 @@ const CrystalColumns = [
     with: 200,
     render: (text: string) => (
       <div>
-        <FormattedMessage id={text}></FormattedMessage>
+        <div id={text}></div>
         {text === "warranty" && (
           <span>
             <span>/(</span>
-            <FormattedMessage id={"year"}></FormattedMessage>
+            <div id={"year"}></div>
             <span>)</span>
           </span>
         )}
@@ -1161,11 +1160,11 @@ const TransparentColumns = [
     with: 200,
     render: (text: string) => (
       <div>
-        <FormattedMessage id={text}></FormattedMessage>
+        <div id={text}></div>
         {text === "warranty" && (
           <span>
             <span>/(</span>
-            <FormattedMessage id={"year"}></FormattedMessage>
+            <div id={"year"}></div>
             <span>)</span>
           </span>
         )}
@@ -1266,11 +1265,11 @@ const FloorColumns = [
     with: 200,
     render: (text: string) => (
       <div>
-        <FormattedMessage id={text}></FormattedMessage>
+        <div id={text}></div>
         {text === "warranty" && (
           <span>
             <span>/(</span>
-            <FormattedMessage id={"year"}></FormattedMessage>
+            <div id={"year"}></div>
             <span>)</span>
           </span>
         )}
@@ -1407,17 +1406,17 @@ const FloorData = [
 export const PosterColumns = [
   {
     dataIndex: "config",
-    title: <FormattedMessage id="config"></FormattedMessage>,
+    title: <div id="config"></div>,
     key: "config",
     fixed: "left",
     with: 300,
     render: (text: string) => (
       <div>
-        <FormattedMessage id={text}></FormattedMessage>
+        <div id={text}></div>
         {text === "warranty" && (
           <span>
             <span>/(</span>
-            <FormattedMessage id={"year"}></FormattedMessage>
+            <div id={"year"}></div>
             <span>)</span>
           </span>
         )}
@@ -1648,17 +1647,17 @@ export const PosterData = [
 export const TaxiColumns = [
   {
     dataIndex: "config",
-    title: <FormattedMessage id="config"></FormattedMessage>,
+    title: <div id="config"></div>,
     key: "config",
     fixed: "left",
     with: 300,
     render: (text: string) => (
       <div>
-        <FormattedMessage id={text}></FormattedMessage>
+        <div id={text}></div>
         {text === "warranty" && (
           <span>
             <span>/(</span>
-            <FormattedMessage id={"year"}></FormattedMessage>
+            <div id={"year"}></div>
             <span>)</span>
           </span>
         )}
@@ -1920,17 +1919,17 @@ export const TaxiData = [
 export const DevilColumns = [
   {
     dataIndex: "config",
-    title: <FormattedMessage id="config"></FormattedMessage>,
+    title: <div id="config"></div>,
     key: "config",
     fixed: "left",
     with: 300,
     render: (text: string) => (
       <div>
-        <FormattedMessage id={text}></FormattedMessage>
+        <div id={text}></div>
         {text === "warranty" && (
           <span>
             <span>/(</span>
-            <FormattedMessage id={"year"}></FormattedMessage>
+            <div id={"year"}></div>
             <span>)</span>
           </span>
         )}
@@ -2203,15 +2202,15 @@ export const Products = [
       <>
         <div>
           <div className={`${prefix}-title`}>POSTER SCREEN MODULE</div>
-          <img src={posterCase1} alt="img" />
+          <Image src={posterCase1} alt="img" />
         </div>
         <div>
           <div className={`${prefix}-title`}>POSTER SCREEN MODULE</div>
-          <img src={posterCase1} alt="img" />
+          <Image src={posterCase1} alt="img" />
         </div>
         <div>
           <div className={`${prefix}-title`}>POSTER SCREEN MODULE</div>
-          <img src={posterCase1} alt="img" />
+          <Image src={posterCase1} alt="img" />
         </div>
       </>
     ),
@@ -2219,15 +2218,15 @@ export const Products = [
       <>
         <div>
           <div className={`${prefix}-title`}>POSTER SCREEN MODULE</div>
-          <img src={posterCase1} alt="img" />
+          <Image src={posterCase1} alt="img" />
         </div>
         <div className={`${prefix}-title`}>
           <div>POSTER SCREEN MODULE</div>
-          <img src={posterCase1} alt="img" />
+          <Image src={posterCase1} alt="img" />
         </div>
         <div className={`${prefix}-title`}>
           <div>POSTER SCREEN MODULE</div>
-          <img src={posterCase1} alt="img" />
+          <Image src={posterCase1} alt="img" />
         </div>
       </>
     ),
@@ -2235,15 +2234,15 @@ export const Products = [
       <>
         <div>
           <div className={`${prefix}-title`}>POSTER SCREEN MODULE</div>
-          <img src={posterCase1} alt="img" />
+          <Image src={posterCase1} alt="img" />
         </div>
         <div>
           <div className={`${prefix}-title`}>POSTER SCREEN MODULE</div>
-          <img src={posterCase1} alt="img" />
+          <Image src={posterCase1} alt="img" />
         </div>
         <div>
           <div className={`${prefix}-title`}>POSTER SCREEN MODULE</div>
-          <img src={posterCase1} alt="img" />
+          <Image src={posterCase1} alt="img" />
         </div>
       </>
     ),
