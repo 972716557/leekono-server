@@ -6,7 +6,7 @@ const Title = ({ id }: { id: string }) => {
   const { lng } = useParams();
   const { t } = useTranslation(lng as string, "product");
   return (
-    <div>
+    <div className="break-keep">
       {t(id)}
       {id === "warranty" && (
         <span>
