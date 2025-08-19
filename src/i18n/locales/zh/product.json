@@ -1,0 +1,43 @@
+{
+    "rental": {
+        "title": "租赁屏",
+        "detail": "zhe "
+    },
+    "outdoor": {
+        "title": "户外屏",
+        "detail": "户外屏"
+    },
+    "indoor": {
+        "title": "室内屏",
+        "detail": "室内屏"
+    },
+    "poster": {
+        "title": "海报屏",
+        "detail": "海报屏"
+    },
+    "crystal": {
+        "title": "晶膜屏",
+        "detail": "晶膜屏"
+    },
+    "transparent": {
+        "title": "透明屏",
+        "detail": "透明屏"
+    },
+    "floor": {
+        "title": "地砖屏",
+        "detail": "地砖屏"
+    },
+    "devil": {
+        "title": "恶魔之眼",
+        "detail": "Evil Screen"
+    },
+    "taxi": {
+        "title": "出租车屏",
+        "detail": "Taxi Screen"
+    },
+    "soft": {
+        "title": "柔软屏",
+        "detail": "Soft Screen"
+    },
+  "contact": "联系我们"
+}

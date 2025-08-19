@@ -2,12 +2,14 @@
 import { FC, ReactNode, useRef, useState } from "react";
 import { Popup, Swiper, SwiperRef } from "antd-mobile";
 import { Modal } from "antd";
+import { useParams } from "next/navigation";
 import Image from "next/image";
 
 import "./index.css";
 import { StaticImageData } from "next/image";
 import { RightOutlined } from "@ant-design/icons";
 import { Posters } from "@/constant";
+import { useTranslation } from "@/i18n/client";
 
 export interface SwiperDataType {
   src: StaticImageData;
@@ -29,6 +31,8 @@ const LeekonoSwiper: FC<SwiperProps> = ({
   className,
 }) => {
   const ref = useRef<SwiperRef>(null);
+  const { lng } = useParams();
+  const { t } = useTranslation(lng, "product");
   const [index, setIndex] = useState(0);
   const [popupVisible, setPopupVisible] = useState(false);
 
@@ -76,12 +80,10 @@ const LeekonoSwiper: FC<SwiperProps> = ({
             <div className={`${prefix}-card`}>
               <div className={`${prefix}-card-content`}>
                 <h2 className={`${prefix}-card-title`}>
-                  title
-                  {/* <FormattedMessage id={`${item.type}.title`}></FormattedMessage> */}
+                  {t(`${item.type}.title`)}
                 </h2>
-                <a href={`/product/detail?id=${item.type}`}>
-                  learnMore
-                  {/* <FormattedMessage id="learnMore"></FormattedMessage> */}
+                <a href={`${lng}/product/${item.type}`}>
+                  {t("learnMore")}
                   <RightOutlined />
                 </a>
               </div>

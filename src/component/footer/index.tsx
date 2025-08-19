@@ -1,23 +1,25 @@
-"use se";
+"use client";
+
+import { useTranslation } from "@/i18n/client";
+import Link from "next/link";
+import { useParams } from "next/navigation";
+
 const LeekonoFooter = () => {
+  const { lng } = useParams();
+  const { t } = useTranslation(lng, "common");
+
   return (
-    <footer className="flex justify-center align-center p-[32px_10px_20px] text-[12px] text-[#999]">
+    <footer className="flex leading-[1.5] flex-col items-center p-[32px_10px_20px] text-[12px] text-[#999]">
       <div>
-        {/* <FormattedMessage id="phoneLabel" />:
-        <span className={`${prefix}-footer-blue`}>
-          <FormattedMessage id="phone" />
-        </span> */}
+        {t("phoneLabel")}
+        <span className="color-[#4d84ed]">{t("phone")}</span>
       </div>
-      <div>{/* <FormattedMessage id="email" /> */}</div>
+      <div>{t("email")}</div>
       <div>Leekono © 2025</div>
-      {/* <div>
-        <a href="/#/business-license">
-          <FormattedMessage id="businessLicense" />
-        </a>
+      <div>
+        <Link href={`${lng}/business-license`}>{t("businessLicense")}</Link>
       </div>
-      <div style={{ textAlign: "center" }}>
-        <FormattedMessage id="address" />
-      </div> */}
+      <div style={{ textAlign: "center" }}>{t("address")}</div>
     </footer>
   );
 };

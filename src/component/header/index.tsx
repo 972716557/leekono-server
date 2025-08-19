@@ -6,14 +6,15 @@ import { useParams, useRouter } from "next/navigation";
 import { MenuOutlined } from "@ant-design/icons";
 import logo from "../../../public/favicon-title.png";
 import { routes } from "@/constant";
-import { useTranslation } from "react-i18next";
 import "./_index.css";
 import Language from "../language";
+import { useTranslation } from "@/i18n/client";
 const prefix = "leekono-layout-mobile-header";
 const MobileHeader = () => {
   const router = useRouter();
   const [visible, setVisible] = useState(false);
-  const { t } = useTranslation();
+  const { lng } = useParams();
+  const { t } = useTranslation(lng, "common");
   const params = useParams();
   const onClick = () => {
     setVisible(true);

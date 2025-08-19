@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "antd";
 import { RightOutlined } from "@ant-design/icons";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 import { FC } from "react";
 import classNames from "classnames";
@@ -19,7 +19,7 @@ import floorSrc from "@/assets/images/floor.png";
 import devilSrc from "@/assets/images/devil.png";
 
 import "./index.css";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/i18n/client";
 
 interface CardProps {
   type: string;
@@ -41,7 +41,10 @@ const imgs = {
 const prefix = "leekono-product-card";
 const Card: FC<CardProps> = (props) => {
   const history = useRouter();
-  const { t } = useTranslation();
+  const { lng } = useParams();
+  console.log(lng, "lng");
+  const { t } = useTranslation(lng, "product");
+
   const { type = "led" } = props;
 
   const onClickContactUs = () => {

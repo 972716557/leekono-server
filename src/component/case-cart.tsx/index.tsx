@@ -4,9 +4,9 @@ import { FC } from "react";
 import "./index.css";
 import { CaseType } from "../../app/[lng]/case/_interface";
 import { En_Locale, TW_Locale, ZH_Locale } from "@/constant";
-import { t } from "i18next";
 import { useRouter, useParams } from "next/navigation";
 import Image from "next/image";
+import { useTranslation } from "@/i18n/client";
 
 const prefix = "leekono-case-card";
 const CaseCard: FC<CaseType> = (props) => {
@@ -24,8 +24,9 @@ const CaseCard: FC<CaseType> = (props) => {
 
   const { lng } = useParams();
 
+  const { t } = useTranslation(lng, "product");
   const onClick = () => {
-    router.push(`/case/${id}`);
+    router.push(`/${lng}/case/${id}`);
   };
   const isEN = lng === En_Locale;
   const isTW = lng === TW_Locale;

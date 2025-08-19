@@ -71,16 +71,14 @@ const Home = async ({ params }: Params) => {
           }))}
         />
       </section>
-      <section
-        className={`${prefix}-section ${prefix}-about-us ${prefix}-case`}
-      >
+      <section className="mt-[20px] p-[12px] bg-[#f2f3f5]">
         <div className="mb20">
           <Row justify="space-between" align="middle">
             <Col>
               <h2 className={`${prefix}-title`}>{t("case")}</h2>
             </Col>
             <Col>
-              <Link href="/case">
+              <Link href={`${lng}/case`}>
                 {t("viewAll")}
                 <RightOutlined />
               </Link>
