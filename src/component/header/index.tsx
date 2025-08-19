@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Popup } from "antd-mobile";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { MenuOutlined } from "@ant-design/icons";
 import logo from "../../../public/favicon-title.png";
 import { routes } from "@/constant";
@@ -14,12 +14,13 @@ const MobileHeader = () => {
   const router = useRouter();
   const [visible, setVisible] = useState(false);
   const { t } = useTranslation();
+  const params = useParams();
   const onClick = () => {
     setVisible(true);
   };
 
   const onTouchEnd = (path: string) => {
-    router.push(path);
+    router.push(`/${params.lng}/${path}`);
     setVisible(false);
   };
 

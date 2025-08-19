@@ -1,7 +1,7 @@
 "use client";
 import { GlobalOutlined } from "@ant-design/icons";
 import { Dropdown, MenuProps } from "antd";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 const items = [
   { label: "中文", key: "zh" },
@@ -11,8 +11,14 @@ const items = [
 
 const Language = () => {
   const router = useRouter();
+  const pathname = usePathname();
   const onClick: MenuProps["onClick"] = ({ key }) => {
-    router.push(`/${key}`);
+    const arr = pathname.split("/").filter((item) => !!item);
+    if (arr.length > 1) {
+      router.push(`/${key}/${arr.slice(1).join("/")}`);
+    } else {
+      router.push(`/${key}`);
+    }
   };
 
   return (
