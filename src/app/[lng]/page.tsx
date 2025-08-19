@@ -5,20 +5,18 @@ import { RightOutlined } from "@ant-design/icons";
 import { LedTypes } from "../../constant";
 import LeekonoSwiper from "@/component/swiper";
 
-import { Cases } from "./case/constant";
+import { Cases } from "./case/_constant";
 import poster1 from "@/assets/home/poster1.png";
 import poster2 from "@/assets/home/poster2.png";
-import CaseCard from "./case/card";
+import CaseCard from "../../component/case-cart.tsx";
 import Link from "next/link";
 import LeekonoStatistic from "@/component/statistic";
 import { getTranslation } from "../../i18n";
 import { languages } from "../../i18n/settings";
+import { Params } from "@/types/common";
 
 const prefix = "leekono-home";
 
-interface Params {
-  params: Promise<{ lng: string }>;
-}
 const data = [
   { id: "founded", value: 15, suffix: "" },
   { id: "servingCountries", value: 30, suffix: "+" },

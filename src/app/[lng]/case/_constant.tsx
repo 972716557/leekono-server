@@ -1,3 +1,4 @@
+import Image from "next/image";
 import outdoorCase1and1 from "@/assets/case/outdoor/case1/1.jpg";
 import outdoorCase1and2 from "@/assets/case/outdoor/case1/2.jpg";
 import outdoorCase1and3 from "@/assets/case/outdoor/case1/3.jpg";
@@ -39,7 +40,7 @@ import softCase3and1 from "@/assets/case/soft/case3/1.jpg";
 import softCase3and2 from "@/assets/case/soft/case3/2.jpg";
 import softCase3and3 from "@/assets/case/soft/case3/3.jpg";
 
-import { CaseType } from "./interface";
+import { CaseType } from "./_interface";
 
 const Cases: CaseType[] = [
   {
@@ -61,8 +62,8 @@ const Cases: CaseType[] = [
           walls, advertising spaces, billboards, and posters—helping enterprises
           achieve digital transformation and upgrading.
         </p>
-        <img src={outdoorCase2and1} />
-        <img src={outdoorCase2and2} />
+        <Image alt="img" src={outdoorCase2and1} />
+        <Image alt="img" src={outdoorCase2and2} />
         <p>
           With its highly dynamic and futuristic display effects, Shenzhen Art
           Exhibition Center perfectly presents the vitality of Shenzhen.
@@ -75,8 +76,8 @@ const Cases: CaseType[] = [
           作为数字时代不可或缺的显示终端，P3.91
           LED显示屏的大规模应用已成为趋势。雷科诺推出的LED显示解决方案，通过满足企业运营需求，广泛应用于室外墙、广告位、广告牌、海报等场景，助力企业实现数字化转型与升级。
         </p>
-        <img src={outdoorCase2and1} />
-        <img src={outdoorCase2and2} />
+        <Image alt="img" src={outdoorCase2and1} />
+        <Image alt="img" src={outdoorCase2and2} />
         <p>深圳艺展中心以极具动态感与未来感的展示效果，完美呈现深圳生命力。</p>
       </>
     ),
@@ -87,8 +88,8 @@ const Cases: CaseType[] = [
           顯示屏的大規模應用已成為趨勢。雷科諾推出的 LED
           顯示解決方案，透過滿足企業營運需求，廣泛應用於室外牆、廣告位、廣告牌、海報等場景，助力企業實現數位轉型與升級。
         </p>
-        <img src={outdoorCase2and1} />
-        <img src={outdoorCase2and2} />
+        <Image alt="img" src={outdoorCase2and1} />
+        <Image alt="img" src={outdoorCase2and2} />
         <p>深圳藝展中心以極具動態感與未來感的展示效果，完美呈現深圳生命力。</p>
       </>
     ),
@@ -120,8 +121,8 @@ const Cases: CaseType[] = [
           icons, images, and other information—achieving "all-in-one-screen
           overview."
         </p>
-        <img src={indoorCase1and1} />
-        <img src={indoorCase1and2} />
+        <Image alt="img" src={indoorCase1and1} />
+        <Image alt="img" src={indoorCase1and2} />
         <p>
           In addition, to ensure the perfect implementation of a one-stop
           solution, Leekono's smart conference room display solution integrates
@@ -131,9 +132,9 @@ const Cases: CaseType[] = [
           convenient, and scalable smart conference space for Nanjing ** Co.,
           Ltd.
         </p>
-        <img src={indoorCase1and3} />
-        <img src={indoorCase1and4} />
-        <img src={indoorCase1and5} />
+        <Image alt="img" src={indoorCase1and3} />
+        <Image alt="img" src={indoorCase1and4} />
+        <Image alt="img" src={indoorCase1and5} />
       </>
     ),
     zhNode: (
@@ -145,16 +146,16 @@ const Cases: CaseType[] = [
           的高刷新率，画质清晰细腻，能够直观、高效且全面地展示各类数据、图标、图像等信息，实现了
           “一屏尽览”。
         </p>
-        <img src={indoorCase1and1} />
-        <img src={indoorCase1and2} />
+        <Image alt="img" src={indoorCase1and1} />
+        <Image alt="img" src={indoorCase1and2} />
         <p>
           此外，为确保一站式解决方案的完美构建，雷科诺研发的智能会议室显示解决方案还集成了多种显示与语音控制系统，
           旨在实现会议流程的全程互联、互通、联动与可视化，为南京 **
           有限公司打造了一个高效便捷、可扩展的智能会议空间。
         </p>
-        <img src={indoorCase1and3} />
-        <img src={indoorCase1and4} />
-        <img src={indoorCase1and5} />
+        <Image alt="img" src={indoorCase1and3} />
+        <Image alt="img" src={indoorCase1and4} />
+        <Image alt="img" src={indoorCase1and5} />
       </>
     ),
     twNode: (
@@ -164,16 +165,16 @@ const Cases: CaseType[] = [
           它具備5000:1的高對比度、奈秒級的反應速度以及3840Hz的高刷新率，
           畫質清晰細膩，能夠直觀、高效且全面地展示各類數據、圖示、圖像等資訊，實現了「一屏盡覽」。
         </p>
-        <img src={indoorCase1and1} />
-        <img src={indoorCase1and2} />
+        <Image alt="img" src={indoorCase1and1} />
+        <Image alt="img" src={indoorCase1and2} />
         <p>
           此外，為確保一站式解決方案的完美建構，雷科諾研發的智能會議室顯示解決方案還集成多種顯示與語音控制系統，
           旨在實現會議流程的全程互聯、互通、聯動與視覺化，為南京 **
           有限公司打造了一個高效便捷、可擴展的智能會議空間。
         </p>
-        <img src={indoorCase1and3} />
-        <img src={indoorCase1and4} />
-        <img src={indoorCase1and5} />
+        <Image alt="img" src={indoorCase1and3} />
+        <Image alt="img" src={indoorCase1and4} />
+        <Image alt="img" src={indoorCase1and5} />
       </>
     ),
   },
@@ -188,20 +189,20 @@ const Cases: CaseType[] = [
     time: "2025-03-14",
     enNode: (
       <>
-        <img src={rentalCase1and1} />
-        <img src={rentalCase1and2} />
+        <Image alt="img" src={rentalCase1and1} />
+        <Image alt="img" src={rentalCase1and2} />
       </>
     ),
     zhNode: (
       <>
-        <img src={rentalCase1and1} />
-        <img src={rentalCase1and2} />
+        <Image alt="img" src={rentalCase1and1} />
+        <Image alt="img" src={rentalCase1and2} />
       </>
     ),
     twNode: (
       <>
-        <img src={rentalCase1and1} />
-        <img src={rentalCase1and2} />
+        <Image alt="img" src={rentalCase1and1} />
+        <Image alt="img" src={rentalCase1and2} />
       </>
     ),
   },
@@ -216,17 +217,17 @@ const Cases: CaseType[] = [
     time: "2025-03-07",
     enNode: (
       <>
-        <img src={softCase1and1} alt="soft-case1" />
+        <Image alt="img" src={softCase1and1} alt="soft-case1" />
       </>
     ),
     zhNode: (
       <>
-        <img src={softCase1and1} alt="soft-case1" />
+        <Image alt="img" src={softCase1and1} alt="soft-case1" />
       </>
     ),
     twNode: (
       <>
-        <img src={softCase1and1} alt="soft-case1" />
+        <Image alt="img" src={softCase1and1} alt="soft-case1" />
       </>
     ),
   },
@@ -241,20 +242,20 @@ const Cases: CaseType[] = [
     time: "2025-03-27",
     enNode: (
       <>
-        <img src={indoorCase2and1} />
-        <img src={indoorCase2and2} />
+        <Image alt="img" src={indoorCase2and1} />
+        <Image alt="img" src={indoorCase2and2} />
       </>
     ),
     zhNode: (
       <>
-        <img src={indoorCase2and1} />
-        <img src={indoorCase2and2} />
+        <Image alt="img" src={indoorCase2and1} />
+        <Image alt="img" src={indoorCase2and2} />
       </>
     ),
     twNode: (
       <>
-        <img src={indoorCase2and1} />
-        <img src={indoorCase2and2} />
+        <Image alt="img" src={indoorCase2and1} />
+        <Image alt="img" src={indoorCase2and2} />
       </>
     ),
   },
@@ -269,23 +270,23 @@ const Cases: CaseType[] = [
     time: "2025-02-26",
     enNode: (
       <>
-        <img src={softCase3and1} />
-        <img src={softCase3and2} />
-        <img src={softCase3and3} />
+        <Image alt="img" src={softCase3and1} />
+        <Image alt="img" src={softCase3and2} />
+        <Image alt="img" src={softCase3and3} />
       </>
     ),
     zhNode: (
       <>
-        <img src={softCase3and1} />
-        <img src={softCase3and2} />
-        <img src={softCase3and3} />
+        <Image alt="img" src={softCase3and1} />
+        <Image alt="img" src={softCase3and2} />
+        <Image alt="img" src={softCase3and3} />
       </>
     ),
     twNode: (
       <>
-        <img src={softCase3and1} />
-        <img src={softCase3and2} />
-        <img src={softCase3and3} />
+        <Image alt="img" src={softCase3and1} />
+        <Image alt="img" src={softCase3and2} />
+        <Image alt="img" src={softCase3and3} />
       </>
     ),
   },
@@ -300,17 +301,17 @@ const Cases: CaseType[] = [
     time: "2025-02-21",
     enNode: (
       <>
-        <img src={softCase2and1} />
+        <Image alt="img" src={softCase2and1} />
       </>
     ),
     zhNode: (
       <>
-        <img src={softCase2and1} />
+        <Image alt="img" src={softCase2and1} />
       </>
     ),
     twNode: (
       <>
-        <img src={softCase2and1} />
+        <Image alt="img" src={softCase2and1} />
       </>
     ),
   },
@@ -325,20 +326,20 @@ const Cases: CaseType[] = [
     time: "2025-02-08",
     enNode: (
       <>
-        <img src={indoorCase3and1} />
-        <img src={indoorCase3and2} />
+        <Image alt="img" src={indoorCase3and1} />
+        <Image alt="img" src={indoorCase3and2} />
       </>
     ),
     zhNode: (
       <>
-        <img src={indoorCase3and1} />
-        <img src={indoorCase3and2} />
+        <Image alt="img" src={indoorCase3and1} />
+        <Image alt="img" src={indoorCase3and2} />
       </>
     ),
     twNode: (
       <>
-        <img src={indoorCase3and1} />
-        <img src={indoorCase3and2} />
+        <Image alt="img" src={indoorCase3and1} />
+        <Image alt="img" src={indoorCase3and2} />
       </>
     ),
   },
@@ -358,26 +359,26 @@ const Cases: CaseType[] = [
     time: "2025-02-07",
     enNode: (
       <>
-        <img src={outdoorCase1and1} />
-        <img src={outdoorCase1and2} />
-        <img src={outdoorCase1and3} />
-        <img src={outdoorCase1and4} />
+        <Image alt="img" src={outdoorCase1and1} />
+        <Image alt="img" src={outdoorCase1and2} />
+        <Image alt="img" src={outdoorCase1and3} />
+        <Image alt="img" src={outdoorCase1and4} />
       </>
     ),
     zhNode: (
       <>
-        <img src={outdoorCase1and1} />
-        <img src={outdoorCase1and2} />
-        <img src={outdoorCase1and3} />
-        <img src={outdoorCase1and4} />
+        <Image alt="img" src={outdoorCase1and1} />
+        <Image alt="img" src={outdoorCase1and2} />
+        <Image alt="img" src={outdoorCase1and3} />
+        <Image alt="img" src={outdoorCase1and4} />
       </>
     ),
     twNode: (
       <>
-        <img src={outdoorCase1and1} />
-        <img src={outdoorCase1and2} />
-        <img src={outdoorCase1and3} />
-        <img src={outdoorCase1and4} />
+        <Image alt="img" src={outdoorCase1and1} />
+        <Image alt="img" src={outdoorCase1and2} />
+        <Image alt="img" src={outdoorCase1and3} />
+        <Image alt="img" src={outdoorCase1and4} />
       </>
     ),
   },
@@ -392,20 +393,20 @@ const Cases: CaseType[] = [
     time: "2025-01-21",
     enNode: (
       <>
-        <img src={rentalCase2and1} />
-        <img src={rentalCase2and2} />
+        <Image alt="img" src={rentalCase2and1} />
+        <Image alt="img" src={rentalCase2and2} />
       </>
     ),
     zhNode: (
       <>
-        <img src={rentalCase2and1} />
-        <img src={rentalCase2and2} />
+        <Image alt="img" src={rentalCase2and1} />
+        <Image alt="img" src={rentalCase2and2} />
       </>
     ),
     twNode: (
       <>
-        <img src={rentalCase2and1} />
-        <img src={rentalCase2and2} />
+        <Image alt="img" src={rentalCase2and1} />
+        <Image alt="img" src={rentalCase2and2} />
       </>
     ),
   },
@@ -422,8 +423,8 @@ const Cases: CaseType[] = [
   //     "The outdoor LED display screen project in Meilong Shanghai, Shanghai, China.",
   //   zhNode: (
   //     <>
-  //       <img src={indoorCase3and1} />
-  //       <img src={indoorCase3and2} />
+  //       <Image alt='img' src={indoorCase3and1} />
+  //       <Image alt='img' src={indoorCase3and2} />
   //     </>
   //   ),
   //   twNode: "",
@@ -441,8 +442,8 @@ const Cases: CaseType[] = [
   //     "The outdoor LED display screen project in Meilong Shanghai, Shanghai, China.",
   //   zhNode: (
   //     <>
-  //       <img src={indoorCase3and1} />
-  //       <img src={indoorCase3and2} />
+  //       <Image alt='img' src={indoorCase3and1} />
+  //       <Image alt='img' src={indoorCase3and2} />
   //     </>
   //   ),
   //   twNode: "",

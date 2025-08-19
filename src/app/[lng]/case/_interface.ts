@@ -1,10 +1,11 @@
+import { StaticImageData } from "next/image";
 import { ReactNode } from "react";
 
 export interface CaseType {
   id: string;
   type: string;
-  poster: string;
-  images: string[];
+  poster: StaticImageData;
+  images: StaticImageData[];
   enTitle: string;
   zhTitle: string;
   twTitle: string;

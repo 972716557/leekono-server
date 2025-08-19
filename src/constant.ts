@@ -18,8 +18,8 @@ const routes = [
   { path: "/product", id: "product" },
 ];
 
-const ZH_Locale = "zh-CN";
-const En_Locale = "en-US";
+const ZH_Locale = "zh";
+const En_Locale = "en";
 const TW_Locale = "zh-TW";
 
 type LedEnum =
