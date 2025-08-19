@@ -26,7 +26,7 @@ const MobileHeader = () => {
   };
 
   const onClickHome = () => {
-    router.push("/");
+    router.push(`/${lng}`);
   };
 
   return (

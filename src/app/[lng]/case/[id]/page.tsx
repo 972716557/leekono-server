@@ -4,15 +4,19 @@ import { Cases } from "../_constant";
 
 import "../_index.css";
 import { Params } from "@/types/common";
+import { notFound } from "next/navigation";
 
 const prefix = "leekono-case-detail";
 const Detail = async ({ params }: Params) => {
-  console.log("params", params);
-  const detail = Cases?.find((item) => item.id === "outdoor-case3") ?? {};
+  const detail = Cases?.find((item) => item.id === "outdoor-case3");
   const { lng: locale } = await params;
   const isEN = locale === En_Locale;
   const isTW = locale === TW_Locale;
   const isZH = locale === ZH_Locale;
+
+  if (!detail) {
+    notFound();
+  }
 
   return (
     <div className={prefix}>

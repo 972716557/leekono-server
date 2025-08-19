@@ -10,6 +10,7 @@ import { StaticImageData } from "next/image";
 import { RightOutlined } from "@ant-design/icons";
 import { Posters } from "@/constant";
 import { useTranslation } from "@/i18n/client";
+import Link from "next/link";
 
 export interface SwiperDataType {
   src: StaticImageData;
@@ -82,10 +83,10 @@ const LeekonoSwiper: FC<SwiperProps> = ({
                 <h2 className={`${prefix}-card-title`}>
                   {t(`${item.type}.title`)}
                 </h2>
-                <a href={`${lng}/product/${item.type}`}>
+                <Link href={`${lng}/product/${item.type}`}>
                   {t("learnMore")}
                   <RightOutlined />
-                </a>
+                </Link>
               </div>
               <Image
                 alt="img"

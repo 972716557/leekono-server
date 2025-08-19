@@ -11,10 +11,9 @@ export const config = {
 
 export default async function middleware(req) {
   let lng;
-  // if (req.cookies.has(cookieName))
-  //   lng = acceptLanguage.get(req.cookies.get(cookieName).value);
-  // if (!lng) lng = acceptLanguage.get(req.headers.get("Accept-Language"));
-  if (!lng) lng = fallbackLng;
+  if (req.cookies.has(cookieName))
+    lng = acceptLanguage.get(req.cookies.get(cookieName).value);
+  if (!lng) lng = acceptLanguage.get(req.headers.get("Accept-Language"));
 
   // Redirect if lng in path is not supported
   const isMatch = languages.some((item) =>
@@ -27,15 +26,15 @@ export default async function middleware(req) {
     );
   }
 
-  // if (req.headers.has("referer")) {
-  //   const refererUrl = new URL(req.headers.get("referer"));
-  //   const lngInReferer = languages.find((l) =>
-  //     refererUrl.pathname.startsWith(`/${l}`)
-  //   );
-  //   const response = NextResponse.next();
-  //   if (lngInReferer) response.cookies.set(cookieName, lngInReferer);
-  //   return response;
-  // }
+  if (req.headers.has("referer")) {
+    const refererUrl = new URL(req.headers.get("referer"));
+    const lngInReferer = languages.find((l) =>
+      refererUrl.pathname.startsWith(`/${l}`)
+    );
+    const response = NextResponse.next();
+    if (lngInReferer) response.cookies.set(cookieName, lngInReferer);
+    return response;
+  }
 
   return NextResponse.next();
 }

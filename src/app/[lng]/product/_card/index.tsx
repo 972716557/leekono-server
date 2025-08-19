@@ -7,6 +7,7 @@ import { FC } from "react";
 import classNames from "classnames";
 import Image from "next/image";
 
+import { useTranslation } from "@/i18n/client";
 import rentalSrc from "@/assets/images/rental.png";
 import outdoorSrc from "@/assets/images/outdoor.png";
 import posterSrc from "@/assets/images/poster.png";
@@ -19,7 +20,6 @@ import floorSrc from "@/assets/images/floor.png";
 import devilSrc from "@/assets/images/devil.png";
 
 import "./index.css";
-import { useTranslation } from "@/i18n/client";
 
 interface CardProps {
   type: string;
@@ -42,7 +42,6 @@ const prefix = "leekono-product-card";
 const Card: FC<CardProps> = (props) => {
   const history = useRouter();
   const { lng } = useParams();
-  console.log(lng, "lng");
   const { t } = useTranslation(lng, "product");
 
   const { type = "led" } = props;
@@ -54,7 +53,7 @@ const Card: FC<CardProps> = (props) => {
   const titleClass = classNames(`${prefix}-title`, `${prefix}-title-mobile`);
 
   const onClickDetail = () => {
-    history.push(`/product/${type}`);
+    history.push(`/${lng}/product/${type}`);
   };
   return (
     <div className={prefix}>
@@ -63,7 +62,11 @@ const Card: FC<CardProps> = (props) => {
       </div>
       <div className={titleClass}>{t(`${type}.title`)}</div>
       <div className={`${prefix}-footer`}>
-        <Button className={`${prefix}-button`} onClick={onClickContactUs}>
+        <Button
+          className={`${prefix}-button`}
+          type="primary"
+          onClick={onClickContactUs}
+        >
           {t("contact")}
         </Button>
       </div>

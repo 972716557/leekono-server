@@ -10,11 +10,13 @@ import { Products } from "../_constant";
 
 import "../_index.css";
 import { notFound, useParams } from "next/navigation";
+import { useTranslation } from "@/i18n/client";
 
 const prefix = "leekono-product-detail";
 
 const ProductDetail = () => {
   const { lng, id } = useParams();
+  const { t } = useTranslation(lng, "product");
 
   const isEN = lng === En_Locale;
   const isTW = lng === TW_Locale;
@@ -63,9 +65,7 @@ const ProductDetail = () => {
         />
       </div>
       <div className={`${prefix}-card`}>
-        <h2 className={`${prefix}-title`}>
-          {/* <FormattedMessage id={`${detail.id}.title`}></FormattedMessage> */}
-        </h2>
+        <h2 className={`${prefix}-title`}>{t(`${detail.id}.title`)}</h2>
         <div className={`${prefix}-content`}>
           {isEN && detail.enDescription}
           {isTW && detail.twDescription}
@@ -73,9 +73,7 @@ const ProductDetail = () => {
         </div>
       </div>
       <div className={`${prefix}-card`}>
-        <h2 className={`${prefix}-title`}>
-          {/* <FormattedMessage id="productDetails"></FormattedMessage> */}
-        </h2>
+        <h2 className={`${prefix}-title`}>{t("productDetails")}</h2>
         <Table
           scroll={{ x: "auto" }}
           columns={detail.columns}
@@ -84,9 +82,7 @@ const ProductDetail = () => {
         />
       </div>
       <div className={`${prefix}-card ${prefix}-advantage`}>
-        <h2 className={`${prefix}-title`}>
-          {/* <FormattedMessage id="productAdvantage"></FormattedMessage> */}
-        </h2>
+        <h2 className={`${prefix}-title`}>{t("productAdvantage")}</h2>
         {isEN && detail.enAdvantage}
         {isTW && detail.twAdvantage}
         {isZH && detail.zhAdvantage}

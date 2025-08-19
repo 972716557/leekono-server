@@ -217,17 +217,17 @@ const Cases: CaseType[] = [
     time: "2025-03-07",
     enNode: (
       <>
-        <Image alt="img" src={softCase1and1} alt="soft-case1" />
+        <Image alt="img" src={softCase1and1} />
       </>
     ),
     zhNode: (
       <>
-        <Image alt="img" src={softCase1and1} alt="soft-case1" />
+        <Image alt="img" src={softCase1and1} />
       </>
     ),
     twNode: (
       <>
-        <Image alt="img" src={softCase1and1} alt="soft-case1" />
+        <Image alt="img" src={softCase1and1} />
       </>
     ),
   },

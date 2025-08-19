@@ -57,10 +57,10 @@ const Home = async ({ params }: Params) => {
             <h2 className={`${prefix}-title`}>{t("product")}</h2>
           </Col>
           <Col>
-            <a href="/product">
+            <Link href={`/${lng}/product`}>
               {t("viewAll")}
               <RightOutlined />
-            </a>
+            </Link>
           </Col>
         </Row>
         <LeekonoSwiper
