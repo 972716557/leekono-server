@@ -7,9 +7,13 @@ import { Params } from "@/types/common";
 import { notFound } from "next/navigation";
 
 const prefix = "leekono-case-detail";
-const Detail = async ({ params }: Params) => {
-  const detail = Cases?.find((item) => item.id === "outdoor-case3");
-  const { lng: locale } = await params;
+const Detail = async ({
+  params,
+}: {
+  params: Promise<{ id: string; lng: string }>;
+}) => {
+  const { id, lng: locale } = await params;
+  const detail = Cases?.find((item) => item.id === id);
   const isEN = locale === En_Locale;
   const isTW = locale === TW_Locale;
   const isZH = locale === ZH_Locale;
