@@ -1,69 +1,20 @@
-"use client";
-import { Table } from "antd";
-import { ImageViewer, Swiper } from "antd-mobile";
-import Image, { StaticImageData } from "next/image";
-import { useState } from "react";
-import { notFound, useParams } from "next/navigation";
-
-// import { En_Locale, TW_Locale, ZH_Locale } from "@/constant";
-import { useTranslation } from "@/i18n/client";
+import { TempData } from "@/types/common";
+import { languages } from "@/i18n/settings";
 
 import { Products } from "../_constant";
-
+import LeekonoSwiper from "../_swiper";
 import "../_index.css";
 
 const prefix = "leekono-product-detail";
 
-const ProductDetail = () => {
-  const { lng, id } = useParams();
-  const { t } = useTranslation(lng as string, "product");
-
+const ProductDetail = async () => {
   // const isEN = lng === En_Locale;
   // const isTW = lng === TW_Locale;
   // const isZH = lng === ZH_Locale;
-  const [visible, setVisible] = useState(false);
-
-  const detail = Products.find((item) => item.id === id);
-  const [src, setSrc] = useState<StaticImageData>();
-
-  if (!detail) {
-    notFound();
-  }
-  const onClick = ({ src }: { src: string }) => {
-    setSrc(src as unknown as StaticImageData);
-    setVisible(true);
-  };
 
   return (
     <div className={prefix}>
-      <div className={`${prefix}-swiper`}>
-        <Swiper
-          indicator={(total, current) => (
-            <div className={`${prefix}-swiper-indicator`}>
-              {`${current + 1} / ${total}`}
-            </div>
-          )}
-        >
-          {Object.values(detail.images).map((item, index) => (
-            <Swiper.Item key={index}>
-              <Image
-                alt="img"
-                src={item}
-                onClick={() => {
-                  onClick(item);
-                }}
-              />
-            </Swiper.Item>
-          ))}
-        </Swiper>
-        <ImageViewer
-          image={src as unknown as string}
-          visible={visible}
-          onClose={() => {
-            setVisible(false);
-          }}
-        />
-      </div>
+      <LeekonoSwiper />
       {/* <div className={`${prefix}-card`}>
         <h2 className={`${prefix}-title`}>{t(`${detail.id}.title`)}</h2>
         <div className={`${prefix}-content`}>
@@ -72,15 +23,7 @@ const ProductDetail = () => {
           {isZH && detail.zhDescription}
         </div>
       </div> */}
-      <div className={`${prefix}-card`}>
-        <h2 className={`${prefix}-title`}>{t("productDetails")}</h2>
-        <Table
-          scroll={{ x: "auto" }}
-          columns={detail.columns}
-          dataSource={detail.data}
-          pagination={false}
-        />
-      </div>
+
       {/* <div className={`${prefix}-card ${prefix}-advantage`}>
         <h2 className={`${prefix}-title`}>{t("productAdvantage")}</h2>
         {isEN && detail.enAdvantage}
@@ -90,4 +33,17 @@ const ProductDetail = () => {
     </div>
   );
 };
+
+export async function generateStaticParams() {
+  const lngs = languages.map((item) => ({
+    lng: item,
+  }));
+  const res: TempData[] = [];
+  lngs.forEach((item) => {
+    Products.forEach((caseData) => {
+      res.push({ ...item, id: caseData.id });
+    });
+  });
+  return res;
+}
 export default ProductDetail;

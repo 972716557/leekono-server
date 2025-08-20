@@ -13,6 +13,7 @@ import { Cases } from "./case/_constant";
 import CaseCard from "../../component/case-cart.tsx";
 import { getTranslation } from "../../i18n";
 import { LedTypes } from "../../constant";
+import { languages } from "@/i18n/settings";
 
 const prefix = "leekono-home";
 
@@ -96,4 +97,9 @@ const Home = async ({ params }: Params) => {
   );
 };
 
+export async function generateStaticParams() {
+  return languages.map((item) => ({
+    lng: item,
+  }));
+}
 export default Home;

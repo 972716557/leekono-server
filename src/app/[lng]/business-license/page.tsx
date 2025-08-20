@@ -1,6 +1,7 @@
 import businessLicenseEN from "@/assets/images/license-en.png";
 import businessLicenseZH from "@/assets/images/license-zh.png";
 import { En_Locale } from "@/constant";
+import { languages } from "@/i18n/settings";
 import { Params } from "@/types/common";
 import Image from "next/image";
 
@@ -17,4 +18,10 @@ const BusinessLicense = async ({ params }: Params) => {
     </div>
   );
 };
+
+export async function generateStaticParams() {
+  return languages.map((item) => ({
+    lng: item,
+  }));
+}
 export default BusinessLicense;

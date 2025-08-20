@@ -1,6 +1,7 @@
 import { Params } from "@/types/common";
 import "./index.css";
 import { getTranslation } from "@/i18n";
+import { languages } from "@/i18n/settings";
 const prefix = "leekono-contact";
 
 const Contact = async ({ params }: Params) => {
@@ -24,4 +25,9 @@ const Contact = async ({ params }: Params) => {
     </div>
   );
 };
+export async function generateStaticParams() {
+  return languages.map((item) => ({
+    lng: item,
+  }));
+}
 export default Contact;

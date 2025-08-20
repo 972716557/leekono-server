@@ -2,6 +2,7 @@ import { getTranslation } from "@/i18n";
 import { Params } from "@/types/common";
 import React from "react";
 import "./_index.css";
+import { languages } from "@/i18n/settings";
 
 export default async function Page({ params }: Params) {
   const { lng } = await params;
@@ -12,4 +13,9 @@ export default async function Page({ params }: Params) {
       <div className="text-gray-100 p-[20px] text-xl">{t("mobileTip")}</div>
     </div>
   );
+}
+export async function generateStaticParams() {
+  return languages.map((item) => ({
+    lng: item,
+  }));
 }

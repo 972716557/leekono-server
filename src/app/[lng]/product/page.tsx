@@ -3,6 +3,7 @@ import { LedTypes } from "@/constant";
 
 import Card from "./_card";
 import "./_index.css";
+import { languages } from "@/i18n/settings";
 
 const prefix = "leekono-product";
 const Product = () => {
@@ -18,4 +19,10 @@ const Product = () => {
     </div>
   );
 };
+
+export async function generateStaticParams() {
+  return languages.map((item) => ({
+    lng: item,
+  }));
+}
 export default Product;

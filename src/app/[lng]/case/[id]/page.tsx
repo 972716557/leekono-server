@@ -5,6 +5,8 @@ import { En_Locale, TW_Locale, ZH_Locale } from "@/constant";
 import { Cases } from "../_constant";
 
 import "../_index.css";
+import { languages } from "@/i18n/settings";
+import { TempData } from "@/types/common";
 
 const prefix = "leekono-case-detail";
 const Detail = async ({
@@ -38,4 +40,18 @@ const Detail = async ({
     </div>
   );
 };
+
+export async function generateStaticParams() {
+  const lngs = languages.map((item) => ({
+    lng: item,
+  }));
+  const res: TempData[] = [];
+  lngs.forEach((item) => {
+    Cases.forEach((caseData) => {
+      res.push({ ...item, id: caseData.id });
+    });
+  });
+  return res;
+}
+
 export default Detail;
