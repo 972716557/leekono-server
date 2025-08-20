@@ -18,7 +18,7 @@ const LeekonoFooter = () => {
       <div>{t("email")}</div>
       <div>Leekono © 2025</div>
       <div>
-        <Link href={`${lng}/business-license`}>{t("businessLicense")}</Link>
+        <Link href="/business-license">{t("businessLicense")}</Link>
       </div>
       <div style={{ textAlign: "center" }}>{t("address")}</div>
     </footer>

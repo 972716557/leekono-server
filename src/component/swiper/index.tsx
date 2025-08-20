@@ -83,7 +83,7 @@ const LeekonoSwiper: FC<SwiperProps> = ({
                 <h2 className={`${prefix}-card-title`}>
                   {t(`${item.type}.title`)}
                 </h2>
-                <Link href={`${lng}/product/${item.type}`}>
+                <Link href={`/product/${item.type}`}>
                   {t("learnMore")}
                   <RightOutlined />
                 </Link>

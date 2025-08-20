@@ -57,7 +57,7 @@ const Home = async ({ params }: Params) => {
             <h2 className={`${prefix}-title`}>{t("product")}</h2>
           </Col>
           <Col>
-            <Link href={`/${lng}/product`}>
+            <Link href="/product">
               {t("viewAll")}
               <RightOutlined />
             </Link>
@@ -78,7 +78,7 @@ const Home = async ({ params }: Params) => {
               <h2 className={`${prefix}-title`}>{t("case")}</h2>
             </Col>
             <Col>
-              <Link href={`${lng}/case`}>
+              <Link href="/case">
                 {t("viewAll")}
                 <RightOutlined />
               </Link>

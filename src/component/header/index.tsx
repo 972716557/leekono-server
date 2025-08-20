@@ -4,29 +4,31 @@ import { Popup } from "antd-mobile";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import { MenuOutlined } from "@ant-design/icons";
-import logo from "../../../public/favicon-title.png";
-import { routes } from "@/constant";
-import "./_index.css";
-import Language from "../language";
+
 import { useTranslation } from "@/i18n/client";
+import { routes } from "@/constant";
+
+import Language from "../language";
+import logo from "../../../public/favicon-title.png";
+import "./_index.css";
+
 const prefix = "leekono-layout-mobile-header";
 const MobileHeader = () => {
   const router = useRouter();
   const [visible, setVisible] = useState(false);
   const { lng } = useParams();
   const { t } = useTranslation(lng as string, "common");
-  const params = useParams();
   const onClick = () => {
     setVisible(true);
   };
 
   const onTouchEnd = (path: string) => {
-    router.push(`/${params.lng}/${path}`);
+    router.push(path);
     setVisible(false);
   };
 
   const onClickHome = () => {
-    router.push(`/${lng}`);
+    router.push("/");
   };
 
   return (
