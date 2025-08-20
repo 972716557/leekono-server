@@ -7,7 +7,6 @@ import crystalSrc from "@/assets/images/crystal.png";
 import softSrc from "@/assets/images/soft.png";
 import taxiSrc from "@/assets/images/taxi.png";
 import floorSrc from "@/assets/images/floor.png";
-import devilSrc from "@/assets/images/devil.png";
 import { StaticImageData } from "next/image";
 
 const routes = [
@@ -30,7 +29,6 @@ export type LedEnum =
   | "poster"
   | "crystal"
   | "transparent"
-  | "devil"
   | "taxi"
   | "floor";
 
@@ -42,7 +40,6 @@ const LedTypes: LedEnum[] = [
   "poster",
   "crystal",
   "transparent",
-  "devil",
   "taxi",
   "floor",
 ];
@@ -54,7 +51,6 @@ const Posters: Record<LedEnum, StaticImageData> = {
   crystal: crystalSrc,
   transparent: transparentSrc,
   soft: softSrc,
-  devil: devilSrc,
   taxi: taxiSrc,
   floor: floorSrc,
 };

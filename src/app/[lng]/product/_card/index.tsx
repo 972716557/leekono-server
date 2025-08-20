@@ -17,7 +17,6 @@ import crystalSrc from "@/assets/images/crystal.png";
 import softSrc from "@/assets/images/soft.png";
 import taxiSrc from "@/assets/images/taxi.png";
 import floorSrc from "@/assets/images/floor.png";
-import devilSrc from "@/assets/images/devil.png";
 
 import "./index.css";
 import { LedEnum } from "@/constant";
@@ -36,7 +35,6 @@ const imgs: Record<LedEnum, StaticImageData> = {
   taxi: taxiSrc,
   soft: softSrc,
   floor: floorSrc,
-  devil: devilSrc,
 };
 
 const prefix = "leekono-product-card";
