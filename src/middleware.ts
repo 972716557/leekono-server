@@ -10,6 +10,12 @@ export const config = {
 };
 
 export default async function middleware(req: NextRequest) {
+  const ua = req.headers.get("user-agent") ?? "";
+  const isMobile =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone|Opera Mini|IEMobile|Mobile/i.test(
+      ua
+    );
+
   let lng;
   if (req.cookies.has(cookieName))
     lng = acceptLanguage.get(req.cookies.get(cookieName)?.value);
@@ -19,6 +25,10 @@ export default async function middleware(req: NextRequest) {
   const isMatch = languages.some((item) =>
     req.nextUrl.pathname.startsWith(`/${item}`)
   );
+
+  if (!isMobile && !isMatch) {
+    return NextResponse.redirect(new URL(`/${lng}/warning`, req.url));
+  }
 
   if (!isMatch) {
     return NextResponse.redirect(

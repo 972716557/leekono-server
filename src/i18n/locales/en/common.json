@@ -1,14 +1,15 @@
 {
-    "home": "Home",
-    "companyName": "Shenzhen Leekono Optoelectronics Technology Co., Ltd",
-    "aboutUs": "About Us",
-    "case": "Case",
-    "contact": "Contact Us",
-    "emailLabel": "Email",
-    "phoneLabel": "Phone Number & WhatsApp & WeChat",
-    "businessLicense": "Business License",
-    "email": "aria_leekono@foxmail.com",
-    "phone": "+86 19168744682",
-    "address":"3rd Floor, No. 6, Jilong Road, Taiwan Industrial Village, Luozu Community, Shiyan Street, Baoan District, Shenzhen",
-    "product": "Product"
+  "home": "Home",
+  "companyName": "Shenzhen Leekono Optoelectronics Technology Co., Ltd",
+  "aboutUs": "About Us",
+  "case": "Case",
+  "contact": "Contact Us",
+  "emailLabel": "Email",
+  "phoneLabel": "Phone Number & WhatsApp & WeChat",
+  "businessLicense": "Business License",
+  "email": "aria_leekono@foxmail.com",
+  "phone": "+86 19168744682",
+  "mobileTip": "For the best experience,please view this page on a mobile device.",
+  "address": "3rd Floor, No. 6, Jilong Road, Taiwan Industrial Village, Luozu Community, Shiyan Street, Baoan District, Shenzhen",
+  "product": "Product"
 }

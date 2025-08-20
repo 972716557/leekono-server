@@ -1,14 +1,15 @@
 {
-    "home": "首頁",
-    "companyName": "深圳市雷科诺光电科技有限公司",
-    "aboutUs": "關於我們",
-    "case": "案例",
-    "contact": "聯係我們",
-    "emailLabel": "郵箱",
-    "phoneLabel": "電話號碼 & WhatsApp & 微信",
-    "businessLicense": "營業執照",
-    "address":"深圳市宝安区石岩街道罗租社区台湾工业村基隆路6号三层",
-    "email": "aria_leekono@foxmail.com",
-    "phone": "+86 19168744682",
-    "product": "產品"
+  "home": "首頁",
+  "companyName": "深圳市雷科诺光电科技有限公司",
+  "aboutUs": "關於我們",
+  "case": "案例",
+  "contact": "聯係我們",
+  "emailLabel": "郵箱",
+  "phoneLabel": "電話號碼 & WhatsApp & 微信",
+  "businessLicense": "營業執照",
+  "address": "深圳市宝安区石岩街道罗租社区台湾工业村基隆路6号三层",
+  "email": "aria_leekono@foxmail.com",
+  "phone": "+86 19168744682",
+  "mobileTip": "為獲得最佳體驗，請在移動設備上查看此頁面。",
+  "product": "產品"
 }
