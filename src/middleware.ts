@@ -15,7 +15,6 @@ export default async function middleware(req: NextRequest) {
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone|Opera Mini|IEMobile|Mobile/i.test(
       ua
     );
-
   let lng;
   if (req.cookies.has(cookieName))
     lng = acceptLanguage.get(req.cookies.get(cookieName)?.value);
@@ -26,7 +25,7 @@ export default async function middleware(req: NextRequest) {
     req.nextUrl.pathname.startsWith(`/${item}`)
   );
 
-  if (!isMobile && !isMatch) {
+  if (!isMobile && !req.nextUrl.pathname?.includes("/warning")) {
     return NextResponse.redirect(new URL(`/${lng}/warning`, req.url));
   }
 
