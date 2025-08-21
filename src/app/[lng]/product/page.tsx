@@ -1,11 +1,16 @@
 import { Col, Row } from "antd";
 import { LedTypes } from "@/constant";
+import { Metadata } from "next";
 
 import Card from "./_card";
 import "./_index.css";
 import { languages } from "@/i18n/settings";
 
 const prefix = "leekono-product";
+export const metadata: Metadata = {
+  title: "Products",
+  description: "A leading LED technology company.",
+};
 const Product = () => {
   return (
     <div className={prefix}>

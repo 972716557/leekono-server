@@ -7,8 +7,14 @@ import { Cases } from "../_constant";
 import "../_index.css";
 import { languages } from "@/i18n/settings";
 import { TempData } from "@/types/common";
+import { Metadata } from "next";
 
 const prefix = "leekono-case-detail";
+
+export const metadata: Metadata = {
+  title: "Case Detail",
+  description: "A leading LED technology company.",
+};
 const Detail = async ({
   params,
 }: {

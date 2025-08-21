@@ -13,8 +13,8 @@ const Case = () => {
 };
 
 export const metadata: Metadata = {
-  title: "...",
-  description: "...",
+  title: "Cases",
+  description: "A leading LED technology company.",
 };
 
 export async function generateStaticParams() {

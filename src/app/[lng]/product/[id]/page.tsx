@@ -4,8 +4,14 @@ import { languages } from "@/i18n/settings";
 import { Products } from "../_constant";
 import LeekonoSwiper from "../_swiper";
 import "../_index.css";
+import { Metadata } from "next";
 
 const prefix = "leekono-product-detail";
+
+export const metadata: Metadata = {
+  title: "Product Detail",
+  description: "A leading LED technology company.",
+};
 
 const ProductDetail = async () => {
   // const isEN = lng === En_Locale;

@@ -3,6 +3,7 @@ import businessLicenseZH from "@/assets/images/license-zh.png";
 import { En_Locale } from "@/constant";
 import { languages } from "@/i18n/settings";
 import { Params } from "@/types/common";
+import { Metadata } from "next";
 import Image from "next/image";
 
 const BusinessLicense = async ({ params }: Params) => {
@@ -19,6 +20,10 @@ const BusinessLicense = async ({ params }: Params) => {
   );
 };
 
+export const metadata: Metadata = {
+  title: "Business License",
+  description: "A leading LED technology company.",
+};
 export async function generateStaticParams() {
   return languages.map((item) => ({
     lng: item,

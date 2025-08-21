@@ -2,7 +2,13 @@ import { Params } from "@/types/common";
 import "./index.css";
 import { getTranslation } from "@/i18n";
 import { languages } from "@/i18n/settings";
+import { Metadata } from "next";
 const prefix = "leekono-contact";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description: "A leading LED technology company.",
+};
 
 const Contact = async ({ params }: Params) => {
   const { lng } = await params;
