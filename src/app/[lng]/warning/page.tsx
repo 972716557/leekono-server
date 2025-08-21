@@ -1,8 +1,10 @@
-import { getTranslation } from "@/i18n";
-import { Params } from "@/types/common";
 import React from "react";
-import "./_index.css";
+
+import { getTranslation } from "@/i18n";
 import { languages } from "@/i18n/settings";
+import { Params } from "@/types/common";
+
+import "./_index.css";
 
 export default async function Page({ params }: Params) {
   const { lng } = await params;
@@ -18,4 +20,17 @@ export async function generateStaticParams() {
   return languages.map((item) => ({
     lng: item,
   }));
+}
+
+export async function generateMetadata({ params }: Params) {
+  const { lng } = await params;
+  const { t } = await getTranslation(lng, "common");
+
+  // 根据语言返回不同的元数据
+  const metadata = {
+    title: t("warning.title"),
+    description: t("warning.description"),
+  };
+
+  return metadata;
 }

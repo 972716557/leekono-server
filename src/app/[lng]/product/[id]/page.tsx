@@ -1,17 +1,12 @@
-import { TempData } from "@/types/common";
+import { Params, TempData } from "@/types/common";
 import { languages } from "@/i18n/settings";
+import { getTranslation } from "@/i18n";
 
 import { Products } from "../_constant";
 import LeekonoSwiper from "../_swiper";
 import "../_index.css";
-import { Metadata } from "next";
 
 const prefix = "leekono-product-detail";
-
-export const metadata: Metadata = {
-  title: "Product Detail",
-  description: "A leading LED technology company.",
-};
 
 const ProductDetail = async () => {
   // const isEN = lng === En_Locale;
@@ -52,4 +47,18 @@ export async function generateStaticParams() {
   });
   return res;
 }
+
+export async function generateMetadata({ params }: Params) {
+  const { lng } = await params;
+  const { t } = await getTranslation(lng, "common");
+
+  // 根据语言返回不同的元数据
+  const metadata = {
+    title: t("productMetadata.detail"),
+    description: t("productMetadata.description"),
+  };
+
+  return metadata;
+}
+
 export default ProductDetail;

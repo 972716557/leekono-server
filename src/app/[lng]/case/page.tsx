@@ -1,7 +1,10 @@
-import "./_index.css";
 import { languages } from "@/i18n/settings";
-import { Metadata } from "next";
+import { getTranslation } from "@/i18n";
+import { Params } from "@/types/common";
+
 import Card from "./_card";
+import "./_index.css";
+
 const prefix = "leekono-case";
 
 const Case = () => {
@@ -12,10 +15,18 @@ const Case = () => {
   );
 };
 
-export const metadata: Metadata = {
-  title: "Cases",
-  description: "A leading LED technology company.",
-};
+export async function generateMetadata({ params }: Params) {
+  const { lng } = await params;
+  const { t } = await getTranslation(lng, "common");
+
+  // 根据语言返回不同的元数据
+  const metadata = {
+    title: t("caseMetadata.title"),
+    description: t("productMetadata.description"),
+  };
+
+  return metadata;
+}
 
 export async function generateStaticParams() {
   return languages.map((item) => ({

@@ -10,6 +10,20 @@
   "address": "深圳市宝安区石岩街道罗租社区台湾工业村基隆路6号三层",
   "email": "aria_leekono@foxmail.com",
   "phone": "+86 19168744682",
+  "warning": {
+    "title": "友情提示",
+    "description": "為獲得最佳體驗，請在移動設備上查看此頁面。"
+  },
+  "productMetadata": {
+    "title": "產品分類",
+    "description": "我哋提供種類繁多嘅優質產品，質量上乘，滿足你嘅各種需求。",
+    "detail": "產品詳情"
+  },
+  "caseMetadata": {
+    "title": "案例",
+    "detail": "案例詳情",
+    "description": "呢啲係嚟自各个唔同嘅国家、地区嘅案例。"
+  },
   "mobileTip": "為獲得最佳體驗，請在移動設備上查看此頁面。",
   "product": "產品"
 }

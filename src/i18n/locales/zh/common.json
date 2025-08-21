@@ -11,5 +11,19 @@
   "email": "aria_leekono@foxmail.com",
   "phone": "+86 19168744682",
   "mobileTip": "为获得最佳体验，请在移动设备上查看此页面。",
+  "warning": {
+    "title": "友情提示",
+    "description": "为获得最佳体验，请在移动设备上查看此页面。"
+  },
+  "productMetadata": {
+    "title": "产品分类",
+    "detail": "产品详情",
+    "description": "我们提供种类繁多的优质产品，质量上乘，满足您的各种需求。"
+  },
+  "caseMetadata": {
+    "title": "案例",
+    "detail": "案例详情",
+    "description": "这是来自各个不同的国家、地区的案例。"
+  },
   "product": "产品"
 }

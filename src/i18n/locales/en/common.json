@@ -11,5 +11,19 @@
   "phone": "+86 19168744682",
   "mobileTip": "For the best experience,please view this page on a mobile device.",
   "address": "3rd Floor, No. 6, Jilong Road, Taiwan Industrial Village, Luozu Community, Shiyan Street, Baoan District, Shenzhen",
+  "warning": {
+    "title": "Friendly Reminder",
+    "description": "For the best experience,please view this page on a mobile device."
+  },
+  "productMetadata": {
+    "title": "Products",
+    "detail": "Product Detail",
+    "description": "We offer a wide variety of high-quality products to meet all your needs."
+  },
+  "caseMetadata": {
+    "title": "Cases",
+    "detail": "Case Detail",
+    "description": "This is a collection of cases from various countries and regions."
+  },
   "product": "Product"
 }

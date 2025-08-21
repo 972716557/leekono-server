@@ -1,16 +1,24 @@
 import { Col, Row } from "antd";
 import { LedTypes } from "@/constant";
-import { Metadata } from "next";
-
+import { getTranslation } from "@/i18n";
+import { languages } from "@/i18n/settings";
+import { Params } from "@/types/common";
 import Card from "./_card";
 import "./_index.css";
-import { languages } from "@/i18n/settings";
 
 const prefix = "leekono-product";
-export const metadata: Metadata = {
-  title: "Products",
-  description: "A leading LED technology company.",
-};
+export async function generateMetadata({ params }: Params) {
+  const { lng } = await params;
+  const { t } = await getTranslation(lng, "common");
+
+  // 根据语言返回不同的元数据
+  const metadata = {
+    title: t("caseMetadata.title"),
+    description: t("caseMetadata.description"),
+  };
+
+  return metadata;
+}
 const Product = () => {
   return (
     <div className={prefix}>

@@ -1,20 +1,28 @@
 import { notFound } from "next/navigation";
 
 import { En_Locale, TW_Locale, ZH_Locale } from "@/constant";
+import { languages } from "@/i18n/settings";
+import { Params, TempData } from "@/types/common";
+import { getTranslation } from "@/i18n";
 
 import { Cases } from "../_constant";
 
 import "../_index.css";
-import { languages } from "@/i18n/settings";
-import { TempData } from "@/types/common";
-import { Metadata } from "next";
 
 const prefix = "leekono-case-detail";
 
-export const metadata: Metadata = {
-  title: "Case Detail",
-  description: "A leading LED technology company.",
-};
+export async function generateMetadata({ params }: Params) {
+  const { lng } = await params;
+  const { t } = await getTranslation(lng, "common");
+
+  // 根据语言返回不同的元数据
+  const metadata = {
+    title: t("caseMetadata.detail"),
+    description: t("caseMetadata.description"),
+  };
+
+  return metadata;
+}
 const Detail = async ({
   params,
 }: {
