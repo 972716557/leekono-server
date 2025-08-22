@@ -12,7 +12,7 @@ import LeekonoStatistic from "@/component/statistic";
 import { Cases } from "./case/_constant";
 import CaseCard from "../../component/case-cart.tsx";
 import { getTranslation } from "../../i18n";
-import { LedTypes } from "../../constant";
+import { LedTypes, WebSiteData } from "../../constant";
 import { languages } from "@/i18n/settings";
 
 const prefix = "leekono-home";
@@ -102,4 +102,21 @@ export async function generateStaticParams() {
     lng: item,
   }));
 }
+
+export async function generateMetadata({ params }: Params) {
+  const { lng } = await params;
+  const { t } = await getTranslation(lng, "common");
+
+  // 根据语言返回不同的元数据
+  const metadata = {
+    metadataBase: new URL(WebSiteData.url),
+    title: t("home"),
+    description: t("companyName"),
+    icons: "/favicon.ico",
+    image: WebSiteData.logo,
+  };
+
+  return metadata;
+}
+
 export default Home;

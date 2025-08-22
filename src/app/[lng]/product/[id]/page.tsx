@@ -41,6 +41,7 @@ export async function generateMetadata({ params }: Params) {
   const metadata = {
     title: t(`${productId}.title`),
     description: t(`${productId}.description`),
+    icons: "/favicon.ico",
     metadataBase: new URL(WebSiteData.url),
     openGraph: {
       title: t("productMetadata.title"),

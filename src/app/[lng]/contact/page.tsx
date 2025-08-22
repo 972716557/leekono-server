@@ -3,12 +3,8 @@ import "./index.css";
 import { getTranslation } from "@/i18n";
 import { languages } from "@/i18n/settings";
 import { Metadata } from "next";
+import { WebSiteData } from "@/constant";
 const prefix = "leekono-contact";
-
-export const metadata: Metadata = {
-  title: "Contact Us",
-  description: "A leading LED technology company.",
-};
 
 const Contact = async ({ params }: Params) => {
   const { lng } = await params;
@@ -36,4 +32,34 @@ export async function generateStaticParams() {
     lng: item,
   }));
 }
+
+export async function generateMetadata({ params }: Params) {
+  const { lng, id } = await params;
+  const { t } = await getTranslation(lng, "common");
+
+  // 根据语言返回不同的元数据
+  const metadata = {
+    title: t("contact"),
+    description: t("companyName"),
+    icons: "/favicon.ico",
+    metadataBase: new URL(WebSiteData.url),
+    openGraph: {
+      title: t("contact"),
+      description: t("companyName"),
+      url: "/contact",
+      siteName: WebSiteData.name,
+      locale: "en_US",
+      alternateLocale: WebSiteData.alternateLocale,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("contact"),
+      description: t("companyName"),
+    },
+  };
+
+  return metadata;
+}
+
 export default Contact;

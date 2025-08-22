@@ -29,8 +29,10 @@ export async function generateMetadata({ params }: Params) {
 
   // 根据语言返回不同的元数据
   const metadata = {
+    metadataBase: new URL(WebSiteData.url),
     title: t("warning.title"),
     description: t("warning.description"),
+    icons: "/favicon.ico",
     image: WebSiteData.logo,
   };
 
