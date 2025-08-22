@@ -1,9 +1,14 @@
 import { Col, Row } from "antd";
-import { LedTypes } from "@/constant";
+
+import { LedTypes, WebSiteData } from "@/constant";
 import { getTranslation } from "@/i18n";
 import { languages } from "@/i18n/settings";
 import { Params } from "@/types/common";
+import softSrc from "@/assets/images/soft.png";
+
 import Card from "./_card";
+import { Products } from "./_constant";
+
 import "./_index.css";
 
 const prefix = "leekono-product";
@@ -13,8 +18,25 @@ export async function generateMetadata({ params }: Params) {
 
   // 根据语言返回不同的元数据
   const metadata = {
-    title: t("caseMetadata.title"),
-    description: t("caseMetadata.description"),
+    metadataBase: new URL(WebSiteData.url),
+    title: t("productMetadata.title"),
+    description: t("productMetadata.description"),
+    openGraph: {
+      title: t("productMetadata.title"),
+      description: t("productMetadata.description"),
+      url: "/product",
+      siteName: WebSiteData.name,
+      locale: "en_US",
+      alternateLocale: WebSiteData.alternateLocale,
+      type: "website",
+      images: [softSrc],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("productMetadata.title"),
+      description: t("productMetadata.description"),
+      images: [softSrc],
+    },
   };
 
   return metadata;

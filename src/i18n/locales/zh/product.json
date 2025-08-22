@@ -1,7 +1,7 @@
 {
   "rental": {
     "title": "租赁屏",
-    "detail": "zhe "
+    "detail": "租赁屏"
   },
   "outdoor": {
     "title": "户外屏",
@@ -29,11 +29,11 @@
   },
   "taxi": {
     "title": "出租车屏",
-    "detail": "Taxi Screen"
+    "detail": "出租车屏"
   },
   "soft": {
     "title": "柔软屏",
-    "detail": "Soft Screen"
+    "detail": "柔软屏"
   },
   "contact": "联系我们",
   "config": "配置",

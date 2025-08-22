@@ -1,5 +1,5 @@
 export interface Params {
-  params: Promise<{ lng: string }>;
+  params: Promise<{ lng: string; id?: string }>;
 }
 export interface TempData {
   id?: string;

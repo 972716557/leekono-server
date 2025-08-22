@@ -55,4 +55,19 @@ const Posters: Record<LedEnum, StaticImageData> = {
   floor: floorSrc,
 };
 
-export { routes, TW_Locale, ZH_Locale, En_Locale, LedTypes, Posters };
+const WebSiteData = {
+  name: "Leekono LED",
+  description: "A leading LED technology company.",
+  url: "https://leekono.com",
+  logo: "http://www.leekono-led.com/favicon.ico",
+  alternateLocale: ["en_US", "zh_CN", "zh_TW"],
+};
+export {
+  routes,
+  TW_Locale,
+  ZH_Locale,
+  En_Locale,
+  LedTypes,
+  Posters,
+  WebSiteData,
+};

@@ -5,32 +5,14 @@ import { getTranslation } from "@/i18n";
 import { Products } from "../_constant";
 import LeekonoSwiper from "../_swiper";
 import "../_index.css";
+import { WebSiteData } from "@/constant";
 
 const prefix = "leekono-product-detail";
 
 const ProductDetail = async () => {
-  // const isEN = lng === En_Locale;
-  // const isTW = lng === TW_Locale;
-  // const isZH = lng === ZH_Locale;
-
   return (
     <div className={prefix}>
       <LeekonoSwiper />
-      {/* <div className={`${prefix}-card`}>
-        <h2 className={`${prefix}-title`}>{t(`${detail.id}.title`)}</h2>
-        <div className={`${prefix}-content`}>
-          {isEN && detail.enDescription}
-          {isTW && detail.twDescription}
-          {isZH && detail.zhDescription}
-        </div>
-      </div> */}
-
-      {/* <div className={`${prefix}-card ${prefix}-advantage`}>
-        <h2 className={`${prefix}-title`}>{t("productAdvantage")}</h2>
-        {isEN && detail.enAdvantage}
-        {isTW && detail.twAdvantage}
-        {isZH && detail.zhAdvantage}
-      </div> */}
     </div>
   );
 };
@@ -49,13 +31,33 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Params) {
-  const { lng } = await params;
+  const { lng, id } = await params;
   const { t } = await getTranslation(lng, "common");
+
+  const product = Products.find((item) => item.id === id);
+  const productId = product?.id;
 
   // 根据语言返回不同的元数据
   const metadata = {
-    title: t("productMetadata.detail"),
-    description: t("productMetadata.description"),
+    title: t(`${productId}.title`),
+    description: t(`${productId}.description`),
+    metadataBase: new URL(WebSiteData.url),
+    openGraph: {
+      title: t("productMetadata.title"),
+      description: t("productMetadata.description"),
+      url: `/product/${id}`,
+      siteName: WebSiteData.name,
+      locale: "en_US",
+      alternateLocale: WebSiteData.alternateLocale,
+      type: "website",
+      images: product?.images,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("productMetadata.title"),
+      description: t("productMetadata.description"),
+      images: product?.images,
+    },
   };
 
   return metadata;

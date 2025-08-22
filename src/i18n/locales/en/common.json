@@ -25,5 +25,41 @@
     "detail": "Case Detail",
     "description": "This is a collection of cases from various countries and regions."
   },
+  "rental": {
+    "title": "Rental LED",
+    "description": " Cost-effective for short-term events. Flexible & scalable setups, full technical support included. Always access the latest technology without the high cost of ownership."
+  },
+  "outdoor": {
+    "title": "Outdoor LED",
+    "description": "Built for brightness and durability. Resists harsh weather, delivers clear visuals even in direct sunlight, ideal for long-term outdoor advertising."
+  },
+  "indoor": {
+    "title": "Indoor LED",
+    "description": "High resolution with excellent color performance. Fine pixel pitch ensures ultra-clear images for close-viewing environments like conferences and malls."
+  },
+  "poster": {
+    "title": "Poster LED",
+    "description": "Ultra-thin and lightweight design for easy installation. Energy-efficient and vibrant, seamlessly replacing traditional printed posters."
+  },
+  "crystal": {
+    "title": "Crystal LED",
+    "description": "Ultra-thin, flexible, and lightweight. Offers high transparency, can be attached to glass surfaces for creative displays without blocking light."
+  },
+  "transparent": {
+    "title": "Transparent LED",
+    "description": "Maintains high transparency while displaying content. Allows viewers to see through it, perfect for retail windows enhancing product visibility."
+  },
+  "floor": {
+    "title": "Floor LED",
+    "description": "High load-bearing and anti-slip surface. Creates immersive interactive experiences for walking, dancing, and gaming on dynamic graphics."
+  },
+  "taxi": {
+    "title": "Taxi LED",
+    "description": "Compact, durable, and energy-efficient. Mobile advertising platform for dynamic messaging, city tours, and enhanced brand visibility."
+  },
+  "soft": {
+    "title": "Soft LED",
+    "description": " Bendable and curveable for unique installations. Creates irregular shapes and immersive curved displays for innovative designs."
+  },
   "product": "Product"
 }

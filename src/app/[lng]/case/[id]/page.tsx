@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import { En_Locale, TW_Locale, ZH_Locale } from "@/constant";
+import { En_Locale, TW_Locale, WebSiteData, ZH_Locale } from "@/constant";
 import { languages } from "@/i18n/settings";
 import { Params, TempData } from "@/types/common";
 import { getTranslation } from "@/i18n";
@@ -12,13 +12,38 @@ import "../_index.css";
 const prefix = "leekono-case-detail";
 
 export async function generateMetadata({ params }: Params) {
-  const { lng } = await params;
-  const { t } = await getTranslation(lng, "common");
+  const { lng: locale, id } = await params;
+  const { t } = await getTranslation(locale, "common");
+  const detail = Cases?.find((item) => item.id === id);
+  const isEN = locale === En_Locale;
+  const isTW = locale === TW_Locale;
+  const title = isEN
+    ? detail?.enTitle
+    : isTW
+    ? detail?.twTitle
+    : detail?.zhTitle;
 
   // 根据语言返回不同的元数据
   const metadata = {
-    title: t("caseMetadata.detail"),
+    title,
     description: t("caseMetadata.description"),
+    metadataBase: new URL(WebSiteData.url),
+    openGraph: {
+      title,
+      description: t("caseMetadata.description"),
+      url: "/case",
+      siteName: WebSiteData.name,
+      locale: "en_US",
+      alternateLocale: WebSiteData.alternateLocale,
+      type: "website",
+      images: detail?.images,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: t("caseMetadata.description"),
+      images: detail?.images,
+    },
   };
 
   return metadata;

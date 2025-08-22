@@ -3,6 +3,7 @@ import React from "react";
 import { getTranslation } from "@/i18n";
 import { languages } from "@/i18n/settings";
 import { Params } from "@/types/common";
+import { WebSiteData } from "@/constant";
 
 import "./_index.css";
 
@@ -30,6 +31,7 @@ export async function generateMetadata({ params }: Params) {
   const metadata = {
     title: t("warning.title"),
     description: t("warning.description"),
+    image: WebSiteData.logo,
   };
 
   return metadata;
