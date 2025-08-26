@@ -51,6 +51,7 @@ export async function generateMetadata({ params }: Params) {
       locale: "en_US",
       alternateLocale: WebSiteData.alternateLocale,
       type: "website",
+      author: "Leekono LED",
     },
     twitter: {
       card: "summary_large_image",
