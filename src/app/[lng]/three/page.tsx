@@ -76,7 +76,7 @@ const Page = () => {
     scene.add(axesHelper);
     // 设置cube x轴的位置
     function animate() {
-      controller.update();
+      // controller.update();
       requestAnimationFrame(animate);
       // 设置旋转
       cube.rotation.set(0.01, 0.01, 0.01);

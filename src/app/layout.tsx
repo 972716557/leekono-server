@@ -37,7 +37,7 @@ export default async function RootLayout({ children }: Readonly<Props>) {
         <AntdRegistry>
           <Header />
           {children}
-          <Footer />
+          {/* <Footer /> */}
         </AntdRegistry>
       </body>
     </html>

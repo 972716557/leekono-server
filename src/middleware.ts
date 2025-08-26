@@ -29,11 +29,11 @@ export default async function middleware(req: NextRequest) {
   //   return NextResponse.redirect(new URL(`/${lng}/warning`, req.url));
   // }
 
-  if (!isMatch) {
-    return NextResponse.redirect(
-      new URL(`/${lng}${req.nextUrl.pathname}`, req.url)
-    );
-  }
+  // if (!isMatch) {
+  //   return NextResponse.redirect(
+  //     new URL(`/${lng}${req.nextUrl.pathname}`, req.url)
+  //   );
+  // }
 
   if (req.headers.has("referer")) {
     const refererUrl = new URL(req.headers.get("referer") ?? "");
