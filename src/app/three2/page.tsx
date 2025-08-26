@@ -14,7 +14,7 @@ import {
   Fog,
   FogExp2,
 } from "three";
-
+import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 //  hdr加载器
@@ -32,6 +32,11 @@ const Page = () => {
       1000 // 相机最远能看到什么
     );
 
+    //  模型加载器
+    const gltfLoader = new GLTFLoader();
+    gltfLoader.load("./base.glb", (gltf) => {
+      scene.add(gltf.scene);
+    });
     camera.position.z = 5;
     camera.position.y = 1;
     camera.position.x = 1;
