@@ -25,9 +25,9 @@ export default async function middleware(req: NextRequest) {
     req.nextUrl.pathname.startsWith(`/${item}`)
   );
 
-  if (!isMobile && !req.nextUrl.pathname?.includes("/warning")) {
-    return NextResponse.redirect(new URL(`/${lng}/warning`, req.url));
-  }
+  // if (!isMobile && !req.nextUrl.pathname?.includes("/warning")) {
+  //   return NextResponse.redirect(new URL(`/${lng}/warning`, req.url));
+  // }
 
   if (!isMatch) {
     return NextResponse.redirect(
