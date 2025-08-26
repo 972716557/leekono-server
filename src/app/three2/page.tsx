@@ -11,6 +11,8 @@ import {
   TextureLoader,
   EquirectangularReflectionMapping,
   AxesHelper,
+  Fog,
+  FogExp2,
 } from "three";
 
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
@@ -33,21 +35,32 @@ const Page = () => {
     camera.position.z = 5;
     camera.position.y = 1;
     camera.position.x = 1;
+    // 创建雾，线型
+    const fog = new Fog(0xffffff, 0.1, 500);
+    // 创建雾，指数型
+    // const fog = new FogExp2(0xffffff, 0.01);
     // 创建纹理加载器
     const textureLoader = new TextureLoader();
     const map = textureLoader.load("./favicon-title.png");
-    const hdr = hdrLoader.load("./room.hdr", (env) => {
-      // 设置球形映射
-      env.mapping = EquirectangularReflectionMapping;
-      scene.background = env;
-    });
-
+    const lightMap = textureLoader.load("./light.png");
     const planGeometry = new PlaneGeometry(1, 1);
     const planMaterial = new MeshBasicMaterial({
       color: 0xffffff,
       map,
       // 允许透明度
       transparent: true,
+      // 设置光照贴图
+      lightMap,
+      // 设置反射
+      // reflectivity: 1,
+    });
+    const hdr = hdrLoader.load("./room.hdr", (env) => {
+      // 设置球形映射
+      env.mapping = EquirectangularReflectionMapping;
+      // 设置环境贴图
+      scene.background = env;
+      scene.environment = env;
+      planMaterial.envMap = env;
     });
     const plan = new Mesh(planGeometry, planMaterial);
 
@@ -56,6 +69,7 @@ const Page = () => {
     const axesHelper = new AxesHelper(5);
     scene.add(axesHelper);
     scene.add(plan);
+    scene.fog = fog;
     const controller = new OrbitControls(camera, renderer.domElement);
     function animate() {
       controller.update();
