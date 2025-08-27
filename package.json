@@ -13,6 +13,7 @@
     "@ant-design/nextjs-registry": "^1.1.0",
     "accept-language": "^3.0.20",
     "antd-mobile": "^5.39.0",
+    "cannon": "^0.6.2",
     "classnames": "^2.5.1",
     "cookies-next": "^6.1.0",
     "i18next": "^25.3.6",
@@ -31,6 +32,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/cannon": "^0.1.13",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
