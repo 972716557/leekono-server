@@ -34,9 +34,21 @@ const Page = () => {
 
     //  模型加载器
     const gltfLoader = new GLTFLoader();
-    gltfLoader.load("./base.glb", (gltf) => {
-      scene.add(gltf.scene);
-    });
+    gltfLoader.load(
+      "http://localhost:3000/gltf/Wolf-Blender-2.82a.glb",
+      (gltf) => {
+        // 修改模型颜色
+        // gltf.scene.traverse((object) => {
+        //   if (object.isMesh) {
+        //     // 克隆材质以避免共享问题:cite[8]
+        //     object.material = object.material.clone();
+        //     object.material.color.setHex(0xff0000);
+        //   }
+        // });
+        console.log(gltf, "gltf");
+        scene.add(gltf.scene);
+      }
+    );
     camera.position.z = 5;
     camera.position.y = 1;
     camera.position.x = 1;
@@ -46,8 +58,8 @@ const Page = () => {
     // const fog = new FogExp2(0xffffff, 0.01);
     // 创建纹理加载器
     const textureLoader = new TextureLoader();
-    const map = textureLoader.load("./favicon-title.png");
-    const lightMap = textureLoader.load("./light.png");
+    const map = textureLoader.load("http://localhost:3000/favicon-title.png");
+    const lightMap = textureLoader.load("http://localhost:3000/light.png");
     const planGeometry = new PlaneGeometry(1, 1);
     const planMaterial = new MeshBasicMaterial({
       color: 0xffffff,
@@ -59,7 +71,7 @@ const Page = () => {
       // 设置反射
       // reflectivity: 1,
     });
-    const hdr = hdrLoader.load("./room.hdr", (env) => {
+    const hdr = hdrLoader.load("http://localhost:3000/room.hdr", (env) => {
       // 设置球形映射
       env.mapping = EquirectangularReflectionMapping;
       // 设置环境贴图
@@ -73,7 +85,7 @@ const Page = () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     const axesHelper = new AxesHelper(5);
     scene.add(axesHelper);
-    scene.add(plan);
+    // scene.add(plan);
     scene.fog = fog;
     const controller = new OrbitControls(camera, renderer.domElement);
     function animate() {
