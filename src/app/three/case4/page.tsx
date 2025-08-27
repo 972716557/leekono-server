@@ -14,6 +14,8 @@ import {
   CameraHelper,
   SphereGeometry,
   MeshStandardMaterial,
+  PointLight,
+  PointLightHelper,
 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
@@ -41,8 +43,14 @@ const Page = () => {
     light.castShadow = true; // default false
     scene.add(light);
 
+    const pointLight = new PointLight(0xffffff, 10);
+    const pointLightHelper = new PointLightHelper(pointLight);
+    pointLight.castShadow = true;
+    pointLight.position.set(2, 2, 0);
+    scene.add(pointLight, pointLightHelper);
+
     //Create a sphere that cast shadows (but does not receive them)
-    const sphereGeometry = new SphereGeometry(1, 32, 32);
+    const sphereGeometry = new BoxGeometry(1, 1);
     const sphereMaterial = new MeshStandardMaterial({ color: 0xff0000 });
     const sphere = new Mesh(sphereGeometry, sphereMaterial);
     sphere.castShadow = true; //default is false
