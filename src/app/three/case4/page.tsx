@@ -1,4 +1,5 @@
 "use client";
+// 增加阴影和光源
 import { useEffect, useRef } from "react";
 import {
   Scene,
@@ -11,8 +12,6 @@ import {
   DirectionalLightHelper,
   PlaneGeometry,
   PCFSoftShadowMap,
-  CameraHelper,
-  SphereGeometry,
   MeshStandardMaterial,
   PointLight,
   PointLightHelper,
@@ -46,6 +45,7 @@ const Page = () => {
     const pointLight = new PointLight(0xffffff, 10);
     const pointLightHelper = new PointLightHelper(pointLight);
     pointLight.castShadow = true;
+    // 灯光的位置需要注意，不然照射不出影子
     pointLight.position.set(2, 2, 0);
     scene.add(pointLight, pointLightHelper);
 

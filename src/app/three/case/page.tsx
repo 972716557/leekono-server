@@ -3,14 +3,11 @@
 import { useEffect, useRef } from "react";
 import {
   AxesHelper,
-  Camera,
   Mesh,
   MeshBasicMaterial,
   PerspectiveCamera,
-  Raycaster,
   Scene,
   SphereGeometry,
-  Vector2,
   WebGLRenderer,
 } from "three";
 import { OrbitControls } from "three/examples/jsm/Addons.js";
