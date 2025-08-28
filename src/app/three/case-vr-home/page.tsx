@@ -1,16 +1,12 @@
 "use client";
 // 3维射线与物体相交
 import { useEffect, useRef } from "react";
-import { text } from "stream/consumers";
 import {
   Scene,
   PerspectiveCamera,
   WebGLRenderer,
-  EquirectangularReflectionMapping,
-  TextureLoader,
   SpriteMaterial,
   Sprite,
-  AxesHelper,
   Vector2,
   Raycaster,
   Vector3,
@@ -46,14 +42,14 @@ const Page = () => {
 
     const hdrLoader = new RGBELoader();
     const geometry = new SphereGeometry(20);
-
+    let sphere;
     // 翻转法线，使纹理在内部可见
     geometry.scale(1, 1, -1);
 
     hdrLoader.load("http://localhost:3000/room.hdr", (env) => {
       // 设置球形映射
       const material = new MeshBasicMaterial({ map: env });
-      const sphere = new Mesh(geometry, material);
+      sphere = new Mesh(geometry, material);
       scene.add(sphere);
     });
     // 点精灵，其实就是一张贴图，点击可以去下一个场景
@@ -166,10 +162,14 @@ const Page = () => {
     window.addEventListener("click", (e) => {
       raycaster.setFromCamera(mouse, camera);
       const intersects = raycaster.intersectObject(buttonSprite, true);
-      console.log(intersects);
 
       if (intersects.length > 0) {
         // 这里切换到另一个场景
+        hdrLoader.load("http://localhost:3000/resturant.hdr", (env) => {
+          // 设置球形映射
+          const material = new MeshBasicMaterial({ map: env });
+          sphere.material = material;
+        });
       }
     });
     function animate() {
