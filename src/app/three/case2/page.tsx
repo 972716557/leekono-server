@@ -13,6 +13,8 @@ import {
   AxesHelper,
   Fog,
   FogExp2,
+  AnimationMixer,
+  Clock,
 } from "three";
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
@@ -32,6 +34,7 @@ const Page = () => {
       1000 // 相机最远能看到什么
     );
 
+    let mixer, currentAction, runAction, walkAction;
     //  模型加载器
     const gltfLoader = new GLTFLoader();
     gltfLoader.load(
@@ -45,8 +48,26 @@ const Page = () => {
         //     object.material.color.setHex(0xff0000);
         //   }
         // });
-        console.log(gltf, "gltf");
-        scene.add(gltf.scene);
+        // 获取模型动画
+        const { animations, scene: internalScene } = gltf;
+        console.log(animations, "amimation");
+
+        const runClip = animations.find(
+          (item) => item.name === "01_Run_Armature_0"
+        );
+        const walkClip = animations.find(
+          (item) => item.name === "02_walk_Armature_0"
+        );
+        mixer = new AnimationMixer(internalScene);
+        if (runClip) {
+          runAction = mixer.clipAction(runClip);
+          // .play();
+        }
+        if (walkClip) {
+          walkAction = mixer.clipAction(walkClip);
+          // .play();
+        }
+        scene.add(internalScene);
       }
     );
     camera.position.z = 5;
@@ -60,7 +81,7 @@ const Page = () => {
     const textureLoader = new TextureLoader();
     const map = textureLoader.load("http://localhost:3000/favicon-title.png");
     const lightMap = textureLoader.load("http://localhost:3000/light.png");
-    const planGeometry = new PlaneGeometry(1, 1);
+    // const planGeometry = new PlaneGeometry(1, 1);
     const planMaterial = new MeshBasicMaterial({
       color: 0xffffff,
       map,
@@ -71,7 +92,8 @@ const Page = () => {
       // 设置反射
       // reflectivity: 1,
     });
-    const hdr = hdrLoader.load("http://localhost:3000/room.hdr", (env) => {
+    // 添加环境贴图
+    hdrLoader.load("http://localhost:3000/room.hdr", (env) => {
       // 设置球形映射
       env.mapping = EquirectangularReflectionMapping;
       // 设置环境贴图
@@ -79,7 +101,7 @@ const Page = () => {
       scene.environment = env;
       planMaterial.envMap = env;
     });
-    const plan = new Mesh(planGeometry, planMaterial);
+    // const plan = new Mesh(planGeometry, planMaterial);
 
     const renderer = new WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -88,7 +110,11 @@ const Page = () => {
     // scene.add(plan);
     scene.fog = fog;
     const controller = new OrbitControls(camera, renderer.domElement);
+    const clock = new Clock();
     function animate() {
+      const elapsedTime = clock.getDelta();
+      // 触发动画的更新
+      mixer?.update(elapsedTime);
       controller.update();
       requestAnimationFrame(animate);
 
@@ -96,6 +122,35 @@ const Page = () => {
     }
     animate();
     ref.current?.append(renderer.domElement);
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "r") {
+        if (runAction && runAction !== currentAction) {
+          runAction.fadeOut(0.5);
+          runAction.reset().fadeIn(0.5).play();
+          currentAction = runAction;
+        }
+      }
+      if (e.key === "w") {
+        if (walkAction && walkAction !== currentAction) {
+          walkAction.fadeOut(0.5);
+          walkAction.reset().fadeIn(0.5).play();
+          currentAction = walkAction;
+        }
+      }
+    });
+    window.addEventListener("keyup", (e) => {
+      if (e.key === "r") {
+        runAction.fadeOut(0.5).play();
+        currentAction = null;
+      }
+      if (e.key === "w") {
+        if (walkAction && walkAction !== currentAction) {
+          walkAction.fadeOut(0.5).play();
+          currentAction = null;
+        }
+      }
+    });
   }, []);
   return (
     <>
