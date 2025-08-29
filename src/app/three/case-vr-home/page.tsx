@@ -14,6 +14,8 @@ import {
   SphereGeometry,
   MeshBasicMaterial,
   CanvasTexture,
+  PlaneGeometry,
+  VideoTexture,
 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
@@ -26,6 +28,24 @@ const Page = () => {
     let buttonSprite: Sprite | null = null;
 
     const scene = new Scene();
+    const videoElement = document.createElement("video");
+    videoElement.src = "http://localhost:3000/video.mp4"; // 替换为你的视频路径
+    videoElement.loop = true; // 循环播放
+    videoElement.muted = true; // 通常需要静音以允许自动播放
+    videoElement.autoplay = true; // 尝试自动播放（注意浏览器策略）
+    videoElement.crossOrigin = "anonymous"; // 处理跨域问题:cite[2]
+    videoElement.play();
+    const videoTexture = new VideoTexture(videoElement);
+
+    // 3. 创建使用该纹理的材质
+    const material = new MeshBasicMaterial({ map: videoTexture });
+
+    // 4. 创建一个几何体（比如平面），并应用此材质
+    const videoGeometry = new PlaneGeometry(9, 7); // 根据视频宽高比调整，例如16:9
+    const videoScreen = new Mesh(videoGeometry, material);
+    videoScreen.position.set(-16, 0, 4);
+    videoScreen.rotation.y = Math.PI / 2;
+    scene.add(videoScreen); // 将视频平面添加到场景中
 
     const camera = new PerspectiveCamera(
       75, // 视角
@@ -39,15 +59,14 @@ const Page = () => {
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     const controller = new OrbitControls(camera, renderer.domElement);
-    controller.minDistance = 1;
-    controller.maxDistance = 1;
+    // controller.minDistance = 1;
+    // controller.maxDistance = 1;
     const hdrLoader = new RGBELoader();
     const geometry = new SphereGeometry(20);
     let sphere;
     // 翻转法线，使纹理在内部可见
     geometry.scale(1, 1, -1);
-
-    hdrLoader.load("http://localhost:3000/room.hdr", (env) => {
+    const video = hdrLoader.load("http://localhost:3000/room.hdr", (env) => {
       // 设置球形映射
       const material = new MeshBasicMaterial({ map: env });
       sphere = new Mesh(geometry, material);
@@ -161,6 +180,18 @@ const Page = () => {
     window.addEventListener("resize", onWindowResize);
 
     window.addEventListener("click", (e) => {
+      if (videoElement.paused) {
+        videoElement
+          .play()
+          .then(() => {
+            console.log("视频开始播放");
+            // 如果使用LoadingManager，在这里标记视频加载完成:cite[5]
+            // manager.itemEnd(video.src);
+          })
+          .catch((err) => {
+            console.error("播放失败:", err);
+          });
+      }
       raycaster.setFromCamera(mouse, camera);
       const intersects = raycaster.intersectObject(buttonSprite, true);
 
