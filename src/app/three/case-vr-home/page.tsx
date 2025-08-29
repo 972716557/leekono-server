@@ -39,7 +39,8 @@ const Page = () => {
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     const controller = new OrbitControls(camera, renderer.domElement);
-
+    controller.minDistance = 1;
+    controller.maxDistance = 1;
     const hdrLoader = new RGBELoader();
     const geometry = new SphereGeometry(20);
     let sphere;
