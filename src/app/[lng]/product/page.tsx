@@ -7,7 +7,6 @@ import { Params } from "@/types/common";
 import softSrc from "@/assets/images/soft.png";
 
 import Card from "./_card";
-import { Products } from "./_constant";
 
 import "./_index.css";
 
