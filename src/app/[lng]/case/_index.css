@@ -40,3 +40,45 @@
   background-clip: padding-box;
   margin-bottom: 10px;
 }
+
+/* Desktop case listing styles */
+@media (min-width: 768px) {
+  .leekono-case {
+    padding: 24px 40px;
+  }
+  .leekono-case-masonry {
+    margin-left: -16px;
+  }
+  .leekono-case-masonry-column {
+    padding-left: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .leekono-case {
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+/* Desktop case detail styles */
+@media (min-width: 768px) {
+  .leekono-case-detail {
+    padding: 32px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+  .leekono-case-detail-title {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+  .leekono-case-detail-description img {
+    width: 80%;
+    margin: 16px auto;
+    display: block;
+    border-radius: 8px;
+  }
+}

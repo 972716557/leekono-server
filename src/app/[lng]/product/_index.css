@@ -50,3 +50,30 @@
 .leekono-product-detail-content {
   color: #86909c;
 }
+
+/* Desktop product detail styles */
+@media (min-width: 768px) {
+  .leekono-product-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .leekono-product-detail-swiper img {
+    height: 500px;
+    object-fit: contain;
+  }
+  .leekono-product-detail-card {
+    padding: 2rem 2.5rem;
+    margin-top: 20px;
+    border-radius: 8px;
+  }
+  .leekono-product-detail-title {
+    font-size: 24px;
+  }
+  .leekono-product-detail-advantage-title {
+    font-size: 18px;
+  }
+  .leekono-product-detail-content {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+}

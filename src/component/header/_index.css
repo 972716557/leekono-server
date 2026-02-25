@@ -12,3 +12,24 @@
 .leekono-layout-mobile-header-mask {
   background-color: rgba(255, 255, 255, 0) !important;
 }
+
+/* Desktop nav item hover underline */
+@media (min-width: 768px) {
+  .leekono-layout-mobile-header-nav-item {
+    position: relative;
+    padding-bottom: 4px;
+  }
+  .leekono-layout-mobile-header-nav-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #1677ff;
+    transition: width 0.3s ease;
+  }
+  .leekono-layout-mobile-header-nav-item:hover::after {
+    width: 100%;
+  }
+}

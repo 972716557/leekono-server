@@ -6,10 +6,16 @@ import { Cases } from "./_constant";
 
 const prefix = "leekono-case";
 
+const breakpointCols = {
+  default: 4,
+  1200: 3,
+  768: 2,
+};
+
 export default function Card() {
   return (
     <Masonry
-      breakpointCols={2}
+      breakpointCols={breakpointCols}
       className={`${prefix}-masonry`}
       columnClassName={`${prefix}-masonry-column`}
     >

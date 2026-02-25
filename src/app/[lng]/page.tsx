@@ -29,70 +29,72 @@ const Home = async ({ params }: Params) => {
 
   return (
     <div className={prefix}>
-      <div className={`${prefix}-carousel`}>
-        <Carousel autoplay>
-          <Image alt="img" src={poster1} className={`${prefix}-image`} />
-          <Image alt="img" src={poster2} className={`${prefix}-image`} />
-        </Carousel>
-      </div>
+      <div className="leekono-container">
+        <div className={`${prefix}-carousel`}>
+          <Carousel autoplay>
+            <Image alt="img" src={poster1} className={`${prefix}-image`} />
+            <Image alt="img" src={poster2} className={`${prefix}-image`} />
+          </Carousel>
+        </div>
 
-      <section className={`${prefix}-section ${prefix}-about-us`}>
-        <h2 className={`${prefix}-title mb12`}>{t("aboutUs")}</h2>
-        <h3 className={`${prefix}-company`}>{t("companyName")}</h3>
-        <div className={`${prefix}-desc`}>{t("companyDescription")}</div>
-      </section>
-      <section className={`${prefix}-section ${prefix}-about-us-data`}>
-        <Row gutter={[12, 12]}>
-          {data.map(({ id, value, suffix }) => (
-            <Col span={12} key={id}>
-              <LeekonoStatistic value={value} suffix={suffix} />
-              <span className={`${prefix}-about-us-dec`}>{t(id)}</span>
-            </Col>
-          ))}
-        </Row>
-      </section>
-      <section className={`${prefix}-section ${prefix}-about-us`}>
-        <Row justify="space-between" align="middle">
-          <Col>
-            <h2 className={`${prefix}-title`}>{t("product")}</h2>
-          </Col>
-          <Col>
-            <Link href="/product">
-              {t("viewAll")}
-              <RightOutlined />
-            </Link>
-          </Col>
-        </Row>
-        <LeekonoSwiper
-          showPlusButton={false}
-          data={LedTypes.map((item) => ({
-            type: item,
-            src: "https://www.apple.com/v/iphone/home/cb/images/overview/consider/safety__bwp7rsowtjiu_xlarge_2x.jpg" as unknown as StaticImageData,
-          }))}
-        />
-      </section>
-      <section className="mt-[20px] p-[12px] bg-[#f2f3f5]">
-        <div className="mb20">
+        <section className={`${prefix}-section ${prefix}-about-us`}>
+          <h2 className={`${prefix}-title mb12`}>{t("aboutUs")}</h2>
+          <h3 className={`${prefix}-company`}>{t("companyName")}</h3>
+          <div className={`${prefix}-desc`}>{t("companyDescription")}</div>
+        </section>
+        <section className={`${prefix}-section ${prefix}-about-us-data`}>
+          <Row gutter={[12, 12]}>
+            {data.map(({ id, value, suffix }) => (
+              <Col span={12} md={6} key={id}>
+                <LeekonoStatistic value={value} suffix={suffix} />
+                <span className={`${prefix}-about-us-dec`}>{t(id)}</span>
+              </Col>
+            ))}
+          </Row>
+        </section>
+        <section className={`${prefix}-section ${prefix}-about-us`}>
           <Row justify="space-between" align="middle">
             <Col>
-              <h2 className={`${prefix}-title`}>{t("case")}</h2>
+              <h2 className={`${prefix}-title`}>{t("product")}</h2>
             </Col>
             <Col>
-              <Link href="/case">
+              <Link href="/product">
                 {t("viewAll")}
                 <RightOutlined />
               </Link>
             </Col>
           </Row>
-        </div>
-        <Row gutter={[12, 12]}>
-          {Cases.slice(0, 4).map((item) => (
-            <Col span={12} key={item.id}>
-              <CaseCard {...item} fixedImgHeight />
-            </Col>
-          ))}
-        </Row>
-      </section>
+          <LeekonoSwiper
+            showPlusButton={false}
+            data={LedTypes.map((item) => ({
+              type: item,
+              src: "https://www.apple.com/v/iphone/home/cb/images/overview/consider/safety__bwp7rsowtjiu_xlarge_2x.jpg" as unknown as StaticImageData,
+            }))}
+          />
+        </section>
+        <section className="mt-[20px] p-[12px] bg-[#f2f3f5] md:mt-[48px] md:p-[32px_0] md:rounded-[12px]">
+          <div className="mb20">
+            <Row justify="space-between" align="middle">
+              <Col>
+                <h2 className={`${prefix}-title`}>{t("case")}</h2>
+              </Col>
+              <Col>
+                <Link href="/case">
+                  {t("viewAll")}
+                  <RightOutlined />
+                </Link>
+              </Col>
+            </Row>
+          </div>
+          <Row gutter={[12, 12]}>
+            {Cases.slice(0, 4).map((item) => (
+              <Col span={12} md={6} key={item.id}>
+                <CaseCard {...item} fixedImgHeight />
+              </Col>
+            ))}
+          </Row>
+        </section>
+      </div>
     </div>
   );
 };

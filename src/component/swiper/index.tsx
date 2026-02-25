@@ -10,6 +10,7 @@ import { RightOutlined } from "@ant-design/icons";
 
 import { LedEnum, Posters } from "@/constant";
 import { useTranslation } from "@/i18n/client";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 import "./index.css";
 
@@ -62,6 +63,46 @@ const LeekonoSwiper: FC<SwiperProps> = ({
     showModal();
   };
 
+  const isMobile = useIsMobile();
+
+  const renderCard = (item: SwiperDataType, idx: number) => (
+    <div className={`${prefix}-card`} key={idx}>
+      <div className={`${prefix}-card-content`}>
+        <h2 className={`${prefix}-card-title`}>
+          {t(`${item.type}.title`)}
+        </h2>
+        <Link
+          href={`/product/${item.type}`}
+          className="inline-flex items-center gap-[4px]"
+        >
+          {t("learnMore")}
+          <RightOutlined />
+        </Link>
+      </div>
+      <Image
+        alt="img"
+        src={Posters[item.type as unknown as LedEnum]}
+        className={`${prefix}-card-image`}
+      />
+      {showPlusButton && (
+        <span
+          className={`${prefix}-button-plus`}
+          onClick={onClickPlusButton}
+        >
+          <i className="iconfont icon-jia" />
+        </span>
+      )}
+    </div>
+  );
+
+  if (!isMobile) {
+    return (
+      <div className={`${prefix}-desktop-grid`}>
+        {data?.map((item, idx) => renderCard(item, idx))}
+      </div>
+    );
+  }
+
   return (
     <div className={prefix}>
       <Swiper
@@ -78,33 +119,7 @@ const LeekonoSwiper: FC<SwiperProps> = ({
       >
         {data?.map((item, index) => (
           <Swiper.Item key={index}>
-            <div className={`${prefix}-card`}>
-              <div className={`${prefix}-card-content`}>
-                <h2 className={`${prefix}-card-title`}>
-                  {t(`${item.type}.title`)}
-                </h2>
-                <Link
-                  href={`/product/${item.type}`}
-                  className="inline-flex items-center gap-[4px]"
-                >
-                  {t("learnMore")}
-                  <RightOutlined />
-                </Link>
-              </div>
-              <Image
-                alt="img"
-                src={Posters[item.type as unknown as LedEnum]}
-                className={`${prefix}-card-image`}
-              />
-              {showPlusButton && (
-                <span
-                  className={`${prefix}-button-plus`}
-                  onClick={onClickPlusButton}
-                >
-                  <i className="iconfont icon-jia" />
-                </span>
-              )}
-            </div>
+            {renderCard(item, index)}
           </Swiper.Item>
         ))}
       </Swiper>

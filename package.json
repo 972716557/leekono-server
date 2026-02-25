@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
+    "@tailwindcss/postcss": "^4.2.1",
     "@types/cannon": "^0.1.13",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -40,7 +40,7 @@
     "antd": "^5.27.0",
     "eslint": "^9",
     "eslint-config-next": "15.4.6",
-    "tailwindcss": "^4",
+    "tailwindcss": "^4.2.1",
     "typescript": "^5"
   }
 }

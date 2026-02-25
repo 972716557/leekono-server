@@ -48,3 +48,14 @@
     text-align: center;
   }
 }
+
+/* Desktop contact page styles */
+@media (min-width: 1024px) {
+  .leekono-contact {
+    max-width: 900px;
+    margin: 40px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  }
+}

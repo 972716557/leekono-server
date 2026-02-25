@@ -114,3 +114,28 @@
   background-color: #333336;
   color: #d6d6d7;
 }
+
+/* Desktop Grid Layout */
+.leekono-swiper-desktop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.leekono-swiper-desktop-grid .leekono-swiper-card {
+  height: 420px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.leekono-swiper-desktop-grid .leekono-swiper-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 1200px) {
+  .leekono-swiper-desktop-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+}

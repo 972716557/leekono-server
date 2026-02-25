@@ -48,3 +48,19 @@
   min-height: 24px;
   cursor: pointer;
 }
+
+/* Desktop product card styles */
+@media (min-width: 768px) {
+  .leekono-product-card {
+    padding: 20px 32px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .leekono-product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+  .leekono-product-card-title-mobile {
+    font-size: 22px;
+  }
+}
