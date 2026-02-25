@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   description:
     "Leekono LED - A leading LED display technology company providing indoor, outdoor, rental, and custom LED solutions worldwide.",
   icons: {
-    icon: "/favicon-title.png",
-    apple: "/favicon-title.png",
+    icon: "/favicon.ico",
+    apple: "/favicon.ico",
   },
   robots: {
     index: true,
