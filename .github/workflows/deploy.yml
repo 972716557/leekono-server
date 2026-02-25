@@ -1,0 +1,59 @@
+# GitHub Actions 部署到阿里云 ECS
+# 需在仓库 Settings → Secrets and variables → Actions 中配置：
+#   ALIYUN_HOST          - 服务器公网 IP 或域名
+#   ALIYUN_USER          - SSH 登录用户名（如 root）
+#   ALIYUN_SSH_PRIVATE_KEY - SSH 私钥全文
+#   ALIYUN_DEPLOY_PATH   - 部署目录（如 /opt/leekono-server）
+#   ALIYUN_SSH_PORT      - 可选，SSH 端口，默认 22
+
+name: Deploy to Alibaba Cloud ECS
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Upload to Alibaba Cloud ECS
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{ secrets.ALIYUN_HOST }}
+          username: ${{ secrets.ALIYUN_USER }}
+          key: ${{ secrets.ALIYUN_SSH_PRIVATE_KEY }}
+          port: ${{ secrets.ALIYUN_SSH_PORT || '22' }}
+          source: '.next,public,package.json,pnpm-lock.yaml,next.config.ts'
+          target: ${{ secrets.ALIYUN_DEPLOY_PATH }}
+
+      - name: Install deps and restart on server
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.ALIYUN_HOST }}
+          username: ${{ secrets.ALIYUN_USER }}
+          key: ${{ secrets.ALIYUN_SSH_PRIVATE_KEY }}
+          port: ${{ secrets.ALIYUN_SSH_PORT || '22' }}
+          script: |
+            cd ${{ secrets.ALIYUN_DEPLOY_PATH }}
+            pnpm install --prod --frozen-lockfile
+            pm2 restart leekono-server || pm2 start pnpm --name leekono-server -- start
