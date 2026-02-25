@@ -1,12 +1,12 @@
 .leekono-product {
-  background-color: #fff;
+  background-color: #f5f5f7;
 }
 
 /* ===== Hero ===== */
 .leekono-product-hero {
   text-align: center;
-  padding: 48px 20px 24px;
-  background: linear-gradient(180deg, #f5f5f7 0%, #fff 100%);
+  padding: 20px 20px 16px;
+  background: #f5f5f7;
 }
 .leekono-product-hero-title {
   font-size: 28px;
@@ -30,7 +30,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
-  padding: 0 16px 40px;
+  padding: 0 16px 16px;
 }
 
 .leekono-product-row {
@@ -83,10 +83,47 @@
   color: #86909c;
 }
 
+/* ===== Product page card overrides (mobile) ===== */
+.leekono-product-grid .leekono-product-card {
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  background: #fff;
+}
+.leekono-product-grid .leekono-product-card-img-wrapper {
+  aspect-ratio: 4 / 3;
+  padding: 12px;
+  background: #fff;
+  border-radius: 0;
+}
+.leekono-product-grid .leekono-product-card-body {
+  padding: 6px 10px 10px;
+  text-align: center;
+}
+.leekono-product-grid .leekono-product-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+.leekono-product-grid .leekono-product-card-desc {
+  font-size: 11px;
+  color: #86868b;
+  margin: 0 0 6px;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  line-height: 1.4;
+}
+.leekono-product-grid .leekono-product-card-link {
+  display: none;
+}
+
 /* ===== Desktop: Hero + Grid ===== */
 @media (min-width: 768px) {
+  .leekono-product {
+    background-color: #f5f5f7;
+  }
   .leekono-product-hero {
-    padding: 80px 40px 40px;
+    padding: 40px 40px 24px;
+    background: #f5f5f7;
   }
   .leekono-product-hero-title {
     font-size: 44px;
@@ -103,20 +140,20 @@
     gap: 24px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px 80px;
+    padding: 0 40px 24px;
   }
 }
 
 @media (min-width: 1200px) {
   .leekono-product-hero {
-    padding: 100px 40px 48px;
+    padding: 48px 40px 24px;
   }
   .leekono-product-hero-title {
     font-size: 52px;
   }
   .leekono-product-grid {
     gap: 32px;
-    padding: 0 0 100px;
+    padding: 0 0 32px;
   }
 }
 

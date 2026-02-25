@@ -68,6 +68,8 @@
   }
   .leekono-case-card-title {
     font-size: 18px;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
   }
   .leekono-case-card-content {
     padding: 12px 16px;

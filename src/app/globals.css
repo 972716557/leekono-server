@@ -1,113 +1,9 @@
 @import "tailwindcss";
 @import "../assets/iconfont/iconfont.css";
 
-.leekono-home {
-  background-color: #fff;
-}
-
-.leekono-home-carousel {
-  padding: 12px;
-}
-
-.leekono-home-image {
-  border-radius: 12px;
-}
-
-.leekono-home-title {
-  margin: 0;
-}
-
-.leekono-home-about-us {
-  padding: 0 12px;
-}
-
-.leekono-home-company {
-  margin-bottom: 12px;
-}
-
-.leekono-home-desc {
-  color: #86909c;
-  line-height: 1.5;
-}
-
-.leekono-home-section {
-  background-color: #fff;
-  margin-top: 20px;
-}
-
-.leekono-home-about-us-dec {
-  color: #86909c;
-  margin-top: 8px;
-}
-
-.leekono-home-about-us-data {
-  padding: 0 20px;
-}
-
-.leekono-home-card {
-  padding: 4px 4px 0 4px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.leekono-home-card-content {
-  padding-top: 24px;
-  width: 100%;
-  text-align: center;
-}
-
-.leekono-home-card-link {
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.leekono-home-card-title {
-  margin-bottom: 12px;
-  font-size: 22px;
-  font-weight: 600;
-}
-
-.leekono-home-card-image {
-  width: 100%;
-  border-radius: 28px;
-  margin-bottom: 4px;
-  margin-top: 28px;
-}
-
-@media (max-width: 767px) {
-  .leekono-home .leekono-swiper-card {
-    height: fit-content;
-  }
-}
-
-.leekono-home .ant-image {
-  border-radius: 12px;
-}
-
-.leekono-home .ant-statistic-title {
-  min-height: 44px;
-}
-
-.leekono-home-section .adm-swiper-slide {
-  padding: 20px 6px;
-}
-
-@media screen and (max-width: 480px) {
-  .leekono-home-content {
-    height: 80vh;
-    min-height: 680px;
-    max-width: 1920px;
-    max-height: 1260px;
-    margin: 0 auto;
-    width: 87.5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
+/* ===== Global Reset ===== */
+html {
+  scroll-behavior: smooth;
 }
 
 h2 {
@@ -132,8 +28,497 @@ h3 {
   unicode-bidi: isolate;
 }
 
+.mb20 {
+  margin-bottom: 20px;
+}
 
+/* ===== Container ===== */
+.leekono-container {
+  width: 100%;
+  margin: 0 auto;
+}
 
+@media (min-width: 1024px) {
+  .leekono-container {
+    max-width: 1200px;
+    padding: 0 40px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .leekono-container {
+    max-width: 1400px;
+  }
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  h3 {
+    font-size: 1.4em;
+    font-weight: 500;
+  }
+}
+
+/* ===== Home Page ===== */
+.leekono-home {
+  background-color: #f5f5f7;
+  padding-bottom: 6px;
+}
+@media (min-width: 768px) {
+  .leekono-home {
+    padding-bottom: 0;
+  }
+}
+
+/* ----- Hero ----- */
+.leekono-home-hero {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 16px 0;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+}
+.leekono-home-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.leekono-home-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+}
+.leekono-home-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 20px;
+}
+.leekono-home-hero-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+.leekono-home-hero-subtitle {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 16px;
+  line-height: 1.5;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.leekono-home-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #1d1d1f;
+  border-radius: 500px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+.leekono-home-hero-cta:hover {
+  background: #fff;
+  gap: 8px;
+}
+
+/* ----- Stats ----- */
+.leekono-home-stats {
+  display: flex;
+  gap: 10px;
+  margin: 16px 16px 0;
+  padding: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.leekono-home-stats::-webkit-scrollbar {
+  display: none;
+}
+.leekono-home-stat {
+  flex: 1;
+  min-width: 0;
+  background: #fff;
+  text-align: center;
+  padding: 16px 8px;
+  border-radius: 12px;
+}
+.leekono-home-stat-number {
+  margin-bottom: 2px;
+}
+.leekono-home-stat-number .ant-statistic-content {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1d1d1f;
+  line-height: 1;
+}
+.leekono-home-stat-number .ant-statistic-content-suffix {
+  font-size: 18px;
+}
+.leekono-home-stat-label {
+  font-size: 11px;
+  color: #86868b;
+  line-height: 1.3;
+}
+
+/* ----- About ----- */
+.leekono-home-about {
+  margin: 16px 16px 0;
+  padding: 24px 20px;
+  background: #fff;
+  border-radius: 16px;
+}
+.leekono-home-about-inner {
+  text-align: center;
+}
+.leekono-home-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin: 0 0 8px;
+}
+.leekono-home-about-company {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0 0 8px;
+}
+.leekono-home-about-desc {
+  font-size: 13px;
+  color: #6e6e73;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ----- Section header ----- */
+.leekono-home-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+  padding: 0;
+}
+.leekono-home-section-header .leekono-home-section-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+.leekono-home-view-all {
+  font-size: 12px;
+  color: #86868b;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  transition: color 0.2s ease, gap 0.2s ease;
+  white-space: nowrap;
+  font-weight: 400;
+}
+.leekono-home-view-all:hover {
+  color: #1d1d1f;
+  gap: 4px;
+}
+
+/* ----- Products ----- */
+.leekono-home-products {
+  padding: 0;
+  margin: 16px 0 0;
+  background: transparent;
+}
+.leekono-home-products-inner {
+  /* mobile: section header has padding */
+}
+.leekono-home-products .leekono-home-section-header {
+  padding: 0 16px;
+}
+
+/* Mobile: 2-column product grid */
+.leekono-home-products-scroll {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 4px 16px 0;
+}
+.leekono-home-products-scroll .leekono-product-card {
+  border-radius: 12px;
+  box-shadow: none;
+  background: #fff;
+  overflow: hidden;
+}
+.leekono-home-products-scroll .leekono-product-card-img-wrapper {
+  aspect-ratio: 4 / 3;
+  padding: 10px;
+  border-radius: 0;
+  background: #fff;
+}
+.leekono-home-products-scroll .leekono-product-card-body {
+  padding: 6px 10px 10px;
+  text-align: center;
+}
+.leekono-home-products-scroll .leekono-product-card-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+}
+.leekono-home-products-scroll .leekono-product-card-desc {
+  font-size: 11px;
+  color: #86868b;
+  margin: 2px 0 0;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  line-height: 1.4;
+}
+.leekono-home-products-scroll .leekono-product-card-link {
+  display: none;
+}
+
+/* Desktop: hide mobile grid, show swiper grid */
+.leekono-home-products-grid {
+  display: none;
+}
+
+/* ----- Cases ----- */
+.leekono-home-cases {
+  padding: 0 0 4px;
+  margin: 16px 16px 0;
+  background: transparent;
+}
+.leekono-home-cases-inner {
+  padding: 0;
+}
+.leekono-home-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 0;
+}
+/* Mobile case card rounded */
+.leekono-home-cases-grid .leekono-case-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+.leekono-home-cases-grid .leekono-case-card-img {
+  border-radius: 0;
+}
+.leekono-home-cases-grid .leekono-case-card-content {
+  padding: 8px 10px;
+}
+.leekono-home-cases-grid .leekono-case-card-title {
+  font-size: 13px;
+  margin-bottom: 4px;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+}
+
+/* ===== Desktop Home ===== */
+@media (min-width: 768px) {
+  .leekono-home {
+    background-color: #fff;
+  }
+
+  /* Hero */
+  .leekono-home-hero {
+    height: 560px;
+    margin: 0;
+    border-radius: 0;
+  }
+  .leekono-home-hero-title {
+    font-size: 48px;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+  }
+  .leekono-home-hero-subtitle {
+    font-size: 18px;
+    max-width: 520px;
+    margin-bottom: 32px;
+  }
+  .leekono-home-hero-cta {
+    padding: 12px 32px;
+    font-size: 16px;
+    background: #fff;
+    backdrop-filter: none;
+  }
+
+  /* Stats */
+  .leekono-home-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 0;
+    padding: 48px 40px;
+    overflow: visible;
+  }
+  .leekono-home-stat {
+    background: transparent;
+    padding: 32px 20px;
+    border-right: 1px solid #e5e5e5;
+    border-radius: 0;
+  }
+  .leekono-home-stat:last-child {
+    border-right: none;
+  }
+  .leekono-home-stat-number .ant-statistic-content {
+    font-size: 48px;
+  }
+  .leekono-home-stat-number .ant-statistic-content-suffix {
+    font-size: 32px;
+  }
+  .leekono-home-stat-label {
+    font-size: 14px;
+    margin-top: 4px;
+  }
+
+  /* About */
+  .leekono-home-about {
+    margin: 0;
+    padding: 40px 40px;
+    border-radius: 0;
+    background: #f5f5f7;
+  }
+  .leekono-home-about-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .leekono-home-section-title {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  .leekono-home-about-company {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  .leekono-home-about-desc {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  /* Section header */
+  .leekono-home-section-header {
+    padding: 0;
+    margin-bottom: 16px;
+  }
+  .leekono-home-section-header .leekono-home-section-title {
+    font-size: 24px;
+  }
+  .leekono-home-view-all {
+    font-size: 14px;
+  }
+
+  /* Products */
+  .leekono-home-products {
+    padding: 32px 0 16px;
+    margin: 0;
+    background: #f5f5f7;
+  }
+  .leekono-home-products-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .leekono-home-products .leekono-home-section-header {
+    padding: 0;
+  }
+  .leekono-home-products-scroll {
+    display: none;
+  }
+  .leekono-home-products-grid {
+    display: block;
+  }
+
+  /* Cases */
+  .leekono-home-cases {
+    padding: 16px 0 32px;
+    margin: 0;
+    background: #f5f5f7;
+  }
+  .leekono-home-cases-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .leekono-home-cases-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .leekono-home-cases-grid .leekono-case-card {
+    border-radius: 8px;
+  }
+  .leekono-home-cases-grid .leekono-case-card-content {
+    padding: 12px 16px;
+  }
+  .leekono-home-cases-grid .leekono-case-card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+  }
+}
+
+@media (min-width: 1200px) {
+  .leekono-home-hero {
+    height: 640px;
+  }
+  .leekono-home-hero-title {
+    font-size: 56px;
+  }
+  .leekono-home-stats {
+    padding: 56px 0;
+  }
+  .leekono-home-stat-number .ant-statistic-content {
+    font-size: 56px;
+  }
+  .leekono-home-about {
+    padding: 48px 40px;
+  }
+  .leekono-home-about-inner {
+    max-width: 800px;
+  }
+  .leekono-home-section-title {
+    font-size: 28px;
+  }
+  .leekono-home-about-desc {
+    font-size: 16px;
+  }
+  .leekono-home-products {
+    padding: 40px 0 20px;
+  }
+  .leekono-home-products-inner {
+    padding: 0;
+  }
+  .leekono-home-cases {
+    padding: 20px 0 40px;
+  }
+  .leekono-home-cases-inner {
+    padding: 0;
+  }
+}
+
+/* ===== SVG Icon Classes (iconfont) ===== */
 .cls-1 {
   fill: #d6b49a;
 }
@@ -253,75 +638,156 @@ h3 {
   fill: #da4e22;
 }
 
-.mb20 {
-  margin-bottom: 20px;
-}
-
-/* ===== PC Desktop Responsive Styles ===== */
-
-html {
-  scroll-behavior: smooth;
-}
-
-.leekono-container {
-  width: 100%;
-  margin: 0 auto;
-}
-
-@media (min-width: 1024px) {
-  .leekono-container {
-    max-width: 1200px;
-    padding: 0 40px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .leekono-container {
-    max-width: 1400px;
-  }
+/* ===== Loading Screen ===== */
+.leekono-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 50px);
+  background: #f5f5f7;
+  animation: leekono-loading-fadein 0.3s ease-out;
 }
 
 @media (min-width: 768px) {
-  h2 {
-    font-size: 2em;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-  }
-  h3 {
-    font-size: 1.4em;
-    font-weight: 500;
-  }
-  .leekono-home-carousel {
-    padding: 24px 40px;
-  }
-  .leekono-home-about-us {
-    padding: 0 40px;
-  }
-  .leekono-home-about-us-data {
-    padding: 0 40px;
-  }
-  .leekono-home-desc {
-    font-size: 16px;
-    line-height: 1.8;
+  .leekono-loading {
+    min-height: calc(100vh - 64px);
+    background: #fff;
   }
 }
 
-@media (min-width: 1024px) {
-  .leekono-home-carousel {
-    padding: 32px 0;
+.leekono-loading-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.leekono-loading-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #86868b;
+  animation: leekono-loading-bounce 1.4s ease-in-out infinite;
+}
+
+.leekono-loading-dot:nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+.leekono-loading-dot:nth-child(3) {
+  animation-delay: 0.32s;
+}
+
+@keyframes leekono-loading-fadein {
+  from {
+    opacity: 0;
   }
-  .leekono-home-about-us {
-    padding: 0;
+  to {
+    opacity: 1;
   }
-  .leekono-home-about-us-data {
-    padding: 0;
+}
+
+@keyframes leekono-loading-bounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0.6);
+    opacity: 0.4;
   }
-  .leekono-home-desc {
-    font-size: 18px;
-    max-width: 800px;
+  40% {
+    transform: scale(1);
+    opacity: 1;
   }
-  .leekono-home-section {
-    margin-top: 48px;
-    padding: 20px 0;
+}
+
+/* ===== 404 Page ===== */
+.leekono-404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 50px);
+  background: #f5f5f7;
+  padding: 0 24px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .leekono-404 {
+    min-height: calc(100vh - 64px);
+    background: #fff;
+  }
+}
+
+.leekono-404-code {
+  font-size: 120px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -4px;
+  background: linear-gradient(135deg, #1d1d1f 0%, #86868b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: leekono-404-fadein 0.6s ease-out;
+}
+
+@media (min-width: 768px) {
+  .leekono-404-code {
+    font-size: 160px;
+  }
+}
+
+.leekono-404-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 16px 0 0;
+  animation: leekono-404-fadein 0.6s ease-out 0.1s both;
+}
+
+@media (min-width: 768px) {
+  .leekono-404-title {
+    font-size: 24px;
+  }
+}
+
+.leekono-404-desc {
+  font-size: 14px;
+  color: #86868b;
+  margin: 8px 0 0;
+  animation: leekono-404-fadein 0.6s ease-out 0.2s both;
+}
+
+@media (min-width: 768px) {
+  .leekono-404-desc {
+    font-size: 16px;
+  }
+}
+
+.leekono-404-btn {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 10px 28px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background: #1d1d1f;
+  border-radius: 980px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+  animation: leekono-404-fadein 0.6s ease-out 0.3s both;
+}
+
+.leekono-404-btn:hover {
+  background: #424245;
+}
+
+@keyframes leekono-404-fadein {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

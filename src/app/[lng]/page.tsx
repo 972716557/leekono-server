@@ -1,15 +1,14 @@
 import Image, { StaticImageData } from "next/image";
-import { Carousel, Col, Row } from "antd";
 import { RightOutlined } from "@ant-design/icons";
 import Link from "next/link";
 
 import LeekonoSwiper from "@/component/swiper";
-import poster1 from "@/assets/home/poster1.png";
-import poster2 from "@/assets/home/poster2.png";
-import { Params } from "@/types/common";
 import LeekonoStatistic from "@/component/statistic";
+import poster1 from "@/assets/home/poster1.png";
+import { Params } from "@/types/common";
 
 import { Cases } from "./case/_constant";
+import Card from "./product/_card";
 import CaseCard from "../../component/case-cart.tsx";
 import { getTranslation } from "../../i18n";
 import { LedTypes, WebSiteData } from "../../constant";
@@ -17,84 +16,105 @@ import { languages } from "@/i18n/settings";
 
 const prefix = "leekono-home";
 
-const data = [
+const stats = [
   { id: "founded", value: 15, suffix: "" },
   { id: "servingCountries", value: 30, suffix: "+" },
   { id: "partner", value: 1100, suffix: "+" },
   { id: "servingProvinces", value: 31, suffix: "" },
 ];
+
 const Home = async ({ params }: Params) => {
   const { lng } = await params;
   const { t } = await getTranslation(lng, "home");
 
   return (
-    <div className={prefix}>
-      <div className="leekono-container">
-        <div className={`${prefix}-carousel`}>
-          <Carousel autoplay>
-            <Image alt="img" src={poster1} className={`${prefix}-image`} />
-            <Image alt="img" src={poster2} className={`${prefix}-image`} />
-          </Carousel>
+    <div className={`${prefix} pb-safe`}>
+      {/* ===== Hero Banner ===== */}
+      <section className={`${prefix}-hero mt-3 md:mt-0`}>
+        <Image
+          alt="Leekono LED"
+          src={poster1}
+          className={`${prefix}-hero-bg`}
+          priority
+        />
+        <div className={`${prefix}-hero-overlay`} />
+        <div className={`${prefix}-hero-content`}>
+          <h1 className={`${prefix}-hero-title`}>{t("heroTitle")}</h1>
+          <p className={`${prefix}-hero-subtitle`}>{t("heroSubtitle")}</p>
+          <Link href="/product" className={`${prefix}-hero-cta`}>
+            {t("heroCta")}
+            <RightOutlined />
+          </Link>
         </div>
+      </section>
 
-        <section className={`${prefix}-section ${prefix}-about-us`}>
-          <h2 className={`${prefix}-title mb12`}>{t("aboutUs")}</h2>
-          <h3 className={`${prefix}-company`}>{t("companyName")}</h3>
-          <div className={`${prefix}-desc`}>{t("companyDescription")}</div>
-        </section>
-        <section className={`${prefix}-section ${prefix}-about-us-data`}>
-          <Row gutter={[12, 12]}>
-            {data.map(({ id, value, suffix }) => (
-              <Col span={12} md={6} key={id}>
-                <LeekonoStatistic value={value} suffix={suffix} />
-                <span className={`${prefix}-about-us-dec`}>{t(id)}</span>
-              </Col>
-            ))}
-          </Row>
-        </section>
-        <section className={`${prefix}-section ${prefix}-about-us`}>
-          <Row justify="space-between" align="middle">
-            <Col>
-              <h2 className={`${prefix}-title`}>{t("product")}</h2>
-            </Col>
-            <Col>
-              <Link href="/product">
-                {t("viewAll")}
-                <RightOutlined />
-              </Link>
-            </Col>
-          </Row>
-          <LeekonoSwiper
-            showPlusButton={false}
-            data={LedTypes.map((item) => ({
-              type: item,
-              src: "https://www.apple.com/v/iphone/home/cb/images/overview/consider/safety__bwp7rsowtjiu_xlarge_2x.jpg" as unknown as StaticImageData,
-            }))}
-          />
-        </section>
-        <section className="mt-[20px] p-[12px] bg-[#f2f3f5] md:mt-[48px] md:p-[32px_0] md:bg-transparent">
-          <div className="mb20">
-            <Row justify="space-between" align="middle">
-              <Col>
-                <h2 className={`${prefix}-title`}>{t("case")}</h2>
-              </Col>
-              <Col>
-                <Link href="/case">
-                  {t("viewAll")}
-                  <RightOutlined />
-                </Link>
-              </Col>
-            </Row>
+      {/* ===== Stats ===== */}
+      <section className={`${prefix}-stats`}>
+        {stats.map(({ id, value, suffix }) => (
+          <div className={`${prefix}-stat`} key={id}>
+            <div className={`${prefix}-stat-number`}>
+              <LeekonoStatistic value={value} suffix={suffix} />
+            </div>
+            <div className={`${prefix}-stat-label`}>{t(id)}</div>
           </div>
-          <Row gutter={[12, 12]}>
-            {Cases.slice(0, 4).map((item) => (
-              <Col span={12} md={6} key={item.id}>
-                <CaseCard {...item} fixedImgHeight />
-              </Col>
+        ))}
+      </section>
+
+      {/* ===== About Us ===== */}
+      <section className={`${prefix}-about`}>
+        <div className={`${prefix}-about-inner`}>
+          <h2 className={`${prefix}-section-title`}>{t("aboutUs")}</h2>
+          <h3 className={`${prefix}-about-company`}>{t("companyName")}</h3>
+          <p className={`${prefix}-about-desc`}>{t("companyDescription")}</p>
+        </div>
+      </section>
+
+      {/* ===== Products ===== */}
+      <section className={`${prefix}-products`}>
+        <div className={`${prefix}-products-inner`}>
+          <div className={`${prefix}-section-header`}>
+            <h2 className={`${prefix}-section-title`}>{t("product")}</h2>
+            <Link href="/product" className={`${prefix}-view-all`}>
+              {t("viewAll")}
+              <RightOutlined />
+            </Link>
+          </div>
+          {/* Mobile: 2-column grid */}
+          <div className={`${prefix}-products-scroll`}>
+            {LedTypes.slice(0, 6).map((item) => (
+              <Card type={item} key={item} />
             ))}
-          </Row>
-        </section>
-      </div>
+          </div>
+          {/* Desktop: grid */}
+          <div className={`${prefix}-products-grid`}>
+            <LeekonoSwiper
+              showPlusButton={false}
+              data={LedTypes.slice(0, 6).map((item) => ({
+                type: item,
+                src: "" as unknown as StaticImageData,
+              }))}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Cases ===== */}
+      <section className={`${prefix}-cases`}>
+        <div className={`${prefix}-cases-inner`}>
+          <div className={`${prefix}-section-header`}>
+            <h2 className={`${prefix}-section-title`}>{t("case")}</h2>
+            <Link href="/case" className={`${prefix}-view-all`}>
+              {t("viewAll")}
+              <RightOutlined />
+            </Link>
+          </div>
+          <div className={`${prefix}-cases-grid`}>
+            {Cases.slice(0, 4).map((item) => (
+              <CaseCard {...item} fixedImgHeight key={item.id} />
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
@@ -109,7 +129,6 @@ export async function generateMetadata({ params }: Params) {
   const { lng } = await params;
   const { t } = await getTranslation(lng, "common");
 
-  // 根据语言返回不同的元数据
   const metadata = {
     metadataBase: new URL(WebSiteData.url),
     title: t("home"),

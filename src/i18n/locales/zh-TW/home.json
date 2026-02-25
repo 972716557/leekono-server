@@ -1,15 +1,18 @@
 {
-  "learnMore": "了解詳情",
+  "heroTitle": "專業 LED 顯示方案",
+  "heroSubtitle": "十五年匠心深耕，為全球 100+ 國家提供優質 LED 顯示解決方案。",
+  "heroCta": "瀏覽產品",
+  "aboutUs": "關於我們",
   "companyName": "深圳市雷科諾光電科技有限公司",
   "companyDescription": "深圳市雷科諾光電科技有限公司佔地面積約2000平方米，十五載匠心深耕LED顯示屏領域。產品遠銷歐美發達國家和地區，外銷佔比超60%，至今已為全球100多個國家和地區提供優質產品與卓越服務。",
   "founded": "公司已成立時間（年）",
   "servingProvinces": "服務省、市、自治區",
   "servingCountries": "全球服務國家",
   "partner": "公司合作夥伴",
-  "productDetails": "產品詳情",
-  "productAdvantage": "產品優勢",
   "product": "產品",
   "viewAll": "查看全部",
-  "aboutUs": "關於我們",
-  "case": "案例"
+  "case": "精選案例",
+  "learnMore": "了解詳情",
+  "productDetails": "產品詳情",
+  "productAdvantage": "產品優勢"
 }

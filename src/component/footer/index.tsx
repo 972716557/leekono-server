@@ -13,7 +13,7 @@ const LeekonoFooter = () => {
     <footer className="bg-[#f5f5f7] text-[#6e6e73]">
       <div className="leekono-container">
         {/* Mobile layout */}
-        <div className="flex flex-col items-center p-[32px_16px_20px] text-[12px] leading-[2] md:hidden">
+        <div className="flex flex-col items-center p-[16px_16px_20px] text-[12px] leading-[2] md:hidden">
           <div className="text-[#1d1d1f] font-semibold text-[14px]">
             Leekono LED
           </div>
@@ -29,7 +29,7 @@ const LeekonoFooter = () => {
         </div>
 
         {/* Desktop layout */}
-        <div className="hidden md:block p-[40px_40px_24px]">
+        <div className="hidden md:block p-[24px_40px_24px]">
           <div className="border-b border-[#d2d2d7] pb-[24px] mb-[16px] grid grid-cols-3 gap-[40px] text-[13px] leading-[1.8]">
             <div>
               <div className="text-[#1d1d1f] font-semibold text-[14px] mb-[8px]">

@@ -2,11 +2,9 @@
 import { FC, useRef, useState } from "react";
 import { Popup, Swiper, SwiperRef } from "antd-mobile";
 import { Modal } from "antd";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
 import { StaticImageData } from "next/image";
-import { RightOutlined } from "@ant-design/icons";
 
 import { LedEnum, Posters } from "@/constant";
 import { useTranslation } from "@/i18n/client";
@@ -33,6 +31,7 @@ const LeekonoSwiper: FC<SwiperProps> = ({
   className,
 }) => {
   const ref = useRef<SwiperRef>(null);
+  const router = useRouter();
   const { lng } = useParams();
   const { t } = useTranslation(lng as string, "product");
   const [index, setIndex] = useState(0);
@@ -66,18 +65,14 @@ const LeekonoSwiper: FC<SwiperProps> = ({
   const isMobile = useIsMobile();
 
   const renderCard = (item: SwiperDataType, idx: number) => (
-    <div className={`${prefix}-card`} key={idx}>
+    <div className={`${prefix}-card`} key={idx} onClick={() => router.push(`/${lng}/product/${item.type}`)}>
       <div className={`${prefix}-card-content`}>
         <h2 className={`${prefix}-card-title`}>
           {t(`${item.type}.title`)}
         </h2>
-        <Link
-          href={`/product/${item.type}`}
-          className="inline-flex items-center gap-[4px]"
-        >
-          {t("learnMore")}
-          <RightOutlined />
-        </Link>
+        <p className={`${prefix}-card-desc`}>
+          {t(`${item.type}.description`)}
+        </p>
       </div>
       <Image
         alt="img"
