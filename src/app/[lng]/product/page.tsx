@@ -2,6 +2,7 @@ import { LedTypes, WebSiteData } from "@/constant";
 import { getTranslation } from "@/i18n";
 import { languages } from "@/i18n/settings";
 import { Params } from "@/types/common";
+import { getAlternates, getOgLocale } from "../../seo";
 import softSrc from "@/assets/images/soft.png";
 
 import Card from "./_card";
@@ -14,17 +15,16 @@ export async function generateMetadata({ params }: Params) {
   const { lng } = await params;
   const { t } = await getTranslation(lng, "common");
 
-  const metadata = {
-    metadataBase: new URL(WebSiteData.url),
+  return {
     title: t("productMetadata.title"),
-    icons: "/favicon.ico",
     description: t("productMetadata.description"),
+    alternates: getAlternates(lng, "/product"),
     openGraph: {
       title: t("productMetadata.title"),
       description: t("productMetadata.description"),
-      url: "/product",
+      url: `/${lng}/product`,
       siteName: WebSiteData.name,
-      locale: "en_US",
+      locale: getOgLocale(lng),
       alternateLocale: WebSiteData.alternateLocale,
       type: "website",
       images: [softSrc],
@@ -36,8 +36,6 @@ export async function generateMetadata({ params }: Params) {
       images: [softSrc],
     },
   };
-
-  return metadata;
 }
 
 const Product = async ({ params }: Params) => {

@@ -4,6 +4,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import Header from "@/component/header";
 import Footer from "@/component/footer";
+import { WebSiteData } from "@/constant";
+import { OrganizationJsonLd, WebSiteJsonLd } from "./json-ld";
 import "./globals.css";
 type Props = {
   children: ReactNode;
@@ -20,25 +22,39 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(WebSiteData.url),
   title: {
-    default: "Leekono LED",
-    template: "%s - Leekono", // 这个可以保证页面的统一格式，%s 会被替换为子页面的标题
+    default: "Leekono LED - Professional LED Display Solutions",
+    template: "%s - Leekono",
   },
-  description: "A leading LED technology company.",
+  description:
+    "Leekono LED - A leading LED display technology company providing indoor, outdoor, rental, and custom LED solutions worldwide.",
+  icons: {
+    icon: "/favicon-title.png",
+    apple: "/favicon-title.png",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    type: "website",
+    siteName: WebSiteData.name,
+    images: [{ url: "/favicon-title.png", width: 512, height: 512 }],
+  },
 };
 
 export default async function RootLayout({ children }: Readonly<Props>) {
   return (
-    <html>
-      {/* dir={dir(lng)} */}
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <OrganizationJsonLd />
+        <WebSiteJsonLd />
         <AntdRegistry>
           <Header />
-          <main className="pt-[50px] md:pt-[64px]">
-            {children}
-          </main>
+          <main className="pt-[50px] md:pt-[64px]">{children}</main>
           <Footer />
         </AntdRegistry>
       </body>

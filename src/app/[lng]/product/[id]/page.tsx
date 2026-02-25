@@ -6,6 +6,7 @@ import { Products } from "../_constant";
 import LeekonoSwiper from "../_swiper";
 import "../_index.css";
 import { WebSiteData } from "@/constant";
+import { getAlternates, getOgLocale } from "../../../seo";
 
 const prefix = "leekono-product-detail";
 
@@ -37,31 +38,27 @@ export async function generateMetadata({ params }: Params) {
   const product = Products.find((item) => item.id === id);
   const productId = product?.id;
 
-  // 根据语言返回不同的元数据
-  const metadata = {
+  return {
     title: t(`${productId}.title`),
     description: t(`${productId}.description`),
-    icons: "/favicon.ico",
-    metadataBase: new URL(WebSiteData.url),
+    alternates: getAlternates(lng, `/product/${id}`),
     openGraph: {
-      title: t("productMetadata.title"),
-      description: t("productMetadata.description"),
-      url: `/product/${id}`,
+      title: t(`${productId}.title`),
+      description: t(`${productId}.description`),
+      url: `/${lng}/product/${id}`,
       siteName: WebSiteData.name,
-      locale: "en_US",
+      locale: getOgLocale(lng),
       alternateLocale: WebSiteData.alternateLocale,
       type: "website",
       images: product?.images,
     },
     twitter: {
-      card: "summary_large_image",
-      title: t("productMetadata.title"),
-      description: t("productMetadata.description"),
+      card: "summary_large_image" as const,
+      title: t(`${productId}.title`),
+      description: t(`${productId}.description`),
       images: product?.images,
     },
   };
-
-  return metadata;
 }
 
 export default ProductDetail;

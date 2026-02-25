@@ -13,6 +13,7 @@ import CaseCard from "../../component/case-cart.tsx";
 import { getTranslation } from "../../i18n";
 import { LedTypes, WebSiteData } from "../../constant";
 import { languages } from "@/i18n/settings";
+import { getAlternates, getOgLocale } from "../seo";
 
 const prefix = "leekono-home";
 
@@ -41,7 +42,7 @@ const Home = async ({ params }: Params) => {
         <div className={`${prefix}-hero-content`}>
           <h1 className={`${prefix}-hero-title`}>{t("heroTitle")}</h1>
           <p className={`${prefix}-hero-subtitle`}>{t("heroSubtitle")}</p>
-          <Link href="/product" className={`${prefix}-hero-cta`}>
+          <Link href={`/${lng}/product`} className={`${prefix}-hero-cta`}>
             {t("heroCta")}
             <RightOutlined />
           </Link>
@@ -74,7 +75,7 @@ const Home = async ({ params }: Params) => {
         <div className={`${prefix}-products-inner`}>
           <div className={`${prefix}-section-header`}>
             <h2 className={`${prefix}-section-title`}>{t("product")}</h2>
-            <Link href="/product" className={`${prefix}-view-all`}>
+            <Link href={`/${lng}/product`} className={`${prefix}-view-all`}>
               {t("viewAll")}
               <RightOutlined />
             </Link>
@@ -103,7 +104,7 @@ const Home = async ({ params }: Params) => {
         <div className={`${prefix}-cases-inner`}>
           <div className={`${prefix}-section-header`}>
             <h2 className={`${prefix}-section-title`}>{t("case")}</h2>
-            <Link href="/case" className={`${prefix}-view-all`}>
+            <Link href={`/${lng}/case`} className={`${prefix}-view-all`}>
               {t("viewAll")}
               <RightOutlined />
             </Link>
@@ -129,15 +130,25 @@ export async function generateMetadata({ params }: Params) {
   const { lng } = await params;
   const { t } = await getTranslation(lng, "common");
 
-  const metadata = {
-    metadataBase: new URL(WebSiteData.url),
+  return {
     title: t("home"),
     description: t("companyName"),
-    icons: "/favicon.ico",
-    image: WebSiteData.logo,
+    alternates: getAlternates(lng),
+    openGraph: {
+      title: t("home"),
+      description: t("companyName"),
+      url: `/${lng}`,
+      siteName: WebSiteData.name,
+      locale: getOgLocale(lng),
+      alternateLocale: WebSiteData.alternateLocale,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image" as const,
+      title: t("home"),
+      description: t("companyName"),
+    },
   };
-
-  return metadata;
 }
 
 export default Home;

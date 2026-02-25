@@ -58,8 +58,8 @@ const Posters: Record<LedEnum, StaticImageData> = {
 const WebSiteData = {
   name: "Leekono LED",
   description: "A leading LED technology company.",
-  url: "http://leekono.com",
-  logo: "http://www.leekono-led.com/favicon.ico",
+  url: "https://leekono.com",
+  logo: "https://leekono.com/favicon-title.png",
   alternateLocale: ["en_US", "zh_CN", "zh_TW"],
 };
 export {

@@ -3,6 +3,7 @@ import "./index.css";
 import { getTranslation } from "@/i18n";
 import { languages } from "@/i18n/settings";
 import { WebSiteData } from "@/constant";
+import { getAlternates, getOgLocale } from "../../seo";
 
 const prefix = "leekono-contact";
 
@@ -71,20 +72,18 @@ export async function generateMetadata({ params }: Params) {
   const { lng } = await params;
   const { t } = await getTranslation(lng, "common");
 
-  const metadata = {
+  return {
     title: t("contact"),
     description: t("companyName"),
-    icons: "/favicon.ico",
-    metadataBase: new URL(WebSiteData.url),
+    alternates: getAlternates(lng, "/contact"),
     openGraph: {
       title: t("contact"),
       description: t("companyName"),
-      url: "/contact",
+      url: `/${lng}/contact`,
       siteName: WebSiteData.name,
-      locale: "en_US",
+      locale: getOgLocale(lng),
       alternateLocale: WebSiteData.alternateLocale,
       type: "website",
-      author: "Leekono LED",
     },
     twitter: {
       card: "summary_large_image" as const,
@@ -92,8 +91,6 @@ export async function generateMetadata({ params }: Params) {
       description: t("companyName"),
     },
   };
-
-  return metadata;
 }
 
 export default Contact;

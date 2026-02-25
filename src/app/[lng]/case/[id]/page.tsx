@@ -4,6 +4,7 @@ import { En_Locale, TW_Locale, WebSiteData, ZH_Locale } from "@/constant";
 import { languages } from "@/i18n/settings";
 import { Params, TempData } from "@/types/common";
 import { getTranslation } from "@/i18n";
+import { getAlternates, getOgLocale } from "../../../seo";
 
 import { Cases } from "../_constant";
 
@@ -23,30 +24,27 @@ export async function generateMetadata({ params }: Params) {
     ? detail?.twTitle
     : detail?.zhTitle;
 
-  // 根据语言返回不同的元数据
-  const metadata = {
+  return {
     title,
     description: t("caseMetadata.description"),
-    metadataBase: new URL(WebSiteData.url),
+    alternates: getAlternates(locale, `/case/${id}`),
     openGraph: {
       title,
       description: t("caseMetadata.description"),
-      url: "/case",
+      url: `/${locale}/case/${id}`,
       siteName: WebSiteData.name,
-      locale: "en_US",
+      locale: getOgLocale(locale),
       alternateLocale: WebSiteData.alternateLocale,
       type: "website",
       images: detail?.images,
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image" as const,
       title,
       description: t("caseMetadata.description"),
       images: detail?.images,
     },
   };
-
-  return metadata;
 }
 const Detail = async ({
   params,

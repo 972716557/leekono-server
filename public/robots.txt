@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Disallow: /three/
+Disallow: /*/three/
+Disallow: /*/three1/
+Disallow: /*/warning/
+
+Sitemap: https://leekono.com/sitemap.xml

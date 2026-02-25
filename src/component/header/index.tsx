@@ -25,12 +25,12 @@ const Header = () => {
   };
 
   const onNavigate = (path: string) => {
-    router.push(path);
+    router.push(`/${lng}${path}`);
     setVisible(false);
   };
 
   const onClickHome = () => {
-    router.push("/");
+    router.push(`/${lng}`);
   };
 
   const isActive = (path: string) => {

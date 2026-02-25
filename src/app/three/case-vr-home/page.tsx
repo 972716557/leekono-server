@@ -63,7 +63,7 @@ const Page = () => {
     // controller.maxDistance = 1;
     const hdrLoader = new RGBELoader();
     const geometry = new SphereGeometry(20);
-    let sphere;
+    let sphere: Mesh | undefined;
     // 翻转法线，使纹理在内部可见
     geometry.scale(1, 1, -1);
     const video = hdrLoader.load("http://localhost:3000/room.hdr", (env) => {
@@ -136,22 +136,17 @@ const Page = () => {
         left: 0,
         top: 0,
       };
+      const width = ref.current?.offsetWidth || 1;
+      const height = ref.current?.offsetHeight || 1;
       mouse.x =
-        ((event.clientX - getBoundingClientRect.left) /
-          ref.current?.offsetWidth) *
-          2 -
-        1;
+        ((event.clientX - getBoundingClientRect.left) / width) * 2 - 1;
       mouse.y =
-        -(
-          (event.clientY - getBoundingClientRect.top) /
-          ref.current?.offsetHeight
-        ) *
-          2 +
-        1;
+        -((event.clientY - getBoundingClientRect.top) / height) * 2 + 1;
 
       // mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
       // mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
       raycaster.setFromCamera(mouse, camera);
+      if (!buttonSprite) return;
       const intersects = raycaster.intersectObject(buttonSprite);
       if (intersects.length > 0) {
         const worldVector = new Vector3(
@@ -164,11 +159,15 @@ const Page = () => {
         const halfHeight = window.innerHeight / 2;
         const left = dncPosition.x * halfWidth + halfWidth;
         const top = -dncPosition.y * halfHeight + halfHeight;
-        spanRef.current?.style.display = "block";
-        spanRef.current?.style.left = left + "px";
-        spanRef.current?.style.top = top + "px";
+        if (spanRef.current) {
+          spanRef.current.style.display = "block";
+          spanRef.current.style.left = left + "px";
+          spanRef.current.style.top = top + "px";
+        }
       } else {
-        spanRef.current?.style.display = "none";
+        if (spanRef.current) {
+          spanRef.current.style.display = "none";
+        }
       }
     });
 
@@ -193,14 +192,15 @@ const Page = () => {
           });
       }
       raycaster.setFromCamera(mouse, camera);
+      if (!buttonSprite) return;
       const intersects = raycaster.intersectObject(buttonSprite, true);
 
-      if (intersects.length > 0) {
+      if (intersects.length > 0 && sphere) {
         // 这里切换到另一个场景
         hdrLoader.load("http://localhost:3000/resturant.hdr", (env) => {
           // 设置球形映射
           const material = new MeshBasicMaterial({ map: env });
-          sphere.material = material;
+          sphere!.material = material;
         });
       }
     });

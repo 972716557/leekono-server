@@ -22,7 +22,7 @@ const LeekonoFooter = () => {
           <div className="mt-[8px] text-center">{t("address")}</div>
           <div className="mt-[12px] flex items-center gap-[16px] text-[11px]">
             <span>Leekono &copy; 2026</span>
-            <Link href="/business-license" className="text-[#6e6e73] hover:text-[#1d1d1f] transition-colors">
+            <Link href={`/${lng}/business-license`} className="text-[#6e6e73] hover:text-[#1d1d1f] transition-colors">
               {t("businessLicense")}
             </Link>
           </div>
@@ -48,7 +48,7 @@ const LeekonoFooter = () => {
               <div className="text-[#1d1d1f] font-medium text-[13px] mb-[8px]">
                 {t("businessLicense")}
               </div>
-              <Link href="/business-license" className="text-[#0066cc] hover:underline text-[13px]">
+              <Link href={`/${lng}/business-license`} className="text-[#0066cc] hover:underline text-[13px]">
                 {t("businessLicense")}
               </Link>
             </div>
