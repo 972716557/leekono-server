@@ -1,6 +1,38 @@
 .leekono-product {
   background-color: #fff;
 }
+
+/* ===== Hero ===== */
+.leekono-product-hero {
+  text-align: center;
+  padding: 48px 20px 24px;
+  background: linear-gradient(180deg, #f5f5f7 0%, #fff 100%);
+}
+.leekono-product-hero-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+}
+.leekono-product-hero-subtitle {
+  font-size: 15px;
+  color: #86868b;
+  margin: 0;
+  line-height: 1.6;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== Product Grid ===== */
+.leekono-product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 0 16px 40px;
+}
+
 .leekono-product-row {
   width: 100%;
 }
@@ -51,23 +83,139 @@
   color: #86909c;
 }
 
-/* Desktop product detail styles */
+/* ===== Desktop: Hero + Grid ===== */
+@media (min-width: 768px) {
+  .leekono-product-hero {
+    padding: 80px 40px 40px;
+  }
+  .leekono-product-hero-title {
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+  }
+  .leekono-product-hero-subtitle {
+    font-size: 18px;
+    max-width: 520px;
+  }
+  .leekono-product-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .leekono-product-hero {
+    padding: 100px 40px 48px;
+  }
+  .leekono-product-hero-title {
+    font-size: 52px;
+  }
+  .leekono-product-grid {
+    gap: 32px;
+    padding: 0 0 100px;
+  }
+}
+
+/* ===== Desktop product detail styles ===== */
 @media (min-width: 768px) {
   .leekono-product-detail {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 40px 40px 60px;
+    background-color: #fff;
+  }
+
+  /* Swiper / Gallery container */
+  .leekono-product-detail-swiper {
+    background: #f9f9f9;
+    border-radius: 20px;
+    overflow: hidden;
   }
   .leekono-product-detail-swiper img {
-    height: 500px;
+    height: auto;
     object-fit: contain;
   }
+
+  /* Gallery layout */
+  .leekono-product-detail-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 48px 32px;
+  }
+  .leekono-product-detail-gallery-main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+  }
+  .leekono-product-detail-gallery-main-img {
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    cursor: zoom-in;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+  .leekono-product-detail-gallery-main-img:hover {
+    transform: scale(1.02);
+  }
+  .leekono-product-detail-gallery-thumbs {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .leekono-product-detail-gallery-thumb {
+    width: 72px;
+    height: 72px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    padding: 4px;
+  }
+  .leekono-product-detail-gallery-thumb:hover {
+    border-color: #d2d2d7;
+    background: #f5f5f7;
+  }
+  .leekono-product-detail-gallery-thumb.active {
+    border-color: #1677ff;
+    box-shadow: 0 0 0 1px rgba(22, 119, 255, 0.2);
+  }
+  .leekono-product-detail-gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+  }
+
+  /* Product detail card */
   .leekono-product-detail-card {
-    padding: 2rem 2.5rem;
-    margin-top: 20px;
-    border-radius: 8px;
+    padding: 32px 40px;
+    margin-top: 32px;
+    border-radius: 20px;
+    background-color: #f9f9f9;
   }
   .leekono-product-detail-title {
-    font-size: 24px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 20px;
   }
   .leekono-product-detail-advantage-title {
     font-size: 18px;
@@ -75,5 +223,50 @@
   .leekono-product-detail-content {
     font-size: 16px;
     line-height: 1.8;
+  }
+
+  /* Table styling */
+  .leekono-product-detail-card .ant-table {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .leekono-product-detail-card .ant-table-thead > tr > th {
+    background: #f0f0f0;
+    font-weight: 600;
+    color: #1d1d1f;
+    border-bottom: none;
+  }
+  .leekono-product-detail-card .ant-table-tbody > tr > td {
+    color: #424245;
+  }
+  .leekono-product-detail-card .ant-table-tbody > tr:hover > td {
+    background: #f5f5f7;
+  }
+}
+
+@media (min-width: 1200px) {
+  .leekono-product-detail {
+    padding: 48px 0 80px;
+  }
+  .leekono-product-detail-gallery {
+    padding: 56px 64px 36px;
+  }
+  .leekono-product-detail-gallery-main {
+    min-height: 480px;
+  }
+  .leekono-product-detail-gallery-main-img {
+    max-height: 480px;
+  }
+  .leekono-product-detail-gallery-thumb {
+    width: 88px;
+    height: 88px;
+    border-radius: 12px;
+    padding: 6px;
+  }
+  .leekono-product-detail-gallery-thumb img {
+    border-radius: 8px;
+  }
+  .leekono-product-detail-card {
+    padding: 40px 48px;
   }
 }

@@ -72,7 +72,7 @@ const Home = async ({ params }: Params) => {
             }))}
           />
         </section>
-        <section className="mt-[20px] p-[12px] bg-[#f2f3f5] md:mt-[48px] md:p-[32px_0] md:rounded-[12px]">
+        <section className="mt-[20px] p-[12px] bg-[#f2f3f5] md:mt-[48px] md:p-[32px_0] md:bg-transparent">
           <div className="mb20">
             <Row justify="space-between" align="middle">
               <Col>

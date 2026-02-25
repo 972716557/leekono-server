@@ -36,7 +36,9 @@ export default async function RootLayout({ children }: Readonly<Props>) {
       >
         <AntdRegistry>
           <Header />
-          {children}
+          <main className="pt-[50px] md:pt-[64px]">
+            {children}
+          </main>
           <Footer />
         </AntdRegistry>
       </body>

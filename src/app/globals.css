@@ -77,8 +77,10 @@
   margin-top: 28px;
 }
 
-.leekono-home .leekono-swiper-card {
-  height: fit-content;
+@media (max-width: 767px) {
+  .leekono-home .leekono-swiper-card {
+    height: fit-content;
+  }
 }
 
 .leekono-home .ant-image {

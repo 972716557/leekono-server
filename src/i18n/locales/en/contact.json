@@ -1,9 +1,10 @@
 {
-    "addressLabel": "Address",
-"address":
-    "3rd Floor, No. 6, Jilong Road, Taiwan Industrial Village, Luozu Community, Shiyan Street, Baoan District, Shenzhen",
-  "phoneLabel": "Phone Number & WhatsApp & WeChat",
-  "phone":"+86 19168744682",
+  "heroTitle": "Contact Us",
+  "heroSubtitle": "Have questions or interested in partnership? We'd love to hear from you.",
+  "addressLabel": "Address",
+  "address": "3rd Floor, No. 6, Jilong Road, Taiwan Industrial Village, Luozu Community, Shiyan Street, Baoan District, Shenzhen",
+  "phoneLabel": "Phone & WhatsApp & WeChat",
+  "phone": "+86 19168744682",
   "emailLabel": "Email",
   "email": "aria_leekono@foxmail.com"
 }

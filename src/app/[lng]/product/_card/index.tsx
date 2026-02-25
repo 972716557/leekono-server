@@ -1,10 +1,7 @@
 "use client";
-import { Button } from "antd";
 import { RightOutlined } from "@ant-design/icons";
 import { useParams, useRouter } from "next/navigation";
-
 import { FC } from "react";
-import classNames from "classnames";
 import Image, { StaticImageData } from "next/image";
 
 import { useTranslation } from "@/i18n/client";
@@ -38,46 +35,37 @@ const imgs: Record<LedEnum, StaticImageData> = {
 };
 
 const prefix = "leekono-product-card";
+
 const Card: FC<CardProps> = (props) => {
-  const history = useRouter();
+  const router = useRouter();
   const { lng } = useParams();
   const { t } = useTranslation(lng as string, "product");
 
   const { type = "led" } = props;
 
-  const onClickContactUs = () => {
-    history.push("/contact");
-  };
-
-  const titleClass = classNames(`${prefix}-title`, `${prefix}-title-mobile`);
-
   const onClickDetail = () => {
-    history.push(`/${lng}/product/${type}`);
+    router.push(`/${lng}/product/${type}`);
   };
+
   return (
-    <div className={prefix}>
-      <div>
+    <div className={prefix} onClick={onClickDetail}>
+      <div className={`${prefix}-img-wrapper`}>
         <Image
-          alt="img"
+          alt={t(`${type}.title`)}
           className={`${prefix}-img`}
           src={imgs[type as unknown as LedEnum]}
         />
       </div>
-      <div className={titleClass}>{t(`${type}.title`)}</div>
-      <div className={`${prefix}-footer`}>
-        <Button
-          className={`${prefix}-button`}
-          type="primary"
-          onClick={onClickContactUs}
-        >
-          {t("contact")}
-        </Button>
-      </div>
-      <div className={`${prefix}-detail`} onClick={onClickDetail}>
-        {t("learnMore")}
-        <RightOutlined />
+      <div className={`${prefix}-body`}>
+        <h3 className={`${prefix}-title`}>{t(`${type}.title`)}</h3>
+        <p className={`${prefix}-desc`}>{t(`${type}.description`)}</p>
+        <span className={`${prefix}-link`}>
+          {t("learnMore")}
+          <RightOutlined />
+        </span>
       </div>
     </div>
   );
 };
+
 export default Card;

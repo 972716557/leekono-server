@@ -1,66 +1,96 @@
+/* ===== Product Card ===== */
 .leekono-product-card {
-  text-align: center;
+  background: #fff;
+  border-radius: 16px;
   overflow: hidden;
-  padding: 0 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.leekono-product-card-img-wrapper {
+  background: #f5f5f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
 }
 
 .leekono-product-card-img {
   width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.leekono-product-card-body {
+  padding: 16px;
 }
 
 .leekono-product-card-title {
-  font-size: 28px;
-  text-align: center;
-  font-weight: 500;
-  white-space: nowrap;
+  font-size: 17px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0 0 6px;
 }
 
-.leekono-product-card-title-mobile {
-  font-size: 18px;
+.leekono-product-card-desc {
+  font-size: 13px;
+  color: #86868b;
+  line-height: 1.5;
+  margin: 0 0 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.leekono-product-card-footer {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.ant-btn.leekono-product-card-button {
-  display: inline-flex;
-  background: #0070d5;
-  border-radius: 500px;
-  font-size: 14px;
-  line-height: 20px;
-  color: #fff;
-  padding: 6px 12px;
-  width: fit-content;
-  margin: 0 auto;
-  height: 32px;
-  border: none;
-}
-
-.leekono-product-card-detail {
-  margin-top: 16px;
-  color: #0070d5;
-  font-size: 14px;
-  line-height: 24px;
+.leekono-product-card-link {
+  font-size: 13px;
+  color: #0066cc;
   display: inline-flex;
   align-items: center;
-  min-height: 24px;
-  cursor: pointer;
+  gap: 4px;
+  transition: gap 0.2s ease;
 }
 
-/* Desktop product card styles */
+/* ===== Desktop ===== */
 @media (min-width: 768px) {
   .leekono-product-card {
-    padding: 20px 32px;
-    border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 20px;
   }
   .leekono-product-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
   }
-  .leekono-product-card-title-mobile {
-    font-size: 22px;
+  .leekono-product-card:hover .leekono-product-card-img {
+    transform: scale(1.05);
+  }
+  .leekono-product-card:hover .leekono-product-card-link {
+    gap: 8px;
+  }
+
+  .leekono-product-card-img-wrapper {
+    padding: 32px;
+  }
+
+  .leekono-product-card-body {
+    padding: 20px 24px 24px;
+  }
+
+  .leekono-product-card-title {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .leekono-product-card-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .leekono-product-card-link {
+    font-size: 15px;
   }
 }

@@ -1,5 +1,3 @@
-import { Col, Row } from "antd";
-
 import { LedTypes, WebSiteData } from "@/constant";
 import { getTranslation } from "@/i18n";
 import { languages } from "@/i18n/settings";
@@ -11,11 +9,11 @@ import Card from "./_card";
 import "./_index.css";
 
 const prefix = "leekono-product";
+
 export async function generateMetadata({ params }: Params) {
   const { lng } = await params;
   const { t } = await getTranslation(lng, "common");
 
-  // 根据语言返回不同的元数据
   const metadata = {
     metadataBase: new URL(WebSiteData.url),
     title: t("productMetadata.title"),
@@ -32,7 +30,7 @@ export async function generateMetadata({ params }: Params) {
       images: [softSrc],
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image" as const,
       title: t("productMetadata.title"),
       description: t("productMetadata.description"),
       images: [softSrc],
@@ -41,18 +39,25 @@ export async function generateMetadata({ params }: Params) {
 
   return metadata;
 }
-const Product = () => {
+
+const Product = async ({ params }: Params) => {
+  const { lng } = await params;
+  const { t } = await getTranslation(lng, "product");
+
   return (
     <div className={prefix}>
-      <div className="leekono-container">
-        <Row gutter={[12, 24]} className={`${prefix}-row`}>
-          {LedTypes.map((item, index) => (
-            <Col xxl={6} lg={8} sm={12} xs={12} key={index}>
-              <Card type={item}></Card>
-            </Col>
-          ))}
-        </Row>
-      </div>
+      {/* Hero */}
+      <section className={`${prefix}-hero`}>
+        <h1 className={`${prefix}-hero-title`}>{t("heroTitle")}</h1>
+        <p className={`${prefix}-hero-subtitle`}>{t("heroSubtitle")}</p>
+      </section>
+
+      {/* Product grid */}
+      <section className={`${prefix}-grid`}>
+        {LedTypes.map((item, index) => (
+          <Card type={item} key={index} />
+        ))}
+      </section>
     </div>
   );
 };
@@ -62,4 +67,5 @@ export async function generateStaticParams() {
     lng: item,
   }));
 }
+
 export default Product;

@@ -1,39 +1,52 @@
 {
+  "heroTitle": "Products",
+  "heroSubtitle": "Professional LED display solutions for rental, outdoor, indoor and more.",
+  "learnMore": "Learn More",
+  "productDetails": "Product Details",
   "rental": {
     "title": "Rental LED",
-    "detail": "zhe "
+    "description": "Cost-effective for short-term events. Flexible & scalable setups with full technical support.",
+    "detail": "Rental LED"
   },
   "outdoor": {
     "title": "Outdoor LED",
-    "detail": "户外屏"
+    "description": "Built for brightness and durability. Clear visuals even in direct sunlight.",
+    "detail": "Outdoor LED"
   },
   "indoor": {
     "title": "Indoor LED",
-    "detail": "室内屏"
+    "description": "High resolution with excellent color. Fine pixel pitch for ultra-clear close-viewing.",
+    "detail": "Indoor LED"
   },
   "poster": {
     "title": "Poster LED",
-    "detail": "海报屏"
+    "description": "Ultra-thin and lightweight for easy installation. Vibrant replacement for print posters.",
+    "detail": "Poster LED"
   },
   "crystal": {
     "title": "Crystal LED",
-    "detail": "晶膜屏"
+    "description": "Ultra-thin, flexible, and lightweight. High transparency for glass surface mounting.",
+    "detail": "Crystal LED"
   },
   "transparent": {
     "title": "Transparent LED",
-    "detail": "透明屏"
+    "description": "Maintains high transparency while displaying content. Perfect for retail windows.",
+    "detail": "Transparent LED"
   },
   "floor": {
     "title": "Floor LED",
-    "detail": "地砖屏"
+    "description": "High load-bearing and anti-slip. Creates immersive interactive experiences.",
+    "detail": "Floor LED"
   },
   "taxi": {
     "title": "Taxi LED",
-    "detail": "Taxi Screen"
+    "description": "Compact, durable, and energy-efficient. Mobile advertising for brand visibility.",
+    "detail": "Taxi LED"
   },
   "soft": {
     "title": "Soft LED",
-    "detail": "Soft Screen"
+    "description": "Bendable and curveable for unique installations and immersive curved displays.",
+    "detail": "Soft LED"
   },
   "config": "Config",
   "bestView": "Best View Distance",

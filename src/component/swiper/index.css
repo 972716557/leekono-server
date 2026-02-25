@@ -119,23 +119,53 @@
 .leekono-swiper-desktop-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px 0;
+  gap: 32px;
+  padding: 24px 0;
 }
 
 .leekono-swiper-desktop-grid .leekono-swiper-card {
-  height: 420px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: auto;
+  padding: 40px 24px 24px;
+  border-radius: 16px;
+  clip-path: none;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column-reverse;
+  transition: box-shadow 0.3s ease;
+  box-shadow: none;
 }
 
 .leekono-swiper-desktop-grid .leekono-swiper-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  transform: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.leekono-swiper-desktop-grid .leekono-swiper-card-content {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.leekono-swiper-desktop-grid .leekono-swiper-card-image {
+  margin-top: 0;
+  border-radius: 12px;
+  height: 220px;
+  object-fit: contain;
+}
+
+.leekono-swiper-desktop-grid .leekono-swiper-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
 }
 
 @media (min-width: 1200px) {
   .leekono-swiper-desktop-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .leekono-swiper-desktop-grid .leekono-swiper-card-image {
+    height: 260px;
   }
 }

@@ -1,8 +1,10 @@
 {
-"addressLabel": "地址",
-"address": "深圳市宝安区石岩街道罗租社区台湾工业村基隆路6号三层",
-"phoneLabel": "電話號碼 & WhatsApp & 微信",
-"phone":"+86 19168744682",
-"emailLabel": "郵箱",
-"email": "aria_leekono@foxmail.com"
+  "heroTitle": "聯繫我們",
+  "heroSubtitle": "如果您有任何疑問或合作意向，歡迎隨時與我們取得聯繫。",
+  "addressLabel": "地址",
+  "address": "深圳市寶安區石巖街道羅租社區臺灣工業村基隆路6號三層",
+  "phoneLabel": "電話 & WhatsApp & 微信",
+  "phone": "+86 19168744682",
+  "emailLabel": "郵箱",
+  "email": "aria_leekono@foxmail.com"
 }

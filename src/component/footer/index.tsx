@@ -10,30 +10,51 @@ const LeekonoFooter = () => {
   const { t } = useTranslation(lng as string, "common");
 
   return (
-    <footer className="bg-[#1a1a1a] text-[#999]">
-      <div className="leekono-container flex flex-col items-center p-[32px_10px_20px] text-[12px] leading-[2] md:flex-row md:justify-between md:items-start md:p-[48px_40px_32px] md:text-[14px] md:leading-[2.2]">
-        <div className="text-center md:text-left md:max-w-[320px]">
-          <div className="text-white font-semibold text-[16px] mb-[4px]">
+    <footer className="bg-[#f5f5f7] text-[#6e6e73]">
+      <div className="leekono-container">
+        {/* Mobile layout */}
+        <div className="flex flex-col items-center p-[32px_16px_20px] text-[12px] leading-[2] md:hidden">
+          <div className="text-[#1d1d1f] font-semibold text-[14px]">
             Leekono LED
           </div>
-          <div>{t("address")}</div>
-        </div>
-        <div className="text-center mt-[8px] md:mt-0">
-          <div>
-            {t("phoneLabel")}
-            <span className="text-[#4d84ed] ml-[4px]">{t("phone")}</span>
-          </div>
+          <div className="mt-[4px]">{t("phone")}</div>
           <div>{t("email")}</div>
-        </div>
-        <div className="text-center mt-[8px] md:mt-0 md:text-right">
-          <div>Leekono &copy; 2025</div>
-          <div>
-            <Link
-              href="/business-license"
-              className="text-[#999] hover:text-white transition-colors"
-            >
+          <div className="mt-[8px] text-center">{t("address")}</div>
+          <div className="mt-[12px] flex items-center gap-[16px] text-[11px]">
+            <span>Leekono &copy; 2026</span>
+            <Link href="/business-license" className="text-[#6e6e73] hover:text-[#1d1d1f] transition-colors">
               {t("businessLicense")}
             </Link>
+          </div>
+        </div>
+
+        {/* Desktop layout */}
+        <div className="hidden md:block p-[40px_40px_24px]">
+          <div className="border-b border-[#d2d2d7] pb-[24px] mb-[16px] grid grid-cols-3 gap-[40px] text-[13px] leading-[1.8]">
+            <div>
+              <div className="text-[#1d1d1f] font-semibold text-[14px] mb-[8px]">
+                Leekono LED
+              </div>
+              <div>{t("address")}</div>
+            </div>
+            <div>
+              <div className="text-[#1d1d1f] font-medium text-[13px] mb-[8px]">
+                {t("phoneLabel")}
+              </div>
+              <div>{t("phone")}</div>
+              <div className="mt-[8px]">{t("email")}</div>
+            </div>
+            <div className="text-right">
+              <div className="text-[#1d1d1f] font-medium text-[13px] mb-[8px]">
+                {t("businessLicense")}
+              </div>
+              <Link href="/business-license" className="text-[#0066cc] hover:underline text-[13px]">
+                {t("businessLicense")}
+              </Link>
+            </div>
+          </div>
+          <div className="text-[12px] text-[#86868b]">
+            Leekono &copy; 2026. All rights reserved.
           </div>
         </div>
       </div>
