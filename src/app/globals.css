@@ -3,27 +3,82 @@
 
 /* ================================================
    LEEKONO — DESIGN SYSTEM (Apple-inspired)
-   Ref: apple.com, apple.com/iphone
-   Palette: #000 / #fff / #f5f5f7 / #1d1d1f / #2997ff
+   Refined minimalist system with design tokens
    ================================================ */
+
+/* ===== Design Tokens ===== */
+:root {
+  /* Colors */
+  --lk-black: #000;
+  --lk-white: #fff;
+  --lk-gray-50: #fbfbfd;
+  --lk-gray-100: #f5f5f7;
+  --lk-gray-200: #e8e8ed;
+  --lk-gray-300: #d2d2d7;
+  --lk-gray-400: #aeaeb2;
+  --lk-gray-500: #86868b;
+  --lk-gray-600: #6e6e73;
+  --lk-gray-700: #424245;
+  --lk-gray-800: #1d1d1f;
+  --lk-blue: #0071e3;
+  --lk-blue-light: #2997ff;
+
+  /* Typography */
+  --lk-font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --lk-tracking-tight: -0.022em;
+  --lk-tracking-tighter: -0.04em;
+  --lk-tracking-tightest: -0.05em;
+  --lk-leading-tight: 1.08;
+  --lk-leading-snug: 1.19;
+  --lk-leading-normal: 1.47;
+
+  /* Spacing */
+  --lk-container-max: 980px;
+  --lk-container-wide: 1080px;
+  --lk-space-xs: 4px;
+  --lk-space-sm: 8px;
+  --lk-space-md: 16px;
+  --lk-space-lg: 24px;
+  --lk-space-xl: 40px;
+  --lk-space-2xl: 64px;
+  --lk-space-3xl: 96px;
+  --lk-space-4xl: 128px;
+
+  /* Radius */
+  --lk-radius-sm: 8px;
+  --lk-radius-md: 12px;
+  --lk-radius-lg: 18px;
+  --lk-radius-xl: 22px;
+  --lk-radius-full: 100px;
+
+  /* Transitions */
+  --lk-ease-out: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --lk-ease-spring: cubic-bezier(0.4, 0, 0.2, 1);
+  --lk-duration-fast: 0.2s;
+  --lk-duration-normal: 0.35s;
+  --lk-duration-slow: 0.6s;
+}
 
 /* ===== Global Reset ===== */
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 body {
-  color: #1d1d1f;
-  background: #fff;
+  font-family: var(--lk-font-sans);
+  color: var(--lk-gray-800);
+  background: var(--lk-white);
   overflow-x: hidden;
+  line-height: var(--lk-leading-normal);
 }
 * {
   -webkit-tap-highlight-color: transparent;
 }
 ::selection {
-  background: #0071e3;
-  color: #fff;
+  background: var(--lk-blue);
+  color: var(--lk-white);
 }
 h2 {
   display: block;
@@ -34,7 +89,7 @@ h2 {
   margin-inline-end: 0;
   font-weight: 700;
   unicode-bidi: isolate;
-  letter-spacing: -0.03em;
+  letter-spacing: var(--lk-tracking-tighter);
 }
 h3 {
   display: block;
@@ -45,7 +100,7 @@ h3 {
   margin-inline-end: 0;
   font-weight: 600;
   unicode-bidi: isolate;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--lk-tracking-tight);
 }
 .mb20 { margin-bottom: 20px; }
 
@@ -55,10 +110,10 @@ h3 {
   margin: 0 auto;
 }
 @media (min-width: 1024px) {
-  .leekono-container { max-width: 980px; padding: 0; }
+  .leekono-container { max-width: var(--lk-container-max); padding: 0; }
 }
 @media (min-width: 1440px) {
-  .leekono-container { max-width: 980px; }
+  .leekono-container { max-width: var(--lk-container-max); }
 }
 @media (min-width: 768px) {
   h2 { font-size: 2.2em; font-weight: 700; }
@@ -70,15 +125,15 @@ h3 {
    HOME PAGE
    =============================================== */
 .leekono-home {
-  background: #fff;
+  background: var(--lk-white);
 }
 
 /* ----- Hero — Full viewport cinematic ----- */
 .leekono-home-hero {
   position: relative;
   height: 92vh;
-  min-height: 500px;
-  max-height: 700px;
+  min-height: 520px;
+  max-height: 720px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -96,31 +151,31 @@ h3 {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.4) 0%,
-    rgba(0, 0, 0, 0.15) 40%,
-    rgba(0, 0, 0, 0.5) 100%
+    rgba(0, 0, 0, 0.32) 0%,
+    rgba(0, 0, 0, 0.05) 42%,
+    rgba(0, 0, 0, 0.52) 100%
   );
 }
 .leekono-home-hero-content {
   position: relative;
   z-index: 1;
   text-align: center;
-  padding: 0 24px;
+  padding: 0 28px;
   max-width: 780px;
 }
 .leekono-home-hero-title {
   font-size: 40px;
   font-weight: 700;
-  color: #fff;
-  margin: 0 0 12px;
-  letter-spacing: -0.05em;
-  line-height: 1.05;
+  color: var(--lk-white);
+  margin: 0 0 14px;
+  letter-spacing: var(--lk-tracking-tightest);
+  line-height: var(--lk-leading-tight);
 }
 .leekono-home-hero-subtitle {
   font-size: 17px;
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0 0 20px;
-  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 28px;
+  line-height: 1.53;
   font-weight: 400;
 }
 .leekono-home-hero-links {
@@ -130,13 +185,14 @@ h3 {
   align-items: center;
 }
 .leekono-home-hero-link {
-  color: #2997ff;
+  color: var(--lk-blue-light);
   font-size: 20px;
   font-weight: 400;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
+  transition: opacity 0.25s ease;
 }
 .leekono-home-hero-link:hover {
   text-decoration: underline;
@@ -144,20 +200,20 @@ h3 {
 
 /* ----- Stats strip ----- */
 .leekono-home-stats {
-  background: #000;
+  background: var(--lk-black);
 }
 .leekono-home-stats-inner {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0;
-  padding: 40px 24px;
+  padding: 44px 24px;
 }
 .leekono-home-stat {
   text-align: center;
-  padding: 16px 8px;
+  padding: 20px 8px;
 }
 .leekono-home-stat-number {
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   height: 40px;
   display: flex;
   align-items: flex-end;
@@ -166,32 +222,33 @@ h3 {
 .leekono-home-stat-number .ant-statistic-content {
   font-size: 36px;
   font-weight: 700;
-  color: #fff;
+  color: var(--lk-white);
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: var(--lk-tracking-tighter);
   display: flex;
   align-items: baseline;
   justify-content: center;
 }
 .leekono-home-stat-number .ant-statistic-content-value {
-  color: #fff !important;
+  color: var(--lk-white) !important;
 }
 .leekono-home-stat-number .ant-statistic-content-suffix {
   font-size: 20px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.4);
 }
 .leekono-home-stat-label {
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.45);
   line-height: 1.4;
-  letter-spacing: 0.02em;
-  margin-top: 2px;
+  letter-spacing: 0.03em;
+  margin-top: 4px;
+  text-transform: uppercase;
 }
 
 /* ----- About Us ----- */
 .leekono-home-about {
-  padding: 64px 24px;
-  background: #fff;
+  padding: 72px 28px;
+  background: var(--lk-white);
 }
 .leekono-home-about-inner {
   text-align: center;
@@ -199,32 +256,32 @@ h3 {
   margin: 0 auto;
 }
 .leekono-home-about-eyebrow {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #6e6e73;
-  margin: 0 0 12px;
+  letter-spacing: 0.1em;
+  color: var(--lk-gray-500);
+  margin: 0 0 14px;
 }
 .leekono-home-section-title {
   font-size: 28px;
   font-weight: 700;
-  color: #1d1d1f;
+  color: var(--lk-gray-800);
   margin: 0 0 8px;
-  letter-spacing: -0.04em;
+  letter-spacing: var(--lk-tracking-tighter);
 }
 .leekono-home-about-company {
   font-size: 28px;
   font-weight: 700;
-  color: #1d1d1f;
-  margin: 0 0 16px;
-  letter-spacing: -0.04em;
-  line-height: 1.1;
+  color: var(--lk-gray-800);
+  margin: 0 0 20px;
+  letter-spacing: var(--lk-tracking-tighter);
+  line-height: var(--lk-leading-tight);
 }
 .leekono-home-about-desc {
   font-size: 17px;
-  color: #6e6e73;
-  line-height: 1.47;
+  color: var(--lk-gray-600);
+  line-height: var(--lk-leading-normal);
   margin: 0;
 }
 
@@ -233,7 +290,7 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 .leekono-home-section-header .leekono-home-section-title {
   margin: 0;
@@ -242,12 +299,13 @@ h3 {
 }
 .leekono-home-view-all {
   font-size: 17px;
-  color: #2997ff;
+  color: var(--lk-blue-light);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   font-weight: 400;
+  transition: opacity 0.25s ease;
 }
 .leekono-home-view-all:hover {
   text-decoration: underline;
@@ -255,8 +313,8 @@ h3 {
 
 /* ----- Products section ----- */
 .leekono-home-products {
-  padding: 64px 20px;
-  background: #f5f5f7;
+  padding: 72px 20px;
+  background: var(--lk-gray-100);
 }
 .leekono-home-products-inner {}
 .leekono-home-products .leekono-home-section-header {
@@ -268,20 +326,20 @@ h3 {
   gap: 12px;
 }
 .leekono-home-products-scroll .leekono-product-card {
-  border-radius: 20px;
+  border-radius: var(--lk-radius-xl);
   border: none;
   box-shadow: none;
-  background: #fff;
+  background: var(--lk-white);
   overflow: hidden;
 }
 .leekono-home-products-scroll .leekono-product-card-img-wrapper {
   aspect-ratio: 4 / 3;
   padding: 16px;
   border-radius: 0;
-  background: #fff;
+  background: var(--lk-white);
 }
 .leekono-home-products-scroll .leekono-product-card-body {
-  padding: 8px 14px 16px;
+  padding: 10px 14px 18px;
   text-align: center;
 }
 .leekono-home-products-scroll .leekono-product-card-title {
@@ -303,8 +361,8 @@ h3 {
 
 /* ----- Cases section ----- */
 .leekono-home-cases {
-  padding: 64px 20px;
-  background: #fff;
+  padding: 72px 20px;
+  background: var(--lk-white);
 }
 .leekono-home-cases-inner {}
 .leekono-home-cases-grid {
@@ -313,16 +371,16 @@ h3 {
   gap: 12px;
 }
 .leekono-home-cases-grid .leekono-case-card {
-  border-radius: 20px;
+  border-radius: var(--lk-radius-xl);
   overflow: hidden;
-  background: #f5f5f7;
+  background: var(--lk-gray-100);
   border: none;
 }
 .leekono-home-cases-grid .leekono-case-card-img {
   border-radius: 0;
 }
 .leekono-home-cases-grid .leekono-case-card-content {
-  padding: 10px 14px;
+  padding: 12px 14px;
 }
 .leekono-home-cases-grid .leekono-case-card-title {
   font-size: 14px;
@@ -340,19 +398,19 @@ h3 {
   .leekono-home-hero {
     height: 100vh;
     max-height: 1000px;
-    min-height: 600px;
+    min-height: 620px;
   }
   .leekono-home-hero-title {
-    font-size: 80px;
-    letter-spacing: -0.05em;
-    margin-bottom: 12px;
+    font-size: 76px;
+    letter-spacing: var(--lk-tracking-tightest);
+    margin-bottom: 16px;
   }
   .leekono-home-hero-subtitle {
     font-size: 21px;
-    max-width: 500px;
+    max-width: 480px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
+    margin-bottom: 32px;
   }
   .leekono-home-hero-link {
     font-size: 21px;
@@ -361,13 +419,13 @@ h3 {
   /* Stats */
   .leekono-home-stats-inner {
     grid-template-columns: repeat(4, 1fr);
-    max-width: 980px;
+    max-width: var(--lk-container-max);
     margin: 0 auto;
-    padding: 72px 0;
+    padding: 80px 0;
   }
   .leekono-home-stat {
-    padding: 0 20px;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0 24px;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
   }
   .leekono-home-stat:last-child {
     border-right: none;
@@ -380,36 +438,36 @@ h3 {
     font-weight: 700;
   }
   .leekono-home-stat-number .ant-statistic-content-suffix {
-    font-size: 40px;
+    font-size: 32px;
   }
   .leekono-home-stat-label {
-    font-size: 14px;
-    margin-top: 8px;
+    font-size: 13px;
+    margin-top: 10px;
   }
 
   /* About */
   .leekono-home-about {
-    padding: 120px 40px;
+    padding: 128px 40px;
   }
   .leekono-home-about-inner {
     max-width: 720px;
   }
   .leekono-home-about-eyebrow {
     font-size: 12px;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
   }
   .leekono-home-about-company {
     font-size: 48px;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
   }
   .leekono-home-about-desc {
     font-size: 21px;
-    line-height: 1.47;
+    line-height: var(--lk-leading-normal);
   }
 
   /* Section header */
   .leekono-home-section-header {
-    margin-bottom: 32px;
+    margin-bottom: 36px;
   }
   .leekono-home-section-header .leekono-home-section-title {
     font-size: 40px;
@@ -425,10 +483,10 @@ h3 {
 
   /* Products */
   .leekono-home-products {
-    padding: 80px 22px;
+    padding: 88px 22px;
   }
   .leekono-home-products-inner {
-    max-width: 980px;
+    max-width: var(--lk-container-max);
     margin: 0 auto;
   }
   .leekono-home-products-scroll {
@@ -440,10 +498,10 @@ h3 {
 
   /* Cases */
   .leekono-home-cases {
-    padding: 80px 22px;
+    padding: 88px 22px;
   }
   .leekono-home-cases-inner {
-    max-width: 980px;
+    max-width: var(--lk-container-max);
     margin: 0 auto;
   }
   .leekono-home-cases-grid {
@@ -460,16 +518,17 @@ h3 {
 
 @media (min-width: 1200px) {
   .leekono-home-hero-title {
-    font-size: 96px;
+    font-size: 92px;
   }
   .leekono-home-hero-subtitle {
-    font-size: 21px;
+    font-size: 24px;
+    max-width: 520px;
   }
   .leekono-home-stat-number .ant-statistic-content {
     font-size: 72px;
   }
   .leekono-home-about {
-    padding: 140px 40px;
+    padding: 152px 40px;
   }
   .leekono-home-about-company {
     font-size: 56px;
@@ -481,61 +540,64 @@ h3 {
 
 
 /* ===============================================
-   FOOTER — Apple-style dark
+   FOOTER — Apple-style minimal
    =============================================== */
 .leekono-footer {
-  background: #f5f5f7;
-  color: #6e6e73;
-  border-top: 1px solid #d2d2d7;
+  background: var(--lk-gray-100);
+  color: var(--lk-gray-600);
+  border-top: 1px solid var(--lk-gray-300);
 }
 .leekono-footer-inner {
-  max-width: 980px;
+  max-width: var(--lk-container-max);
   margin: 0 auto;
-  padding: 20px 24px 24px;
+  padding: 24px 24px 28px;
 }
 .leekono-footer-top {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #d2d2d7;
+  gap: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--lk-gray-300);
 }
 .leekono-footer-brand-name {
   font-size: 13px;
   font-weight: 600;
-  color: #1d1d1f;
-  margin-bottom: 4px;
+  color: var(--lk-gray-800);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
 }
 .leekono-footer-brand-desc {
   font-size: 12px;
-  line-height: 1.5;
-  color: #6e6e73;
+  line-height: 1.58;
+  color: var(--lk-gray-600);
 }
 .leekono-footer-label {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  color: #1d1d1f;
-  margin-bottom: 8px;
+  color: var(--lk-gray-800);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 .leekono-footer-value {
   font-size: 12px;
-  color: #6e6e73;
-  line-height: 1.5;
+  color: var(--lk-gray-600);
+  line-height: 1.6;
 }
 .leekono-footer-link {
   font-size: 12px;
-  color: #424245;
+  color: var(--lk-gray-700);
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.25s ease;
 }
 .leekono-footer-link:hover {
-  color: #1d1d1f;
+  color: var(--lk-gray-800);
   text-decoration: underline;
 }
 .leekono-footer-bottom {
-  padding-top: 12px;
+  padding-top: 16px;
   font-size: 12px;
-  color: #6e6e73;
+  color: var(--lk-gray-500);
 }
 
 @media (min-width: 768px) {
@@ -543,12 +605,12 @@ h3 {
     padding: 0 22px;
   }
   .leekono-footer-inner {
-    padding: 20px 0 24px;
+    padding: 28px 0 32px;
   }
   .leekono-footer-top {
     flex-direction: row;
-    gap: 40px;
-    padding-bottom: 16px;
+    gap: 48px;
+    padding-bottom: 20px;
   }
   .leekono-footer-brand {
     flex: 2;
@@ -592,7 +654,7 @@ h3 {
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - 48px);
-  background: #000;
+  background: var(--lk-black);
 }
 @media (min-width: 768px) {
   .leekono-loading { min-height: calc(100vh - 44px); }
@@ -601,27 +663,28 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 24px;
 }
 .leekono-loading-logo {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.3em;
-  color: rgba(255, 255, 255, 0.3);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  color: rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
 }
 .leekono-loading-bar {
-  width: 48px;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.08);
+  width: 40px;
+  height: 1.5px;
+  background: rgba(255, 255, 255, 0.06);
   border-radius: 2px;
   overflow: hidden;
 }
 .leekono-loading-bar-fill {
   width: 40%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 2px;
-  animation: lk-slide 1.2s ease-in-out infinite;
+  animation: lk-slide 1.4s ease-in-out infinite;
 }
 
 @keyframes lk-slide {
@@ -640,8 +703,8 @@ h3 {
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - 48px);
-  background: #000;
-  padding: 0 24px;
+  background: var(--lk-black);
+  padding: 0 28px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -660,8 +723,8 @@ h3 {
 .leekono-404-bg span {
   font-size: 40vw;
   font-weight: 900;
-  color: rgba(255, 255, 255, 0.03);
-  letter-spacing: -0.04em;
+  color: rgba(255, 255, 255, 0.025);
+  letter-spacing: var(--lk-tracking-tighter);
   line-height: 1;
   user-select: none;
 }
@@ -672,18 +735,18 @@ h3 {
 .leekono-404-title {
   font-size: 32px;
   font-weight: 700;
-  color: #f5f5f7;
-  margin: 0 0 12px;
-  letter-spacing: -0.04em;
+  color: var(--lk-gray-100);
+  margin: 0 0 14px;
+  letter-spacing: var(--lk-tracking-tighter);
 }
 @media (min-width: 768px) {
   .leekono-404-title { font-size: 48px; }
 }
 .leekono-404-desc {
   font-size: 17px;
-  color: #86868b;
-  margin: 0 0 32px;
-  line-height: 1.47;
+  color: var(--lk-gray-500);
+  margin: 0 0 36px;
+  line-height: var(--lk-leading-normal);
   max-width: 360px;
 }
 .leekono-404-btn {
@@ -692,8 +755,9 @@ h3 {
   gap: 6px;
   font-size: 17px;
   font-weight: 400;
-  color: #2997ff;
+  color: var(--lk-blue-light);
   text-decoration: none;
+  transition: opacity 0.25s ease;
 }
 .leekono-404-btn:hover {
   text-decoration: underline;

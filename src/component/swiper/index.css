@@ -16,18 +16,23 @@
   justify-content: center;
   height: 36px;
   width: 36px;
-  color: rgba(255, 255, 255, 0.8);
-  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.08);
   border-radius: 50%;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background-color 0.2s ease;
+}
+.leekono-swiper-mask-close:active {
+  background-color: rgba(255, 255, 255, 0.14);
 }
 
 .leekono-swiper-card-title {
   margin-bottom: 8px;
   font-size: 22px;
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
+  line-height: var(--lk-leading-snug);
+  letter-spacing: var(--lk-tracking-tighter);
   display: -webkit-box;
   overflow: hidden;
   white-space: pre-wrap;
@@ -37,9 +42,16 @@
   -webkit-box-orient: vertical;
 }
 
+.leekono-swiper-card-desc {
+  font-size: 14px;
+  color: var(--lk-gray-600);
+  margin: 0;
+  line-height: var(--lk-leading-normal);
+}
+
 .leekono-swiper-card {
-  padding: 24px 4px 0 4px;
-  background: #f5f5f7;
+  padding: 28px 4px 0 4px;
+  background: var(--lk-gray-100);
   border-radius: 28px;
   box-sizing: border-box;
   clip-path: inset(1px 1px 1px 1px round 28px);
@@ -54,7 +66,7 @@
   width: 100%;
   border-radius: 0;
   margin-bottom: 4px;
-  margin-top: 28px;
+  margin-top: 24px;
 }
 
 .leekono-swiper-img {
@@ -72,18 +84,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.06);
-  color: rgba(0, 0, 0, 0.4);
-  transition: all 0.2s;
+  background: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.35);
+  transition: all 0.25s ease;
   cursor: pointer;
 }
 .leekono-swiper-button:hover {
-  background: rgba(0, 0, 0, 0.1);
-  color: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.09);
+  color: rgba(0, 0, 0, 0.55);
 }
 .leekono-swiper-button-disabled {
   pointer-events: none;
-  opacity: 0.3;
+  opacity: 0.25;
 }
 .leekono-swiper-button-group {
   display: flex;
@@ -109,27 +121,28 @@
   border: 0;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px);
-  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.25s ease;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: rgba(255, 255, 255, 0.85);
 }
 .leekono-swiper-button-plus:hover {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.65);
 }
 
 /* ===== Desktop Grid — Apple.com style ===== */
 .leekono-swiper-desktop-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: 14px;
 }
 
 /* --- Base tile --- */
 .leekono-swiper-desktop-grid .leekono-swiper-card {
   height: 500px;
-  padding: 52px 32px 0;
-  border-radius: 20px;
+  padding: 56px 36px 0;
+  border-radius: var(--lk-radius-xl);
   clip-path: none;
   cursor: pointer;
   display: flex;
@@ -144,30 +157,30 @@
 
 /* --- Alternating colors: odd=light, even=dark --- */
 .leekono-swiper-desktop-grid .leekono-swiper-card:nth-child(odd) {
-  background: #f5f5f7;
+  background: var(--lk-gray-100);
 }
 .leekono-swiper-desktop-grid .leekono-swiper-card:nth-child(even) {
-  background: #1d1d1f;
+  background: var(--lk-gray-800);
 }
 .leekono-swiper-desktop-grid .leekono-swiper-card:nth-child(even) .leekono-swiper-card-title {
-  color: #f5f5f7;
+  color: var(--lk-gray-100);
 }
 .leekono-swiper-desktop-grid .leekono-swiper-card:nth-child(even) .leekono-swiper-card-desc {
-  color: #a1a1a6;
+  color: var(--lk-gray-400);
 }
 
 /* First child: full-width hero tile */
 .leekono-swiper-desktop-grid .leekono-swiper-card:first-child {
   grid-column: 1 / -1;
   height: 580px;
-  background: #000;
+  background: var(--lk-black);
 }
 .leekono-swiper-desktop-grid .leekono-swiper-card:first-child .leekono-swiper-card-title {
-  color: #f5f5f7;
+  color: var(--lk-gray-100);
   font-size: 40px;
 }
 .leekono-swiper-desktop-grid .leekono-swiper-card:first-child .leekono-swiper-card-desc {
-  color: #a1a1a6;
+  color: var(--lk-gray-400);
   font-size: 17px;
   -webkit-line-clamp: 2;
 }
@@ -181,16 +194,16 @@
 .leekono-swiper-desktop-grid .leekono-swiper-card-title {
   font-size: 28px;
   font-weight: 700;
-  margin-bottom: 4px;
-  letter-spacing: -0.04em;
-  color: #1d1d1f;
-  line-height: 1.1;
+  margin-bottom: 6px;
+  letter-spacing: var(--lk-tracking-tighter);
+  color: var(--lk-gray-800);
+  line-height: var(--lk-leading-tight);
 }
 .leekono-swiper-desktop-grid .leekono-swiper-card-desc {
   font-size: 14px;
-  color: #6e6e73;
+  color: var(--lk-gray-600);
   margin: 0;
-  line-height: 1.47;
+  line-height: var(--lk-leading-normal);
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -199,15 +212,15 @@
 
 /* --- Product image --- */
 .leekono-swiper-desktop-grid .leekono-swiper-card-image {
-  margin-top: 24px;
+  margin-top: 28px;
   border-radius: 0;
   flex: 1;
-  width: 80%;
+  width: 78%;
   object-fit: contain;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 .leekono-swiper-desktop-grid .leekono-swiper-card:hover .leekono-swiper-card-image {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
 /* Last child: full-width if odd count */
@@ -217,7 +230,7 @@
 
 @media (min-width: 1200px) {
   .leekono-swiper-desktop-grid .leekono-swiper-card {
-    height: 550px;
+    height: 560px;
   }
   .leekono-swiper-desktop-grid .leekono-swiper-card:first-child {
     height: 640px;

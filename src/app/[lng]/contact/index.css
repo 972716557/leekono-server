@@ -1,28 +1,28 @@
 /* ===== Contact Page ===== */
 .leekono-contact {
-  background: #fff;
+  background: var(--lk-white);
   min-height: 60vh;
 }
 
 /* ===== Hero ===== */
 .leekono-contact-hero {
   text-align: center;
-  padding: 56px 24px 40px;
-  background: #000;
+  padding: 60px 28px 48px;
+  background: var(--lk-black);
 }
 .leekono-contact-hero-title {
   font-size: 40px;
   font-weight: 700;
-  color: #f5f5f7;
-  margin: 0 0 8px;
-  letter-spacing: -0.05em;
-  line-height: 1.05;
+  color: var(--lk-gray-100);
+  margin: 0 0 12px;
+  letter-spacing: var(--lk-tracking-tightest);
+  line-height: var(--lk-leading-tight);
 }
 .leekono-contact-hero-subtitle {
   font-size: 17px;
-  color: #a1a1a6;
+  color: var(--lk-gray-400);
   margin: 0 auto;
-  line-height: 1.47;
+  line-height: var(--lk-leading-normal);
   max-width: 400px;
 }
 
@@ -31,27 +31,28 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 24px 20px 48px;
+  padding: 28px 20px 56px;
 }
 
 .leekono-contact-card {
-  background: #f5f5f7;
-  border-radius: 20px;
-  padding: 28px 24px;
+  background: var(--lk-gray-100);
+  border-radius: var(--lk-radius-xl);
+  padding: 32px 24px;
   text-align: center;
   border: none;
+  transition: box-shadow 0.35s ease;
 }
 
 .leekono-contact-card-icon {
   width: 44px;
   height: 44px;
-  margin: 0 auto 16px;
+  margin: 0 auto 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #1d1d1f;
+  background: var(--lk-gray-800);
   border-radius: 50%;
-  color: #fff;
+  color: var(--lk-white);
 }
 .leekono-contact-card-icon svg {
   width: 20px;
@@ -59,27 +60,28 @@
 }
 
 .leekono-contact-card-label {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  color: #6e6e73;
+  color: var(--lk-gray-500);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin: 0 0 8px;
+  letter-spacing: 0.06em;
+  margin: 0 0 10px;
 }
 
 .leekono-contact-card-value {
   font-size: 17px;
-  color: #1d1d1f;
+  color: var(--lk-gray-800);
   margin: 0;
-  line-height: 1.47;
+  line-height: var(--lk-leading-normal);
   word-break: break-word;
 }
 
 .leekono-contact-card-link {
   font-size: 17px;
-  color: #2997ff;
+  color: var(--lk-blue-light);
   text-decoration: none;
-  line-height: 1.47;
+  line-height: var(--lk-leading-normal);
+  transition: opacity 0.2s ease;
 }
 .leekono-contact-card-link:hover {
   text-decoration: underline;
@@ -88,11 +90,11 @@
 /* ===== Desktop ===== */
 @media (min-width: 768px) {
   .leekono-contact-hero {
-    padding: 100px 40px 72px;
+    padding: 108px 40px 76px;
   }
   .leekono-contact-hero-title {
     font-size: 56px;
-    letter-spacing: -0.05em;
+    letter-spacing: var(--lk-tracking-tightest);
   }
   .leekono-contact-hero-subtitle {
     font-size: 21px;
@@ -101,21 +103,24 @@
 
   .leekono-contact-cards {
     flex-direction: row;
-    max-width: 1024px;
+    max-width: var(--lk-container-wide);
     margin: 0 auto;
-    padding: 48px 22px 100px;
+    padding: 56px 22px 108px;
     gap: 16px;
   }
 
   .leekono-contact-card {
     flex: 1;
-    padding: 40px 32px;
+    padding: 44px 32px;
+  }
+  .leekono-contact-card:hover {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
   }
 
   .leekono-contact-card-icon {
     width: 48px;
     height: 48px;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
   }
   .leekono-contact-card-icon svg {
     width: 22px;
@@ -123,22 +128,22 @@
   }
 
   .leekono-contact-card-label {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
 }
 
 @media (min-width: 1200px) {
   .leekono-contact-hero {
-    padding: 120px 40px 80px;
+    padding: 128px 40px 88px;
   }
   .leekono-contact-hero-title {
     font-size: 64px;
   }
   .leekono-contact-cards {
     gap: 20px;
-    padding-bottom: 120px;
+    padding-bottom: 128px;
   }
   .leekono-contact-card {
-    padding: 48px 36px;
+    padding: 52px 40px;
   }
 }
