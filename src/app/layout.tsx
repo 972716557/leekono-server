@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   description:
     "Leekono LED - A leading LED display technology company providing indoor, outdoor, rental, and custom LED solutions worldwide.",
   icons: {
-    icon: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: "/icon.png",
+    apple: "/icon.png",
   },
   robots: {
     index: true,
@@ -54,7 +54,7 @@ export default async function RootLayout({ children }: Readonly<Props>) {
         <WebSiteJsonLd />
         <AntdRegistry>
           <Header />
-          <main className="pt-[50px] md:pt-[64px]">{children}</main>
+          <main className="pt-[48px] md:pt-[44px]">{children}</main>
           <Footer />
         </AntdRegistry>
       </body>

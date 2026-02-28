@@ -3,14 +3,18 @@ import Link from "next/link";
 export default async function NotFound() {
   return (
     <div className="leekono-404">
-      <div className="leekono-404-code">404</div>
-      <p className="leekono-404-title">页面走丢了</p>
-      <p className="leekono-404-desc">
-        抱歉，您访问的页面不存在或已被移除
-      </p>
-      <Link href="/" className="leekono-404-btn">
-        返回首页
-      </Link>
+      <div className="leekono-404-bg">
+        <span>404</span>
+      </div>
+      <div className="leekono-404-content">
+        <h1 className="leekono-404-title">Page not found</h1>
+        <p className="leekono-404-desc">
+          Sorry, the page you are looking for doesn&apos;t exist or has been moved.
+        </p>
+        <Link href="/" className="leekono-404-btn">
+          Go Home
+        </Link>
+      </div>
     </div>
   );
 }

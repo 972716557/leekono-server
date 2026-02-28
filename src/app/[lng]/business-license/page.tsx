@@ -11,12 +11,14 @@ const BusinessLicense = async ({ params }: Params) => {
   const { lng } = await params;
   const isEN = lng === En_Locale;
   return (
-    <div>
-      <Image
-        style={{ width: "100%" }}
-        src={isEN ? businessLicenseEN : businessLicenseZH}
-        alt="businessLicense"
-      />
+    <div style={{ background: "#f5f5f7", padding: "24px 16px", minHeight: "60vh" }}>
+      <div style={{ maxWidth: 800, margin: "0 auto" }}>
+        <Image
+          style={{ width: "100%", borderRadius: 16 }}
+          src={isEN ? businessLicenseEN : businessLicenseZH}
+          alt="businessLicense"
+        />
+      </div>
     </div>
   );
 };

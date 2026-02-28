@@ -29,9 +29,9 @@ const Home = async ({ params }: Params) => {
   const { t } = await getTranslation(lng, "home");
 
   return (
-    <div className={`${prefix} pb-safe`}>
-      {/* ===== Hero Banner ===== */}
-      <section className={`${prefix}-hero mt-3 md:mt-0`}>
+    <div className={prefix}>
+      {/* ===== Hero — Full bleed, immersive ===== */}
+      <section className={`${prefix}-hero`}>
         <Image
           alt="Leekono LED"
           src={poster1}
@@ -42,35 +42,38 @@ const Home = async ({ params }: Params) => {
         <div className={`${prefix}-hero-content`}>
           <h1 className={`${prefix}-hero-title`}>{t("heroTitle")}</h1>
           <p className={`${prefix}-hero-subtitle`}>{t("heroSubtitle")}</p>
-          <Link href={`/${lng}/product`} className={`${prefix}-hero-cta`}>
-            {t("heroCta")}
-            <RightOutlined />
-          </Link>
+          <div className={`${prefix}-hero-links`}>
+            <Link href={`/${lng}/product`} className={`${prefix}-hero-link`}>
+              {t("heroCta")}
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* ===== Stats ===== */}
+      {/* ===== Stats — Dark strip for contrast ===== */}
       <section className={`${prefix}-stats`}>
-        {stats.map(({ id, value, suffix }) => (
-          <div className={`${prefix}-stat`} key={id}>
-            <div className={`${prefix}-stat-number`}>
-              <LeekonoStatistic value={value} suffix={suffix} />
+        <div className={`${prefix}-stats-inner`}>
+          {stats.map(({ id, value, suffix }) => (
+            <div className={`${prefix}-stat`} key={id}>
+              <div className={`${prefix}-stat-number`}>
+                <LeekonoStatistic value={value} suffix={suffix} />
+              </div>
+              <div className={`${prefix}-stat-label`}>{t(id)}</div>
             </div>
-            <div className={`${prefix}-stat-label`}>{t(id)}</div>
-          </div>
-        ))}
+          ))}
+        </div>
       </section>
 
-      {/* ===== About Us ===== */}
+      {/* ===== About Us — Clean white ===== */}
       <section className={`${prefix}-about`}>
         <div className={`${prefix}-about-inner`}>
-          <h2 className={`${prefix}-section-title`}>{t("aboutUs")}</h2>
-          <h3 className={`${prefix}-about-company`}>{t("companyName")}</h3>
+          <p className={`${prefix}-about-eyebrow`}>{t("aboutUs")}</p>
+          <h2 className={`${prefix}-about-company`}>{t("companyName")}</h2>
           <p className={`${prefix}-about-desc`}>{t("companyDescription")}</p>
         </div>
       </section>
 
-      {/* ===== Products ===== */}
+      {/* ===== Products — Light gray ===== */}
       <section className={`${prefix}-products`}>
         <div className={`${prefix}-products-inner`}>
           <div className={`${prefix}-section-header`}>
@@ -99,7 +102,7 @@ const Home = async ({ params }: Params) => {
         </div>
       </section>
 
-      {/* ===== Cases ===== */}
+      {/* ===== Cases — White background ===== */}
       <section className={`${prefix}-cases`}>
         <div className={`${prefix}-cases-inner`}>
           <div className={`${prefix}-section-header`}>

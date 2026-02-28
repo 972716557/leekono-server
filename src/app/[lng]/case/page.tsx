@@ -10,10 +10,21 @@ import "./_index.css";
 
 const prefix = "leekono-case";
 
-const Case = () => {
+const Case = async ({ params }: Params) => {
+  const { lng } = await params;
+  const { t } = await getTranslation(lng, "common");
+
   return (
     <div className={prefix}>
-      <Card />
+      {/* Hero */}
+      <section className={`${prefix}-hero`}>
+        <h1 className={`${prefix}-hero-title`}>{t("caseMetadata.title")}</h1>
+        <p className={`${prefix}-hero-subtitle`}>{t("caseMetadata.description")}</p>
+      </section>
+      {/* Masonry grid */}
+      <section className={`${prefix}-grid`}>
+        <Card />
+      </section>
     </div>
   );
 };

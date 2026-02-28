@@ -12,8 +12,8 @@ export default async function Page({ params }: Params) {
   const { t } = await getTranslation(lng, "common");
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-indigo-500  bg-fixed bg-cover bg-bottom error-bg">
-      <div className="text-gray-100 p-[20px] text-xl">{t("mobileTip")}</div>
+    <div className="flex items-center justify-center min-h-screen bg-fixed bg-cover bg-bottom error-bg">
+      <div className="text-gray-400 p-[20px] text-base text-center max-w-md leading-relaxed">{t("mobileTip")}</div>
     </div>
   );
 }
