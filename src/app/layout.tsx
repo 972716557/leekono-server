@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import Header from "@/component/header";
 import Footer from "@/component/footer";
+import WhatsApp from "@/component/whatsapp";
 import { WebSiteData } from "@/constant";
 import { OrganizationJsonLd, WebSiteJsonLd } from "./json-ld";
 import "./globals.css";
@@ -56,6 +57,7 @@ export default async function RootLayout({ children }: Readonly<Props>) {
           <Header />
           <main className="pt-[48px] md:pt-[44px]">{children}</main>
           <Footer />
+          <WhatsApp />
         </AntdRegistry>
       </body>
     </html>

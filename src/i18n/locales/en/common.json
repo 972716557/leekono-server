@@ -7,8 +7,8 @@
   "emailLabel": "Email",
   "phoneLabel": "Phone Number & WhatsApp & WeChat",
   "businessLicense": "Business License",
-  "email": "aria_leekono@foxmail.com",
-  "phone": "+86 19168744682",
+  "email": "ariahuang.leekono@gmail.com",
+  "phone": "+86 18332552416",
   "mobileTip": "For the best experience,please view this page on a mobile device.",
   "address": "3rd Floor, No. 6, Jilong Road, Taiwan Industrial Village, Luozu Community, Shiyan Street, Baoan District, Shenzhen",
   "warning": {
@@ -61,5 +61,6 @@
     "title": "Soft LED",
     "description": " Bendable and curveable for unique installations. Creates irregular shapes and immersive curved displays for innovative designs."
   },
-  "product": "Product"
+  "product": "Product",
+  "news": "News"
 }

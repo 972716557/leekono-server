@@ -6,14 +6,14 @@
 /* ===== Hero ===== */
 .leekono-case-hero {
   text-align: center;
-  padding: 60px 28px 48px;
+  padding: 96px var(--lk-gutter) 60px;
   background: var(--lk-black);
 }
 .leekono-case-hero-title {
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 700;
   color: var(--lk-gray-100);
-  margin: 0 0 12px;
+  margin: 0 0 16px;
   letter-spacing: var(--lk-tracking-tightest);
   line-height: var(--lk-leading-tight);
 }
@@ -21,32 +21,32 @@
   font-size: 17px;
   color: var(--lk-gray-400);
   margin: 0 auto;
-  line-height: var(--lk-leading-normal);
+  line-height: 1.58;
   max-width: 440px;
 }
 
 /* ===== Grid wrapper ===== */
 .leekono-case-grid {
-  padding: 28px 20px;
+  padding: 32px 20px;
 }
 
 /* ===== Masonry ===== */
 .leekono-case-masonry {
   display: flex;
   width: auto;
-  margin-left: -12px;
+  margin-left: -14px;
 }
 .leekono-case-masonry-column {
-  padding-left: 12px;
+  padding-left: 14px;
   background-clip: padding-box;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 /* ===== Case Detail ===== */
 .leekono-case-detail {
-  padding: 24px;
+  padding: 28px var(--lk-gutter);
   background: var(--lk-white);
-  line-height: var(--lk-leading-normal);
+  line-height: 1.75;
   font-size: 17px;
   color: var(--lk-gray-600);
 }
@@ -66,17 +66,17 @@
 }
 .leekono-case-detail-description img {
   width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   border-radius: var(--lk-radius-md);
 }
 
 /* ===== Desktop ===== */
 @media (min-width: 768px) {
   .leekono-case-hero {
-    padding: 108px 40px 76px;
+    padding: 128px 40px 80px;
   }
   .leekono-case-hero-title {
-    font-size: 56px;
+    font-size: 48px;
     letter-spacing: var(--lk-tracking-tightest);
   }
   .leekono-case-hero-subtitle {
@@ -84,7 +84,7 @@
     max-width: 520px;
   }
   .leekono-case-grid {
-    padding: 36px 40px 52px;
+    padding: 40px 40px 56px;
   }
   .leekono-case-masonry {
     margin-left: -16px;
@@ -97,7 +97,7 @@
 
 @media (min-width: 1024px) {
   .leekono-case-grid {
-    padding: 52px 22px;
+    padding: 56px 22px;
     max-width: var(--lk-container-wide);
     margin: 0 auto;
   }
@@ -105,29 +105,29 @@
 
 @media (min-width: 1200px) {
   .leekono-case-hero {
-    padding: 128px 40px 88px;
+    padding: 136px 40px 88px;
   }
   .leekono-case-hero-title {
-    font-size: 64px;
+    font-size: 60px;
   }
 }
 
 /* ===== Desktop case detail ===== */
 @media (min-width: 768px) {
   .leekono-case-detail {
-    padding: 52px 40px;
+    padding: 56px 40px;
     max-width: 720px;
     margin: 0 auto;
     font-size: 17px;
-    line-height: var(--lk-leading-normal);
+    line-height: 1.75;
   }
   .leekono-case-detail-title {
     font-size: 32px;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
   }
   .leekono-case-detail-description img {
     width: 80%;
-    margin: 24px auto;
+    margin: 28px auto;
     display: block;
     border-radius: var(--lk-radius-lg);
   }
@@ -135,7 +135,7 @@
 
 @media (min-width: 1200px) {
   .leekono-case-detail {
-    padding: 72px 0;
+    padding: 80px 0;
   }
   .leekono-case-detail-title {
     font-size: 40px;

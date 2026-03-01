@@ -7,7 +7,8 @@
   overflow: hidden;
   cursor: pointer;
   border: none;
-  transition: box-shadow 0.4s ease;
+  transition: transform var(--lk-duration-normal) var(--lk-ease-out),
+    box-shadow var(--lk-duration-normal) var(--lk-ease-out);
 }
 
 .leekono-case-card-fixed-height .leekono-case-card-img {
@@ -18,17 +19,17 @@
   width: 100%;
   border-radius: 0;
   object-fit: cover;
-  transition: transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: transform 0.5s var(--lk-ease-out);
 }
 .leekono-case-card:hover .leekono-case-card-img {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
 .leekono-case-card-tip {
   position: absolute;
-  top: 12px;
-  left: 12px;
-  padding: 4px 12px;
+  top: 14px;
+  left: 14px;
+  padding: 5px 14px;
   border-radius: var(--lk-radius-full);
   color: var(--lk-white);
   font-size: 11px;
@@ -45,7 +46,7 @@
 }
 
 .leekono-case-card-content {
-  padding: 14px 16px;
+  padding: 16px 18px;
 }
 .leekono-case-card-title {
   margin-bottom: 4px;
@@ -64,13 +65,17 @@
 }
 .leekono-case-card-time {
   font-size: 12px;
-  color: var(--lk-gray-600);
+  color: var(--lk-gray-500);
 }
 
 /* Desktop */
 @media (min-width: 768px) {
+  .leekono-case-card {
+    box-shadow: var(--lk-shadow-sm);
+  }
   .leekono-case-card:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+    box-shadow: var(--lk-shadow-md);
   }
   .leekono-case-card-fixed-height .leekono-case-card-img {
     height: 260px;
@@ -81,6 +86,6 @@
     line-clamp: 1;
   }
   .leekono-case-card-content {
-    padding: 16px 18px;
+    padding: 16px 20px;
   }
 }

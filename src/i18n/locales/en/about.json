@@ -1,0 +1,38 @@
+{
+  "heroTitle": "About Us",
+  "heroSubtitle": "15 years of LED expertise, delivering innovative display solutions to over 100 countries worldwide.",
+  "introTitle": "Who We Are",
+  "introDesc": "Shenzhen Leekono Optoelectronics Technology Co., Ltd. is a professional LED display manufacturer located in Shenzhen, China. Covering approximately 2,000 square meters of production space, we have been dedicated to the LED display industry for over 15 years. Our products are widely exported to developed countries and regions across Europe, America, the Middle East, and Southeast Asia, with overseas sales exceeding 60% of total revenue. To date, we have delivered premium products and outstanding services to clients in more than 100 countries and regions worldwide.",
+  "timelineTitle": "Our Journey",
+  "timeline": {
+    "2011": "Founded in Shenzhen, starting with indoor LED display manufacturing",
+    "2014": "Expanded product line to include outdoor and rental LED displays",
+    "2016": "Passed CE, FCC, and RoHS certifications, entering European and American markets",
+    "2018": "Products exported to over 50 countries, overseas sales surpassing 50%",
+    "2020": "Upgraded factory to 2,000㎡, introduced automated production lines",
+    "2022": "Launched innovative transparent and crystal LED display series",
+    "2024": "Serving 100+ countries with 1,100+ trusted partners globally",
+    "2025": "Continuing to innovate with flexible, interactive, and energy-efficient LED solutions"
+  },
+  "valuesTitle": "Our Values",
+  "values": {
+    "quality": {
+      "title": "Quality First",
+      "desc": "Every product undergoes rigorous quality control with 72-hour burn-in testing before shipment."
+    },
+    "innovation": {
+      "title": "Innovation Driven",
+      "desc": "Continuously investing in R&D to develop cutting-edge LED display technologies."
+    },
+    "service": {
+      "title": "Customer Focused",
+      "desc": "Providing comprehensive pre-sale consultation, customized solutions, and responsive after-sale support."
+    },
+    "global": {
+      "title": "Global Reach",
+      "desc": "Serving clients across 100+ countries with localized support and fast worldwide delivery."
+    }
+  },
+  "factoryTitle": "Our Facility",
+  "factoryDesc": "A modern 2,000㎡ production facility equipped with advanced automated production lines, professional testing equipment, and strict quality management systems."
+}

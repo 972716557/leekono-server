@@ -8,7 +8,7 @@
   background: rgba(251, 251, 253, 0.72);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .leekono-header-inner {
@@ -18,16 +18,16 @@
   align-items: center;
   justify-content: center;
   height: 48px;
-  padding: 0 20px;
+  padding: 0 var(--lk-gutter, 24px);
   position: relative;
 }
 
 .leekono-header-menu-btn {
   position: absolute;
-  left: 20px;
+  left: var(--lk-gutter, 24px);
   font-size: 16px;
   cursor: pointer;
-  color: #1d1d1f;
+  color: var(--lk-gray-800, #1d1d1f);
   display: flex;
   align-items: center;
   transition: opacity 0.2s ease;
@@ -52,15 +52,15 @@
 
 .leekono-header-lang {
   position: absolute;
-  right: 20px;
+  right: var(--lk-gutter, 24px);
   font-size: 14px;
 }
 
 /* Mobile menu */
 .leekono-header-mask {
   background: rgba(0, 0, 0, 0.48) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .leekono-header-mobile {
@@ -94,17 +94,17 @@
 }
 
 .leekono-header-mobile-nav {
-  padding: 24px 0;
+  padding: 28px 0;
   flex: 1;
 }
 
 .leekono-header-mobile-link {
-  padding: 16px 36px;
+  padding: 18px 40px;
   font-size: 20px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
-  transition: color 0.35s ease;
+  transition: color var(--lk-duration-normal, 0.35s) ease;
   letter-spacing: -0.022em;
 }
 
@@ -139,8 +139,8 @@
     cursor: pointer;
     font-size: 12px;
     font-weight: 400;
-    color: #424245;
-    transition: color 0.35s ease;
+    color: var(--lk-gray-700, #424245);
+    transition: color var(--lk-duration-normal, 0.35s) ease;
     position: relative;
     padding: 2px 0;
   }
@@ -152,13 +152,13 @@
     left: 50%;
     width: 0;
     height: 1px;
-    background: #1d1d1f;
-    transition: all 0.35s ease;
+    background: var(--lk-gray-800, #1d1d1f);
+    transition: all var(--lk-duration-normal, 0.35s) ease;
     transform: translateX(-50%);
   }
 
   .leekono-header-nav-link:hover {
-    color: #000;
+    color: var(--lk-black, #000);
   }
 
   .leekono-header-nav-link:hover::after {
@@ -166,13 +166,13 @@
   }
 
   .leekono-header-nav-link-active {
-    color: #000;
+    color: var(--lk-black, #000);
     font-weight: 500;
   }
 
   .leekono-header-nav-link-active::after {
     width: 100%;
-    background: #000;
+    background: var(--lk-black, #000);
   }
 
   .leekono-header-lang {

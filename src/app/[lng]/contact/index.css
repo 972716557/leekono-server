@@ -7,14 +7,14 @@
 /* ===== Hero ===== */
 .leekono-contact-hero {
   text-align: center;
-  padding: 60px 28px 48px;
+  padding: 96px var(--lk-gutter) 60px;
   background: var(--lk-black);
 }
 .leekono-contact-hero-title {
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 700;
   color: var(--lk-gray-100);
-  margin: 0 0 12px;
+  margin: 0 0 16px;
   letter-spacing: var(--lk-tracking-tightest);
   line-height: var(--lk-leading-tight);
 }
@@ -22,37 +22,38 @@
   font-size: 17px;
   color: var(--lk-gray-400);
   margin: 0 auto;
-  line-height: var(--lk-leading-normal);
-  max-width: 400px;
+  line-height: 1.58;
+  max-width: 420px;
 }
 
 /* ===== Cards ===== */
 .leekono-contact-cards {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 28px 20px 56px;
+  gap: 14px;
+  padding: 32px 20px 56px;
 }
 
 .leekono-contact-card {
   background: var(--lk-gray-100);
   border-radius: var(--lk-radius-xl);
-  padding: 32px 24px;
+  padding: 36px var(--lk-gutter);
   text-align: center;
   border: none;
-  transition: box-shadow 0.35s ease;
+  transition: transform var(--lk-duration-normal) var(--lk-ease-out),
+    box-shadow var(--lk-duration-normal) var(--lk-ease-out);
 }
 
 .leekono-contact-card-icon {
-  width: 44px;
-  height: 44px;
-  margin: 0 auto 18px;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--lk-gray-800);
-  border-radius: 50%;
-  color: var(--lk-white);
+  background: var(--lk-gray-200);
+  border-radius: var(--lk-radius-md);
+  color: var(--lk-gray-700);
 }
 .leekono-contact-card-icon svg {
   width: 20px;
@@ -62,38 +63,159 @@
 .leekono-contact-card-label {
   font-size: 11px;
   font-weight: 600;
-  color: var(--lk-gray-500);
+  color: var(--lk-gray-400);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin: 0 0 10px;
+  letter-spacing: 0.08em;
+  margin: 0 0 12px;
 }
 
 .leekono-contact-card-value {
-  font-size: 17px;
+  font-size: 16px;
   color: var(--lk-gray-800);
   margin: 0;
-  line-height: var(--lk-leading-normal);
+  line-height: 1.55;
   word-break: break-word;
 }
 
 .leekono-contact-card-link {
-  font-size: 17px;
+  font-size: 16px;
   color: var(--lk-blue-light);
   text-decoration: none;
-  line-height: var(--lk-leading-normal);
-  transition: opacity 0.2s ease;
+  line-height: 1.55;
+  transition: color var(--lk-duration-fast) ease;
 }
 .leekono-contact-card-link:hover {
   text-decoration: underline;
 }
 
+/* ===== Inquiry Form ===== */
+.leekono-contact-form-section {
+  padding: 56px 20px 72px;
+  background: var(--lk-gray-100);
+}
+.leekono-contact-form-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--lk-gray-800);
+  margin: 0 0 10px;
+  text-align: center;
+  letter-spacing: var(--lk-tracking-tighter);
+}
+.leekono-contact-form-subtitle {
+  font-size: 15px;
+  color: var(--lk-gray-500);
+  text-align: center;
+  margin: 0 0 36px;
+  line-height: 1.55;
+}
+.leekono-contact-form {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.leekono-contact-form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.leekono-contact-form-group {
+  margin-bottom: 24px;
+}
+.leekono-contact-form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--lk-gray-700);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.leekono-contact-form-input {
+  width: 100%;
+  padding: 13px 16px;
+  font-size: 16px;
+  font-family: inherit;
+  color: var(--lk-gray-800);
+  background: var(--lk-white);
+  border: 1px solid var(--lk-gray-200);
+  border-radius: var(--lk-radius-md);
+  outline: none;
+  transition: border-color var(--lk-duration-fast) ease,
+    box-shadow var(--lk-duration-fast) ease;
+  box-sizing: border-box;
+}
+.leekono-contact-form-input:focus {
+  border-color: var(--lk-blue);
+  box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.1);
+}
+.leekono-contact-form-input::placeholder {
+  color: var(--lk-gray-400);
+  font-weight: 400;
+}
+.leekono-contact-form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2386868b' d='M6 8.825a.5.5 0 01-.354-.146L2.146 5.179a.5.5 0 11.708-.708L6 7.617l3.146-3.146a.5.5 0 11.708.708L6.354 8.679a.5.5 0 01-.354.146z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+.leekono-contact-form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+.leekono-contact-form-submit {
+  display: block;
+  width: 100%;
+  padding: 15px 32px;
+  font-size: 17px;
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--lk-white);
+  background: var(--lk-blue);
+  border: none;
+  border-radius: var(--lk-radius-full);
+  cursor: pointer;
+  transition: background var(--lk-duration-fast) ease,
+    transform var(--lk-duration-fast) ease;
+  margin-top: 8px;
+}
+.leekono-contact-form-submit:hover {
+  background: var(--lk-blue-hover);
+}
+.leekono-contact-form-submit:active {
+  transform: scale(0.98);
+}
+.leekono-contact-form-submit:disabled {
+  background: var(--lk-gray-400);
+  cursor: not-allowed;
+}
+.leekono-contact-form-submit:disabled:hover {
+  background: var(--lk-gray-400);
+}
+
+/* ===== Status Messages ===== */
+.leekono-contact-form-status {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 16px;
+  border-radius: var(--lk-radius-md);
+  margin-bottom: 16px;
+}
+.leekono-contact-form-status-success {
+  color: #15803d;
+  background: #f0fdf4;
+}
+.leekono-contact-form-status-error {
+  color: #dc2626;
+  background: #fef2f2;
+}
+
 /* ===== Desktop ===== */
 @media (min-width: 768px) {
   .leekono-contact-hero {
-    padding: 108px 40px 76px;
+    padding: 128px 40px 80px;
   }
   .leekono-contact-hero-title {
-    font-size: 56px;
+    font-size: 48px;
     letter-spacing: var(--lk-tracking-tightest);
   }
   .leekono-contact-hero-subtitle {
@@ -105,22 +227,23 @@
     flex-direction: row;
     max-width: var(--lk-container-wide);
     margin: 0 auto;
-    padding: 56px 22px 108px;
-    gap: 16px;
+    padding: 64px 22px 112px;
+    gap: 20px;
   }
 
   .leekono-contact-card {
     flex: 1;
-    padding: 44px 32px;
+    padding: 48px 32px;
   }
   .leekono-contact-card:hover {
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+    box-shadow: var(--lk-shadow-md);
   }
 
   .leekono-contact-card-icon {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 22px;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 24px;
   }
   .leekono-contact-card-icon svg {
     width: 22px;
@@ -130,20 +253,48 @@
   .leekono-contact-card-label {
     margin-bottom: 14px;
   }
+  .leekono-contact-card-value {
+    font-size: 17px;
+  }
+
+  /* Form desktop */
+  .leekono-contact-form-section {
+    padding: 80px 22px 104px;
+  }
+  .leekono-contact-form-title {
+    font-size: 40px;
+  }
+  .leekono-contact-form-subtitle {
+    font-size: 17px;
+    margin-bottom: 44px;
+  }
+  .leekono-contact-form-row {
+    flex-direction: row;
+    gap: 20px;
+  }
+  .leekono-contact-form-row .leekono-contact-form-group {
+    flex: 1;
+  }
+  .leekono-contact-form-submit {
+    width: auto;
+    min-width: 220px;
+    margin: 12px auto 0;
+    padding: 16px 48px;
+  }
 }
 
 @media (min-width: 1200px) {
   .leekono-contact-hero {
-    padding: 128px 40px 88px;
+    padding: 136px 40px 88px;
   }
   .leekono-contact-hero-title {
-    font-size: 64px;
+    font-size: 60px;
   }
   .leekono-contact-cards {
-    gap: 20px;
+    gap: 24px;
     padding-bottom: 128px;
   }
   .leekono-contact-card {
-    padding: 52px 40px;
+    padding: 56px 40px;
   }
 }

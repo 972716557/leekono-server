@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 import { Products } from "./_constant";
 import { Table } from "antd";
-import { notFound, useParams } from "next/navigation";
+import { notFound, useParams, useRouter } from "next/navigation";
 import { useTranslation } from "@/i18n/client";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
@@ -13,8 +13,10 @@ const prefix = "leekono-product-detail";
 export default function LeekonoSwiper() {
   const { lng, id } = useParams();
   const { t } = useTranslation(lng as string, "product");
+  const { t: tCommon } = useTranslation(lng as string, "common");
   const detail = Products.find((item) => item.id === id);
   const isMobile = useIsMobile();
+  const router = useRouter();
 
   const [src, setSrc] = useState<StaticImageData>();
   const [visible, setVisible] = useState(false);
@@ -89,6 +91,26 @@ export default function LeekonoSwiper() {
           dataSource={detail.data}
           pagination={false}
         />
+      </div>
+
+      {/* Product description */}
+      <div className={`${prefix}-desc-section`}>
+        <h2 className={`${prefix}-title`}>
+          {tCommon(`${detail.id}.title`)}
+        </h2>
+        <p className={`${prefix}-desc-text`}>
+          {tCommon(`${detail.id}.description`)}
+        </p>
+      </div>
+
+      {/* CTA */}
+      <div className={`${prefix}-cta`}>
+        <button
+          className={`${prefix}-cta-btn`}
+          onClick={() => router.push(`/${lng}/contact`)}
+        >
+          {t("contact")}
+        </button>
       </div>
     </>
   );

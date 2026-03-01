@@ -21,7 +21,7 @@
   border-radius: 50%;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  transition: background-color 0.2s ease;
+  transition: background-color var(--lk-duration-fast) ease;
 }
 .leekono-swiper-mask-close:active {
   background-color: rgba(255, 255, 255, 0.14);
@@ -52,9 +52,9 @@
 .leekono-swiper-card {
   padding: 28px 4px 0 4px;
   background: var(--lk-gray-100);
-  border-radius: 28px;
+  border-radius: var(--lk-radius-xl);
   box-sizing: border-box;
-  clip-path: inset(1px 1px 1px 1px round 28px);
+  clip-path: inset(1px 1px 1px 1px round 22px);
   height: 480px;
   overflow: hidden;
   position: relative;
@@ -84,13 +84,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.35);
-  transition: all 0.25s ease;
+  transition: all var(--lk-duration-fast) ease;
   cursor: pointer;
 }
 .leekono-swiper-button:hover {
-  background: rgba(0, 0, 0, 0.09);
+  background: rgba(0, 0, 0, 0.08);
   color: rgba(0, 0, 0, 0.55);
 }
 .leekono-swiper-button-disabled {
@@ -121,21 +121,21 @@
   border: 0;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all var(--lk-duration-fast) ease;
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   color: rgba(255, 255, 255, 0.85);
 }
 .leekono-swiper-button-plus:hover {
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 /* ===== Desktop Grid — Apple.com style ===== */
 .leekono-swiper-desktop-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  gap: 16px;
 }
 
 /* --- Base tile --- */
@@ -152,7 +152,7 @@
   overflow: hidden;
   border: none;
   box-shadow: none;
-  transition: none;
+  transition: transform var(--lk-duration-normal) var(--lk-ease-out);
 }
 
 /* --- Alternating colors: odd=light, even=dark --- */
@@ -194,16 +194,16 @@
 .leekono-swiper-desktop-grid .leekono-swiper-card-title {
   font-size: 28px;
   font-weight: 700;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   letter-spacing: var(--lk-tracking-tighter);
   color: var(--lk-gray-800);
   line-height: var(--lk-leading-tight);
 }
 .leekono-swiper-desktop-grid .leekono-swiper-card-desc {
   font-size: 14px;
-  color: var(--lk-gray-600);
+  color: var(--lk-gray-500);
   margin: 0;
-  line-height: var(--lk-leading-normal);
+  line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -212,12 +212,12 @@
 
 /* --- Product image --- */
 .leekono-swiper-desktop-grid .leekono-swiper-card-image {
-  margin-top: 28px;
+  margin-top: 32px;
   border-radius: 0;
   flex: 1;
   width: 78%;
   object-fit: contain;
-  transition: transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: transform 0.5s var(--lk-ease-out);
 }
 .leekono-swiper-desktop-grid .leekono-swiper-card:hover .leekono-swiper-card-image {
   transform: scale(1.03);

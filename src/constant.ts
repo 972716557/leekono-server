@@ -11,10 +11,11 @@ import { StaticImageData } from "next/image";
 
 const routes = [
   { path: "/", id: "home" },
-  // { path: "/about-us", id: "aboutUs" },
-  { path: "/case", id: "case" },
-  { path: "/contact", id: "contact" },
+  { path: "/about", id: "aboutUs" },
   { path: "/product", id: "product" },
+  { path: "/case", id: "case" },
+  { path: "/news", id: "news" },
+  { path: "/contact", id: "contact" },
 ];
 
 const ZH_Locale = "zh";

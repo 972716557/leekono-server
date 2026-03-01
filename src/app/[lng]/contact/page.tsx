@@ -4,6 +4,7 @@ import { getTranslation } from "@/i18n";
 import { languages } from "@/i18n/settings";
 import { WebSiteData } from "@/constant";
 import { getAlternates, getOgLocale } from "../../seo";
+import InquiryForm from "./_form";
 
 const prefix = "leekono-contact";
 
@@ -58,6 +59,9 @@ const Contact = async ({ params }: Params) => {
           </a>
         </div>
       </section>
+
+      {/* Inquiry Form */}
+      <InquiryForm />
     </div>
   );
 };
