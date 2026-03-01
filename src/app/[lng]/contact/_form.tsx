@@ -23,6 +23,7 @@ const InquiryForm = () => {
     phone: "",
     productType: "",
     area: "",
+    pixelPitch: "",
     message: "",
   });
 
@@ -54,13 +55,14 @@ const InquiryForm = () => {
           phone: form.phone || "N/A",
           productType: productLabel,
           area: form.area ? `${form.area} ㎡` : "N/A",
+          pixelPitch: form.pixelPitch ? `${form.pixelPitch} mm` : "N/A",
           message: form.message || "N/A",
         },
         PUBLIC_KEY
       );
 
       setStatus("success");
-      setForm({ name: "", email: "", phone: "", productType: "", area: "", message: "" });
+      setForm({ name: "", email: "", phone: "", productType: "", area: "", pixelPitch: "", message: "" });
     } catch {
       setStatus("error");
     }
@@ -143,6 +145,18 @@ const InquiryForm = () => {
             value={form.area}
             onChange={onChange}
             placeholder={t("areaPlaceholder")}
+            className={`${prefix}-form-input`}
+          />
+        </div>
+
+        <div className={`${prefix}-form-group`}>
+          <label className={`${prefix}-form-label`}>{t("pixelPitchLabel")}</label>
+          <input
+            type="text"
+            name="pixelPitch"
+            value={form.pixelPitch}
+            onChange={onChange}
+            placeholder={t("pixelPitchPlaceholder")}
             className={`${prefix}-form-input`}
           />
         </div>

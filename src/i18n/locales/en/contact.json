@@ -19,6 +19,8 @@
   "productTypePlaceholder": "Select a product type",
   "areaLabel": "Project Area (㎡)",
   "areaPlaceholder": "e.g. 20",
+  "pixelPitchLabel": "Pixel Pitch (mm)",
+  "pixelPitchPlaceholder": "e.g. 2.5",
   "messageLabel": "Message",
   "messagePlaceholder": "Tell us about your project requirements...",
   "submitButton": "Send Inquiry",

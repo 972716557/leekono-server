@@ -19,6 +19,8 @@
   "productTypePlaceholder": "请选择产品类型",
   "areaLabel": "项目面积（㎡）",
   "areaPlaceholder": "例如 20",
+  "pixelPitchLabel": "像素间距（mm）",
+  "pixelPitchPlaceholder": "例如 2.5",
   "messageLabel": "留言",
   "messagePlaceholder": "请描述您的项目需求...",
   "submitButton": "发送询价",

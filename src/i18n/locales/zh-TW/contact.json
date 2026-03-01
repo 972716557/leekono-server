@@ -19,6 +19,8 @@
   "productTypePlaceholder": "請選擇產品類型",
   "areaLabel": "項目面積（㎡）",
   "areaPlaceholder": "例如 20",
+  "pixelPitchLabel": "像素間距（mm）",
+  "pixelPitchPlaceholder": "例如 2.5",
   "messageLabel": "留言",
   "messagePlaceholder": "請描述您的項目需求...",
   "submitButton": "發送詢價",
